@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1353751060 source:f:\codeblocks projects\taller 1 2019\polinomios\main.cpp
+	<iostream>
+
+1549150848 source:f:\codeblocks projects\taller 1 2019\polinomios\string.cpp
+	"String.h"
+	<stdio.h>
+
+1549150590 f:\codeblocks projects\taller 1 2019\polinomios\string.h
+	"Boolean.h"
+
+1549150654 f:\codeblocks projects\taller 1 2019\polinomios\boolean.h
+
