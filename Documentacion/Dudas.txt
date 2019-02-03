@@ -5,3 +5,5 @@ Dudas:
   - "Para interactuar con la aplicación, el usuario digitará una serie de comandos por teclado que le indicarán al programa las 	diferentes acciones a realizar" ¿Los comandos son tal como define el pdf, o pueden ser como nosotros queramos? En caso de ser 	  como define el pdf, ¿Como diferenciamos lo que es el comando, de lo que es el polinomio en si?
   
   - ¿Se respaldan los polinomios al terminar la ejecucion del programa o solo cuando el usuario lo solicita?
+  
+  - ¿Se pueden utilizar cosas no vistas en clase (como librerias externas)?
