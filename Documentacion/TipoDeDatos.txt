@@ -27,6 +27,7 @@ Terminos.h
 	#define TERMINOS_H_INCLUDED
 
 	typedef struct nodo_int{int info;
+				int coeficiente;
 							nodo_int * sig;} NodoTermino;
 	typedef Nodo * Terminos;
 	
