@@ -7,3 +7,10 @@ Dudas:
   - ¿Se respaldan los polinomios al terminar la ejecucion del programa o solo cuando el usuario lo solicita?
   
   - ¿Se pueden utilizar cosas no vistas en clase (como librerias externas)?
+  
+  - ¿Tendremos multiples archivos por cada polinomio que se persista? Porque no guardarlo todo en un mismo archivo?
+  
+  - ¿El polinomio nulo se encuentra definido en el programa al inicio de la ejecucion?
+  
+  - ¿De que forma se deben explicar las desiciones de diseño?
+  
