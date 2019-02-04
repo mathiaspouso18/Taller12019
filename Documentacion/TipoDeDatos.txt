@@ -21,16 +21,16 @@ String.h
 	#endif // STRING_H_INCLUDED
 
 
-ListaPolinomio.h
+Terminos.h
 
-	#ifndef LISTAPOLINOMIO_H_INCLUDED
-	#define LISTAPOLINOMIO_H_INCLUDED
+	#ifndef TERMINOS_H_INCLUDED
+	#define TERMINOS_H_INCLUDED
 
 	typedef struct nodo_int{int info;
-							nodo_int * sig;} NodoPol;
-	typedef Nodo * ListaPol;
+							nodo_int * sig;} NodoTermino;
+	typedef Nodo * Terminos;
 	
-	#endif // LISTAPOLINOMIO_H_INCLUDED
+	#endif // TERMINOS_H_INCLUDED
 	
 	
 Polinomio.h
@@ -39,10 +39,10 @@ Polinomio.h
 	#define POLINOMIO_H_INCLUDED
 	
 	#include "String.h"
-	#include "ListaPolinomio.h"
+	#include "Terminos.h"
 	
 	typedef struct nodo_int{String nombre;
-							ListaPolinomio poli} Polinomio;
+							Terminos Listaterminos} Polinomio;
 	
 	#endif // POLINOMIO_H_INCLUDED
 	
