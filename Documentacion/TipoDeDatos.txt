@@ -19,19 +19,44 @@ String.h
 	typedef char * String;
 
 	#endif // STRING_H_INCLUDED
-
-
-Terminos.h
-
-	#ifndef TERMINOS_H_INCLUDED
-	#define TERMINOS_H_INCLUDED
-
-	typedef struct nodo_int{int info;
-				int coeficiente;
-							nodo_int * sig;} NodoTermino;
-	typedef Nodo * Terminos;
 	
-	#endif // TERMINOS_H_INCLUDED
+
+ListaParametros.h
+	
+	#ifndef LISTAPARAMETROS_H_INCLUDED
+	#define LISTAPARAMETROS_H_INCLUDED
+
+	#include "String.h"
+
+	typedef struct nodo_string{String info;
+							   nodo_string * sig;} Nodo;
+	typedef Nodo * ListaParam;
+
+	#endif // LISTAPARAMETROS_H_INCLUDED
+
+	
+Termino.h
+
+	#ifndef TERMINO_H_INCLUDED
+	#define TERMINO_H_INCLUDED
+
+	typedef struct {int base;
+					int exponente;} Termino;
+	
+	#endif // TERMINO_H_INCLUDED
+	
+ListaTerminos.h
+
+	#ifndef LISTATERMINOS_H_INCLUDED
+	#define LISTATERMINOS_H_INCLUDED
+	
+	#include "Termino.h"
+	
+	typedef struct nodo_termino{Termino info;
+							   nodo_termino * sig;} Nodo;
+	typedef Nodo * ListaTerm;
+	
+	#endif // LISTATERMINOS_H_INCLUDED
 	
 	
 Polinomio.h
@@ -40,10 +65,10 @@ Polinomio.h
 	#define POLINOMIO_H_INCLUDED
 	
 	#include "String.h"
-	#include "Terminos.h"
+	#include "ListaTerminos.h"
 	
 	typedef struct nodo_int{String nombre;
-							Terminos Listaterminos} Polinomio;
+							ListaTerm Listaterminos} Polinomio;
 	
 	#endif // POLINOMIO_H_INCLUDED
 	
@@ -62,3 +87,7 @@ ABBPolinomio.h
 	typedef nodo *Arbol;
 
 	#endif // ABBPOLINOMIO_H_INCLUDED
+	
+Errores.h
+
+	typedef enum{//ACA VAN LOS ERRORES QUE TENEMOS QUE DEFINIR} ErroresEnum;
