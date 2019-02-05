@@ -45,6 +45,7 @@ Termino.h
 	
 	#endif // TERMINO_H_INCLUDED
 	
+	
 ListaTerminos.h
 
 	#ifndef LISTATERMINOS_H_INCLUDED
@@ -87,6 +88,7 @@ ABBPolinomio.h
 	typedef nodo *Arbol;
 
 	#endif // ABBPOLINOMIO_H_INCLUDED
+	
 	
 Errores.h
 
