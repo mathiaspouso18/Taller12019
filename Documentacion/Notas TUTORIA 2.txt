@@ -1,0 +1,15 @@
+- ValidarComando -> Solo pasarle el primer string de la lista parseada, no toda la lisa
+- ValidarComando -> Usar el enumerado de ERRORES para identificar si es un comando valido o no.
+
+- CrearPolinomio -> Falta cargar el exponente
+
+-> Agregar salidas, no importa si son por referencia o no.
+
+LUNES:
+-> Pseudocodigo completo de los comandos
+-> Cabezales de funciones y procedimientos que surgen del pseudocodigo
+-> Diagrama modulos
+-> Estructura de datos en c++
+-> Cronograma (gantt)
+
+1) Se ingresa el comando
