@@ -1,3 +1,5 @@
+Tutoria Jueves 7/2
+
 - ValidarComando -> Solo pasarle el primer string de la lista parseada, no toda la lisa
 - ValidarComando -> Usar el enumerado de ERRORES para identificar si es un comando valido o no.
 
@@ -5,7 +7,7 @@
 
 -> Agregar salidas, no importa si son por referencia o no.
 
-LUNES:
+PARA LUNES:
 -> Pseudocodigo completo de los comandos
 -> Cabezales de funciones y procedimientos que surgen del pseudocodigo
 -> Diagrama modulos
