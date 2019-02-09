@@ -93,3 +93,7 @@ ABBPolinomio.h
 Errores.h
 
 	typedef enum{//ACA VAN LOS ERRORES QUE TENEMOS QUE DEFINIR} ErroresEnum;
+	
+EnumComandos.h
+
+	typedef enum{CREAR, SUMAR, MULTIPLICAR, EVALUAR, ES_RAIZ, MOSTRAR, GUARDAR, RECUPERAR, SALIR} EnumComandos;
