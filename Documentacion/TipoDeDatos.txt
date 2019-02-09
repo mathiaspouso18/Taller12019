@@ -18,6 +18,14 @@ String.h
 	const int MAX = 80;
 	typedef char * String;
 
+
+	void Parsear(String s,ListaTerm &lista);
+	Termino ConvertirStringATermino (String s);
+	Boolean ValidarNombre(String s);
+	Boolean ValidarNumero(String s);
+	Boolean ValidarNombreArchivo (String s);
+
+
 	#endif // STRING_H_INCLUDED
 	
 
@@ -29,8 +37,12 @@ ListaParametros.h
 	#include "String.h"
 
 	typedef struct nodo_string{String info;
-							   nodo_string * sig;} Nodo;
+				   nodo_string * sig;} Nodo;
 	typedef Nodo * ListaParam;
+
+
+	int CantParametros(ListaParam l);
+
 
 	#endif // LISTAPARAMETROS_H_INCLUDED
 
@@ -40,10 +52,20 @@ Termino.h
 	#ifndef TERMINO_H_INCLUDED
 	#define TERMINO_H_INCLUDED
 
-	typedef struct {int base;
-					int exponente;} Termino;
+	typedef struct { char signo;
+			 int base;
+			 int exponente;} Termino;
 	
+
+	char DarSigno(Termino term);
+	int DarExponente(Termino term);
+	int DarBase(Termino term);
+
+
+
 	#endif // TERMINO_H_INCLUDED
+
+
 	
 	
 ListaTerminos.h
@@ -53,11 +75,17 @@ ListaTerminos.h
 	
 	#include "Termino.h"
 	
-	typedef struct nodo_termino{Termino info;
-							   nodo_termino * sig;} Nodo;
+	typedef struct nodo_termino{ Termino info;
+				     nodo_termino * sig;} Nodo;
 	typedef Nodo * ListaTerm;
+
+	
+	int CantTerminos(ListaTerm lista);
+	void InsTermBack(ListaTerm &lista, Termino term);
 	
 	#endif // LISTATERMINOS_H_INCLUDED
+
+	
 	
 	
 Polinomio.h
@@ -68,8 +96,19 @@ Polinomio.h
 	#include "String.h"
 	#include "ListaTerminos.h"
 	
-	typedef struct nodo_int{String nombre;
-							ListaTerm Listaterminos} Polinomio;
+	typedef struct nodo_int{ String nombre;
+				 ListaTerm Listaterminos} Polinomio;
+	
+
+	void DarNombrePloli(Polinomio p);
+	void DarListaTermPoli(Polinomio p, ListaTerm &lista);
+	void Crear(Polinomio &p, ListaParam lista);
+	void SumarPoli(Polinomio a, Polinomio b ,Polinomio &resu);
+	void MultiplicarPoli(Polinomio a, Polinomio b ,Polinomio &resu);
+	int EvaluarPoli(Polinomio p, int x);
+	Boolean EsRaizPoli(Polinomio p, int x);
+	void GuardarPolinomio(Polinomio p, String archivo);
+	void RecuperarPolinomio(Polinomio &p, String poli, String archivo);
 	
 	#endif // POLINOMIO_H_INCLUDED
 	
@@ -81,19 +120,23 @@ ABBPolinomio.h
 
 	#include "Polinomio.h"
 
-	typedef struct nodoN{Polinomio info;
-                   nodoN *hizq;
-                   nodoN *hder;} nodo;
+	typedef struct nodoN { Polinomio info;
+                               nodoN *hizq;
+                               nodoN *hder;} nodo;
 
 	typedef nodo *Arbol;
 
 	#endif // ABBPOLINOMIO_H_INCLUDED
+
+	void InicializarArbol(Arbol &ABB);
+	void MostrarABBPoli(Arbol ABBPoli);
+	void InsPoliABBPoli(Arbol &ABBPoli, Polinomio p);
+	Boolean ExistePolinomio(Arbol &ABBPoli, String nombre_poli);
+	void DarPolinomio (Arbol &ABBPoli, String nombre_poli);
+
+		
 	
 	
 Errores.h
 
 	typedef enum{//ACA VAN LOS ERRORES QUE TENEMOS QUE DEFINIR} ErroresEnum;
-	
-EnumComandos.h
-
-	typedef enum{CREAR, SUMAR, MULTIPLICAR, EVALUAR, ES_RAIZ, MOSTRAR, GUARDAR, RECUPERAR, SALIR} EnumComandos;
