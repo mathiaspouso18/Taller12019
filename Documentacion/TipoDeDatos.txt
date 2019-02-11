@@ -21,6 +21,7 @@ String.h
 
 	void Parsear(String s,ListaTerm &lista);
 	Termino ConvertirStringATermino (String s);
+	int ConvertirCharANumero(String s);
 	Boolean ValidarNombre(String s);
 	Boolean ValidarNumero(String s);
 	Boolean ValidarNombreArchivo (String s);
