@@ -136,8 +136,6 @@ ABBPolinomio.h
 	void DarPolinomio (Arbol &ABBPoli, String nombre_poli);
 
 		
-	
-	
-Errores.h
+EnumComandos.h
 
-	typedef enum{//ACA VAN LOS ERRORES QUE TENEMOS QUE DEFINIR} ErroresEnum;
+	typedef enum{CREAR, SUMAR, MULTIPLICAR, EVALUAR, ES_RAIZ, MOSTRAR, GUARDAR, RECUPERAR, SALIR} EnumComandos;
