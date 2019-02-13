@@ -1,4 +1,5 @@
 #include "String.h"
+#include "Boolean.h"
 #include <stdio.h>
 
 void StrCrear (String & s){

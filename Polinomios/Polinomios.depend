@@ -11,3 +11,44 @@
 
 1549150654 f:\codeblocks projects\taller 1 2019\polinomios\boolean.h
 
+1549225329 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\boolean.cpp
+	"Boolean.h"
+
+1549225329 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\boolean.h
+
+1549396753 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\main.cpp
+	<iostream>
+
+1550066747 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\string.cpp
+	"String.h"
+	"Boolean.h"
+	<stdio.h>
+
+1549225329 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\string.h
+	"Boolean.h"
+
+1550066983 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\listaparametros.cpp
+
+1550067049 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\termino.cpp
+
+1550067170 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\listaterminos.cpp
+
+1550067181 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\polinomio.cpp
+
+1550067341 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enumcomandos.cpp
+
+1550067378 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\abbpolinomio.cpp
+	"ABBPolinomio.h"
+
+1550067212 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\abbpolinomio.h
+	"Polinomio.h"
+
+1550067413 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\polinomio.h
+	"String.h"
+	"ListaTerminos.h"
+
+1550067083 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\listaterminos.h
+	"Termino.h"
+
+1550067034 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\termino.h
+

@@ -32,6 +32,22 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="ABBPolinomio.cpp" />
+		<Unit filename="ABBPolinomio.h" />
+		<Unit filename="Boolean.cpp" />
+		<Unit filename="Boolean.h" />
+		<Unit filename="EnumComandos.cpp" />
+		<Unit filename="EnumComandos.h" />
+		<Unit filename="ListaParametros.cpp" />
+		<Unit filename="ListaParametros.h" />
+		<Unit filename="ListaTerminos.cpp" />
+		<Unit filename="ListaTerminos.h" />
+		<Unit filename="Polinomio.cpp" />
+		<Unit filename="Polinomio.h" />
+		<Unit filename="String.cpp" />
+		<Unit filename="String.h" />
+		<Unit filename="Termino.cpp" />
+		<Unit filename="Termino.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
