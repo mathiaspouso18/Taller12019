@@ -2,7 +2,6 @@
 #define STRING_H_INCLUDED
 
 #include "Boolean.h"
-#include <stdio.h>
 
 const int MAX = 80;
 typedef char * String;
@@ -33,19 +32,5 @@ void Print (String s);
 
 /* compara dos strings */
 Boolean StrEq(String s1, String s2);
-
-/* Convierte un char a numero */
-int ConvertirCharANumero(String s);
-
-Boolean EsValidoNombre(String s);
-
-Boolean EsValidoNumero(String s);
-
-Boolean ValidarNombreArchivo (String s);
-
-void Guardar_String (String s, FILE * f) ;
-
-void Levantar_String (String &s, FILE * f);
-
 
 #endif // STRING_H_INCLUDED
