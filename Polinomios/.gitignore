@@ -1,6 +1,6 @@
 # Specify filepatterns you want git to ignore.
 
-bin/
-obj/
+bin
+obj
 Polinomios_build_log.html
 Polinomios.exe
