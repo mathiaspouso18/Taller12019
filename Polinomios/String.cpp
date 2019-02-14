@@ -1,5 +1,3 @@
-#include "String.h"
-#include "Boolean.h"
 #include <stdio.h>
 
 void StrCrear (String & s){
@@ -106,4 +104,92 @@ Boolean StrEq(String s1, String s2)
 		iguales = FALSE;
 
 	return iguales;
+}
+
+int ConvertirCharANumero(String s)
+{
+	int cantItem, contador = 0, resultado, multiplicador = 1, i = 0;
+	while (s[i] != '\0')
+	{
+		cantItem++;
+		i++;
+	}
+
+	i = cantItem;
+	for (contador= 0; contador < i; contador++)
+	{
+		resultado = (resultado + s[cantItem-1])-48 * multiplicador;
+		multiplicador = multiplicador *10;
+		cantItem--;
+	}
+
+	return resultado;
+}
+
+Boolean EsValidoNombre(String s)
+{
+	int i = 0;
+	Boolean es = TRUE;
+	while(s[i] != '\0' && es)
+	{
+		if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i]<= 'Z') || (s[i]>= '0' && s[i] <= '9'))
+			es = TRUE;
+		else
+            es = FALSE;
+
+		i++;
+	}
+
+	return es;
+}
+
+Boolean EsValidoNumero(String s)
+{
+	int i = 0;
+	Boolean es = TRUE;
+	while(s[i] != '\0' && es)
+	{
+		if(s[i]='-')
+		{
+			if(s[i+1] >= '0' && s[i+1] <= '9')
+				es = TRUE;
+			else
+				es = FALSE;
+		}else{
+			if(s[i] >= '0' && s[i] <= '9')
+				es = TRUE;
+			else
+				es = FALSE;
+		}
+		i++;
+	}
+
+	return es;
+}
+
+void Guardar_String (String s, FILE * f)
+{
+	int i=0;
+    while (s[i] != '\0')
+    {
+		fwrite (&s[i], sizeof(char), 1, f);
+		i++;
+    }
+    // escribo el '\0'
+    fwrite (&s[i], sizeof(char), 1, f);
+}
+
+void Levantar_String (String &s, FILE * f)
+{
+	 int i=0;
+	 String aux;
+	 aux = new char[MAX];
+	 fread (&aux[i], sizeof(char), 1, f);
+	 while (!feof(f) && (aux[i] != '\0'))
+	 {
+         i++;
+         fread (&aux[i], sizeof(char), 1, f);
+	 }
+	 strcop (s, aux);
+	 delete [] aux;
 }

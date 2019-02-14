@@ -11,10 +11,10 @@
 
 1549150654 f:\codeblocks projects\taller 1 2019\polinomios\boolean.h
 
-1549225329 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\boolean.cpp
+1550174592 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\boolean.cpp
 	"Boolean.h"
 
-1549225329 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\boolean.h
+1550174592 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\boolean.h
 
 1549396753 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\main.cpp
 	<iostream>
@@ -35,7 +35,8 @@
 
 1550067181 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\polinomio.cpp
 
-1550067341 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enumcomandos.cpp
+1550174592 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enumcomandos.cpp
+	"EnumComandos.h"
 
 1550067378 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\abbpolinomio.cpp
 	"ABBPolinomio.h"
@@ -51,4 +52,6 @@
 	"Termino.h"
 
 1550067034 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\termino.h
+
+1550174592 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enumcomandos.h
 
