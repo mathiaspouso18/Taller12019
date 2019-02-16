@@ -1,6 +1,8 @@
 #ifndef TERMINO_H_INCLUDED
 #define TERMINO_H_INCLUDED
 
+#include "String.h"
+
 typedef struct { char signo;
 			 int base;
 			 int exponente;} Termino;
@@ -11,8 +13,8 @@ int DarExponente(Termino term);
 int DarBase(Termino term);
 
 
-void Guardar_Termino (Termino term, FILE * f);
-void Levantar_Termino (Termino &term, FILE * f);
+void Guardar_Termino(Termino term, FILE * f);
+void Levantar_Termino(Termino &term, FILE * f);
 
 
 //Termino ConvertirStringATermino (String s);

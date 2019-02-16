@@ -1,12 +1,11 @@
+#include "stdafx.h"
 #include "Polinomio.h"
 
 
 void GuardarPolinomio(Polinomio p, FILE * f)
 {
-	Guardar_String (DarNombrePloli(p), f);
-	DarNombreEscrib(ex,nom);
-	DarApellidoEscrib(ex,ape);
-	Bajar_String (nom, f);
-	Bajar_String (ape, f);
-	fwrite (&ex.cantPags, sizeof(int), 1, f);
+	ListaTerm lista;
+	Guardar_String (p.nombre, f);
+	DarListaTermPoli(p, lista);
+	Guardar_Termino(lista -> info, f);
 }

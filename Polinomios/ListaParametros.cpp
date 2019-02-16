@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "ListaParametros.h"
 
 int CantParametros(ListaParam l){

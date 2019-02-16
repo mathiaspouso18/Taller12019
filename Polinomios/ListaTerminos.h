@@ -11,6 +11,8 @@ int CantTerminos(ListaTerm lista);
 
 void InsTermBack(ListaTerm &lista, Termino term);
 
-void Parsear(String s, ListaTerm &lista);
+void GuardarListaTerminos(ListaTerm lista, FILE *f);
+
+void LevantarListaTerminos(ListaTerm &lista, FILE *f);
 
 #endif // LISTATERMINOS_H_INCLUDED
