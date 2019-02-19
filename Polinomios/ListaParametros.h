@@ -12,4 +12,7 @@ int CantParametros(ListaParam l);
 
 void Parsear(String s, ListaParam &l);
 
+void InsFront (String s, ListaParam &l);
+
+
 #endif // LISTAPARAMETROS_H_INCLUDED

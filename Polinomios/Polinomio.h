@@ -15,9 +15,11 @@ void MultiplicarPoli(Polinomio a, Polinomio b ,Polinomio &resu);
 int EvaluarPoli(Polinomio p, int x);
 Boolean EsRaizPoli(Polinomio p, int x);
 
-void GuardarPolinomio(Polinomio p, FILE * f);
+void MostrarPolinomio(Polinomio p);
+
+void GuardarPolinomio(Polinomio p, String poli);
 
 /*Precondicion: Debe existir el polinomio*/
-void RecuperarPolinomio(Polinomio &p, String poli, String archivo);
+void LevantarPolinomio(Polinomio &p, String poli);
 
 #endif // POLINOMIO_H_INCLUDED
