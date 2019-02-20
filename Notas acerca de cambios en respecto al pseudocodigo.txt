@@ -1,0 +1,2 @@
+//Parsear
+Tuve que recorrer el string e ir comparando una posicion mas que i, es decir i+1, porque al llegar al final, como nosotros tomamos el espacio como señal de cortar palabras, la ultima palabra no la agregaba, ya que despues de la ultima letra, no hay espacios, hay un caracter de fin de linea '\0'.

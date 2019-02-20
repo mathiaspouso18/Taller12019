@@ -3,11 +3,8 @@
 
 using namespace std;
 
-int main()
+/*void PruebaParsear(ListaParam l, String s)
 {
-    ListaParam l = NULL;
-    String s;
-
     printf("Ingrese un string a Parsear: ");
     Scan(s);
     //Prueba de Parsear()
@@ -19,4 +16,12 @@ int main()
         printf("\n");
         l = l->sig;
     }
+}*/
+
+int main()
+{
+    ListaParam l = NULL;
+    String s;
+
+    //PruebaParsear(l, s);
 }
