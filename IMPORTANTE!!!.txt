@@ -1,0 +1,1 @@
+Antes de hacer nada, dar click derecho en la solucion y seleccionar "clean", luego rebuildear

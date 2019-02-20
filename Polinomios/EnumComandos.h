@@ -5,6 +5,4 @@
 
 typedef enum{CREAR, SUMAR, MULTIPLICAR, EVALUAR, ES_RAIZ, MOSTRAR, GUARDAR, RECUPERAR, SALIR} EnumComandos;
 
-Boolean ValidarComando(String s);
-
 #endif // ENUMCOMANDOS_H_INCLUDED

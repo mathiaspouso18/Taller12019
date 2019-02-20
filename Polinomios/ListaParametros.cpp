@@ -22,7 +22,6 @@ void InsBack(String s, ListaParam &l)
         InsBack (s, l -> sig);
  }
 
-
 void Parsear(String s, ListaParam &l)
 {
 	String s1;
@@ -47,4 +46,22 @@ void Parsear(String s, ListaParam &l)
 	s1[j] = s[i];
     s1[j+1] = '\0';
 	InsBack(s1,l);
+}
+
+void LimpiarVacios(ListaParam &l)
+{
+    ListaParam aux;
+    aux = l;
+    while(aux != NULL)
+    {
+        if(aux->info == " ")
+        {
+            delete aux;
+            aux = aux->sig;
+        }
+        else
+        {
+            aux = aux->sig;
+        }
+    }
 }

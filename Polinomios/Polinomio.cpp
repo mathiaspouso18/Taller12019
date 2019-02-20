@@ -6,6 +6,11 @@ void DarNombrePloli(Polinomio p, String &nom)
 
 }
 
+/*void Crear(Polinomio &p, ListaParam lista)
+{
+
+}*/
+
 
 /*void MostrarPolinomio(Polinomio p)
 {
@@ -19,8 +24,6 @@ void DarNombrePloli(Polinomio p, String &nom)
 	}
 
 }*/
-
-
 
 void GuardarPolinomio(Polinomio p, String poli)
 {
