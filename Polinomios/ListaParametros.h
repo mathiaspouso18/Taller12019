@@ -14,6 +14,4 @@ void Parsear(String s, ListaParam &l);
 
 void InsBack(String s, ListaParam &l);
 
-void LimpiarVacios(ListaParam &l);
-
 #endif // LISTAPARAMETROS_H_INCLUDED

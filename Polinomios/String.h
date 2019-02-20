@@ -2,7 +2,7 @@
 #define STRING_H_INCLUDED
 
 #include "Boolean.h"
-#include "EnumMensajes.h"
+//#include "EnumMensajes.h"
 #include <stdio.h>
 
 const int MAX = 80;

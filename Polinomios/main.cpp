@@ -3,7 +3,7 @@
 
 using namespace std;
 
-/*void PruebaParsear(ListaParam l, String s)
+void PruebaParsear(ListaParam l, String s)
 {
     printf("Ingrese un string a Parsear: ");
     Scan(s);
@@ -16,12 +16,12 @@ using namespace std;
         printf("\n");
         l = l->sig;
     }
-}*/
+}
 
 int main()
 {
     ListaParam l = NULL;
     String s;
 
-    //PruebaParsear(l, s);
+    PruebaParsear(l, s);
 }
