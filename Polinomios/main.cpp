@@ -1,6 +1,7 @@
 #include <iostream>
 #include "ABBPolinomio.h"
 
+using namespace std;
 
 /*void PruebaParsear(ListaParam l, String s)
 {
@@ -17,19 +18,10 @@
     }
 }*/
 
-void PruebaValidarComando()
+int main()
 {
     ListaParam l = NULL;
     String s;
-    printf("Ingrese un string a Parsear: ");
-    Scan(s);
-    Parsear(s, l);
-    if(ValidarComando(l->info) == OK)
-        printf("OK");
-}
 
-int main()
-{
     //PruebaParsear(l, s);
-    PruebaValidarComando();
 }
