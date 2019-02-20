@@ -6,10 +6,10 @@ void DarNombrePloli(Polinomio p, String &nom)
 
 }
 
-/*void Crear(Polinomio &p, ListaParam lista)
+void Crear(Polinomio &p, ListaParam lista)
 {
 
-}*/
+}
 
 
 /*void MostrarPolinomio(Polinomio p)

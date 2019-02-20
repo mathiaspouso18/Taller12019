@@ -23,8 +23,9 @@
 1550663719 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\string.cpp
 	"String.h"
 
-1550691171 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\string.h
+1550694211 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\string.h
 	"Boolean.h"
+	"EnumMensajes.h"
 	<stdio.h>
 
 1550691979 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\listaparametros.cpp
@@ -121,5 +122,5 @@
 1550663965 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enummensajes.cpp
 	"EnumMensajes.h"
 
-1550664176 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enummensajes.h
+1550694202 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enummensajes.h
 
