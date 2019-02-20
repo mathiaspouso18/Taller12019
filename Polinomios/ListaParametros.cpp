@@ -1,7 +1,7 @@
-
 #include "ListaParametros.h"
 
-int CantParametros(ListaParam l){
+int CantParametros(ListaParam l)
+{
 	int cant = 0;
 	while(l != NULL){
 		cant++;

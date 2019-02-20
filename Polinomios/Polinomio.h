@@ -9,7 +9,7 @@ typedef struct nodo_int{String nombre;
 
 void DarNombrePloli(Polinomio p, String &nom);
 void DarListaTermPoli(Polinomio p, ListaTerm &lista);
-void Crear(Polinomio &p, ListaParam lista);
+//void Crear(Polinomio &p, ListaParam lista);
 void SumarPoli(Polinomio a, Polinomio b ,Polinomio &resu);
 void MultiplicarPoli(Polinomio a, Polinomio b ,Polinomio &resu);
 int EvaluarPoli(Polinomio p, int x);

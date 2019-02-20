@@ -38,6 +38,8 @@
 		<Unit filename="Boolean.h" />
 		<Unit filename="EnumComandos.cpp" />
 		<Unit filename="EnumComandos.h" />
+		<Unit filename="EnumMensajes.cpp" />
+		<Unit filename="EnumMensajes.h" />
 		<Unit filename="ListaParametros.cpp" />
 		<Unit filename="ListaParametros.h" />
 		<Unit filename="ListaTerminos.cpp" />

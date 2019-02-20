@@ -1,2 +1,3 @@
-#include "stdafx.h"
 #include "EnumMensajes.h"
+
+void MostrarMensaje(TipoMensaje tipo);
