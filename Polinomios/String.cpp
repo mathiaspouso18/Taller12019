@@ -1,7 +1,5 @@
-#include "stdafx.h"
+
 #include "String.h"
-#include "Boolean.h"
-#include <stdio.h>
 
 void StrCrear (String & s){
     s = new char[1];
@@ -117,7 +115,7 @@ int ConvertirCharANumero(String s)
 		cantItem++;
 		i++;
 	}
-	
+
 	i = cantItem;
 	for (contador= 0; contador < i; contador++)
 	{
@@ -170,7 +168,7 @@ Boolean EsValidoNumero(String s)
 	return es;
 }
 
-void Guardar_String (String s, FILE * f) 
+void Guardar_String (String s, FILE * f)
 {
 	int i=0;
     while (s[i] != '\0')

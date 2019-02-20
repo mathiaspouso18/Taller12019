@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #include "Termino.h"
 
 char DarSigno(Termino term){
@@ -21,7 +21,7 @@ void Guardar_Termino (Termino term, FILE * f)
 }
 
 
-void Levantar_Termino (Termino &term, FILE * f) 
+void Levantar_Termino (Termino &term, FILE * f)
 {
 	fread (&term.signo, sizeof(char), 1, f);
 	fread (&term.exponente, sizeof(int), 1, f);

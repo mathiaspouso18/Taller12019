@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #include "ListaParametros.h"
 
 int CantParametros(ListaParam l){
@@ -10,28 +10,41 @@ int CantParametros(ListaParam l){
 	return cant;
 }
 
-void InsFront (String s, ListaParam &l)
+void InsBack(String s, ListaParam &l)
 {
-	ListaParam aux = new NodoS;
-	StrCop(aux->info, s);
-	aux -> sig = l;
-	l = aux;
-}
+    if (l == NULL)
+     {
+         l = new NodoS;
+         StrCop(l -> info, s);
+         l -> sig = NULL;
+     }
+     else
+        InsBack (s, l -> sig);
+ }
 
 
 void Parsear(String s, ListaParam &l)
 {
 	String s1;
 	StrCrear(s1);
-	int i = 0;
-	while(s[i] != '\0'){
+	int i = 0, j = 0;
+	while(s[i + 1] != '\0')
+    {
 		if(s[i] != ' ')
-			s1[i] = s[i];
-		else{
-			s1[i] = '\0';
-			InsFront(s,l);
-			StrCrear(s1); 
+        {
+			s1[j] = s[i];
+            j++;
+        }
+		else
+		{
+			s1[j] = '\0';
+			InsBack(s1,l);
+			StrCrear(s1);
+			j=0;
 		}
+        i++;
 	}
-
+	s1[j] = s[i];
+    s1[j+1] = '\0';
+	InsBack(s1,l);
 }

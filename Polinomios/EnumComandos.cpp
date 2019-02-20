@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #include "EnumComandos.h"
 
 Boolean ValidarComando(String s){

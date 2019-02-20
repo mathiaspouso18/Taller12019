@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #include "Polinomio.h"
 
 void DarNombrePloli(Polinomio p, String &nom)
@@ -7,7 +7,7 @@ void DarNombrePloli(Polinomio p, String &nom)
 }
 
 
-void MostrarPolinomio(Polinomio p)
+/*void MostrarPolinomio(Polinomio p)
 {
 	int i = 1;
 	ListaTerm l;
@@ -15,10 +15,10 @@ void MostrarPolinomio(Polinomio p)
 	printf("= ");
 	DarListaTermPoli(p, l);
 	while(l != NULL){
-		
+
 	}
 
-}
+}*/
 
 
 
@@ -27,7 +27,7 @@ void GuardarPolinomio(Polinomio p, String poli)
 	FILE *f = fopen(poli,"wb");
 	ListaTerm lista;
 	Guardar_String (p.nombre, f);
-	DarListaTermPoli(p, lista);
+	//DarListaTermPoli(p, lista);
 	GuardarListaTerminos(lista, f);
 	fclose(f);
 }
