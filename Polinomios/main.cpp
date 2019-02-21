@@ -54,4 +54,8 @@ int main()
             break;
         }
     }
+    else
+    {
+        MostrarMensaje(COMANDO_INVALIDO);
+    }
 }

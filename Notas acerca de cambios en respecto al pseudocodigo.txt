@@ -1,2 +1,8 @@
 //Parsear
 Tuve que recorrer el string e ir comparando una posicion mas que i, es decir i+1, porque al llegar al final, como nosotros tomamos el espacio como señal de cortar palabras, la ultima palabra no la agregaba, ya que despues de la ultima letra, no hay espacios, hay un caracter de fin de linea '\0'.
+
+//Crear
+No paso listas enteras, si no que voy moviendome un nodo mas segun necesite.
+
+//Modulo Termino
+Se agrego el procedimiento CrearTermino, ya que no se puede acceder a los elementos del termino desde otro modulo.

@@ -149,13 +149,15 @@ Boolean EsValidoNumero(String s)
 	Boolean es = TRUE;
 	while(s[i] != '\0' && es)
 	{
-		if(s[i]='-')
+		if(s[i]=='-')
 		{
 			if(s[i+1] >= '0' && s[i+1] <= '9')
 				es = TRUE;
 			else
 				es = FALSE;
-		}else{
+		}
+		else
+        {
 			if(s[i] >= '0' && s[i] <= '9')
 				es = TRUE;
 			else

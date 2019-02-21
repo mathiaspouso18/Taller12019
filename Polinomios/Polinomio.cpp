@@ -19,28 +19,39 @@ void Crear(Polinomio &p, ListaParam lista)
             StrCop(p.nombre, lista->info);
             lista = lista -> sig;
             cant_terminos = CantParametros(lista);
-            if(cant_terminos > 2)
+            if(cant_terminos == 0)
             {
-                if(lista->info == 0)
+                MostrarMensaje(NO_INGRESO_TERMINO);
+            }
+            else
+            {
+                if(cant_terminos > 2 || (cant_terminos <= 2 && !StrEq(lista->info, "0")))
                 {
-                    MostrarMensaje(NO_INGRESO_TERMINO);
+                    if(EsValidoNumero(lista -> info))
+                    {
+                        while(lista != NULL)
+                        {
+                            if(StrEq(lista->info, "-"))
+                                signo = '-';
+                            else
+                            {
+                                base = ConvertirCharANumero(lista->info);
+                                CrearTermino(t, base, cant_terminos, signo);
+                                InsTermBack(listaTerminos, t);
+                                cant_terminos--;
+                            }
+                            lista = lista->sig;
+                        }
+                    }
+                    else
+                    {
+                        MostrarMensaje(NUMERO_INVALIDO);
+                    }
+                    p.Listaterminos = listaTerminos;
                 }
                 else
                 {
-                    while(lista != NULL)
-                    {
-                        if(StrEq(lista->info, "-"))
-                            signo = '-';
-                        else
-                        {
-                            base = ConvertirCharANumero(lista->info);
-                            CrearTermino(t, base, cant_terminos, signo);
-                            InsTermBack(listaTerminos, t);
-                            lista = lista->sig;
-                            cant_terminos--;
-                        }
-                    }
-                    p.Listaterminos = listaTerminos;
+                    MostrarMensaje(NO_INGRESO_TERMINO);
                 }
             }
         }
@@ -48,6 +59,10 @@ void Crear(Polinomio &p, ListaParam lista)
         {
             MostrarMensaje(NOMBRE_INVALIDO);
         }
+    }
+    else
+    {
+        MostrarMensaje(NO_INGRESO_NOMBRE);
     }
 
 }
