@@ -32,9 +32,26 @@ void PruebaValidar(ListaParam l, String s)
 
 int main()
 {
+    Arbol abb;
     ListaParam l = NULL;
     String s;
-    //PruebaParsear(l, s);
-    PruebaValidar(l, s);
+    Polinomio p;
+    EnumComandos ec;
+    InicializarArbol(abb);
 
+    printf("Ingrese comando y polinomio: ");
+    Scan(s);
+    Parsear(s, l);
+    if(ValidarComando(l->info) == OK)
+    {
+        ec = Mapeo(l->info);
+        l = l->sig;
+        switch(ec)
+        {
+            case CREAR:
+                Crear(p, l);
+                InsPoliABBPoli(abb, p);
+            break;
+        }
+    }
 }

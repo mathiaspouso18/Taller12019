@@ -8,6 +8,47 @@ void DarNombrePloli(Polinomio p, String &nom)
 
 void Crear(Polinomio &p, ListaParam lista)
 {
+    char signo = '+';
+    int base, cant_terminos = 0;
+    Termino t;
+    ListaTerm listaTerminos = NULL;
+    if(lista != NULL)
+    {
+        if(EsValidoNombre(lista->info))
+        {
+            StrCop(p.nombre, lista->info);
+            lista = lista -> sig;
+            cant_terminos = CantParametros(lista);
+            if(cant_terminos > 2)
+            {
+                if(lista->info == 0)
+                {
+                    MostrarMensaje(NO_INGRESO_TERMINO);
+                }
+                else
+                {
+                    while(lista != NULL)
+                    {
+                        if(StrEq(lista->info, "-"))
+                            signo = '-';
+                        else
+                        {
+                            base = ConvertirCharANumero(lista->info);
+                            CrearTermino(t, base, cant_terminos, signo);
+                            InsTermBack(listaTerminos, t);
+                            lista = lista->sig;
+                            cant_terminos--;
+                        }
+                    }
+                    p.Listaterminos = listaTerminos;
+                }
+            }
+        }
+        else
+        {
+            MostrarMensaje(NOMBRE_INVALIDO);
+        }
+    }
 
 }
 

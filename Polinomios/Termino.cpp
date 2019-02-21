@@ -13,6 +13,13 @@ int DarBase(Termino term){
 	return term.base;
 }
 
+void CrearTermino(Termino &t, int base, int exp, char signo)
+{
+    t.signo = signo;
+    t.base = base;
+    t.exponente = exp;
+}
+
 void Guardar_Termino (Termino term, FILE * f)
 {
 	fwrite(&term.signo, sizeof(char), 1, f);

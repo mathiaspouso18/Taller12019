@@ -109,11 +109,10 @@ Boolean StrEq(String s1, String s2)
 
 int ConvertirCharANumero(String s)
 {
-	int cantItem, contador = 0, resultado, multiplicador = 1, i = 0;
-	while (s[i] != '\0')
+	int cantItem = 0, contador = 0, resultado = 0, multiplicador = 1, i = 0;
+	while (s[cantItem] != '\0')
 	{
 		cantItem++;
-		i++;
 	}
 
 	i = cantItem;
