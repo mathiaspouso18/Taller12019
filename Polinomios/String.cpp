@@ -118,7 +118,7 @@ int ConvertirCharANumero(String s)
 	i = cantItem;
 	for (contador= 0; contador < i; contador++)
 	{
-		resultado = (resultado + s[cantItem-1])-48 * multiplicador;
+		resultado = resultado + (s[cantItem-1]-48) * multiplicador;
 		multiplicador = multiplicador *10;
 		cantItem--;
 	}
