@@ -42,20 +42,17 @@ int main()
     printf("Ingrese comando y polinomio: ");
     Scan(s);
     Parsear(s, l);
-    if(ValidarComando(l->info) == OK)
+
+    ec = ValidarComando(l->info);
+    l = l->sig;
+    switch(ec)
     {
-        ec = Mapeo(l->info);
-        l = l->sig;
-        switch(ec)
-        {
-            case CREAR:
-                Crear(p, l);
-                InsPoliABBPoli(abb, p);
-            break;
-        }
-    }
-    else
-    {
-        MostrarMensaje(COMANDO_INVALIDO);
+        case CREAR:
+            Crear(p, l);
+            InsPoliABBPoli(abb, p);
+        break;
+        default:
+            MostrarMensaje(COMANDO_INVALIDO);
+        break;
     }
 }

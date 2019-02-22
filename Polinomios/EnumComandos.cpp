@@ -1,6 +1,6 @@
 #include "EnumComandos.h"
 
-EnumComandos Mapeo(String s)
+EnumComandos ValidarComando(String s)
 {
     EnumComandos ec = NADA;
     if(StrEq(s, "crear"))
@@ -25,7 +25,7 @@ EnumComandos Mapeo(String s)
     return ec;
 }
 
-TipoMensaje ValidarComando(String comando)
+/*TipoMensaje ValidarComando(String comando)
 {
     TipoMensaje check = COMANDO_INVALIDO;
     EnumComandos comandoMapeado = Mapeo(comando);
@@ -42,4 +42,4 @@ TipoMensaje ValidarComando(String comando)
         case SALIR:check = OK; break;
     }
     return check;
-}
+}*/

@@ -187,3 +187,64 @@
 	"EnumMensajes.h"
 	<stdio.h>
 
+1550752030 source:e:\downloads\taller12019-master 5\polinomios\abbpolinomio.cpp
+	"ABBPolinomio.h"
+
+1550752030 e:\downloads\taller12019-master 5\polinomios\abbpolinomio.h
+	"Polinomio.h"
+
+1550752030 e:\downloads\taller12019-master 5\polinomios\polinomio.h
+	"ListaTerminos.h"
+	"ListaParametros.h"
+
+1550752030 e:\downloads\taller12019-master 5\polinomios\listaterminos.h
+	"Termino.h"
+
+1550752030 e:\downloads\taller12019-master 5\polinomios\termino.h
+	"String.h"
+
+1550752030 e:\downloads\taller12019-master 5\polinomios\string.h
+	"Boolean.h"
+	"EnumMensajes.h"
+	<stdio.h>
+
+1550752030 e:\downloads\taller12019-master 5\polinomios\boolean.h
+
+1550752030 e:\downloads\taller12019-master 5\polinomios\enummensajes.h
+
+1550752030 e:\downloads\taller12019-master 5\polinomios\listaparametros.h
+	"EnumComandos.h"
+	"String.h"
+
+1550790812 e:\downloads\taller12019-master 5\polinomios\enumcomandos.h
+	"String.h"
+
+1550752030 source:e:\downloads\taller12019-master 5\polinomios\boolean.cpp
+	"Boolean.h"
+
+1550752030 source:e:\downloads\taller12019-master 5\polinomios\listaparametros.cpp
+	"ListaParametros.h"
+
+1550752030 source:e:\downloads\taller12019-master 5\polinomios\listaterminos.cpp
+	"ListaTerminos.h"
+
+1550752030 source:e:\downloads\taller12019-master 5\polinomios\polinomio.cpp
+	"Polinomio.h"
+
+1550752030 source:e:\downloads\taller12019-master 5\polinomios\string.cpp
+	"String.h"
+
+1550752030 source:e:\downloads\taller12019-master 5\polinomios\termino.cpp
+	"Termino.h"
+
+1550790775 source:e:\downloads\taller12019-master 5\polinomios\enumcomandos.cpp
+	"EnumComandos.h"
+
+1550752030 source:e:\downloads\taller12019-master 5\polinomios\enummensajes.cpp
+	"EnumMensajes.h"
+	<stdio.h>
+
+1550790975 source:e:\downloads\taller12019-master 5\polinomios\main.cpp
+	<iostream>
+	"ABBPolinomio.h"
+
