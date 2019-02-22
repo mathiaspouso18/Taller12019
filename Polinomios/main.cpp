@@ -38,7 +38,8 @@ int main()
     Polinomio p;
     EnumComandos ec;
     InicializarArbol(abb);
-
+    int x;
+    
     printf("Ingrese comando y polinomio: ");
     Scan(s);
     Parsear(s, l);
@@ -73,6 +74,42 @@ int main()
                 MostrarMensaje(NO_INGRESO_NOMBRE);
             }
         break;
+        case EVALUAR:
+			if(CantParametros(l) == 2)
+			{
+				if(EsValidoNombre(l->info) == OK)
+				{
+					if(ExistePolinomio(abb,l->info) == YA_EXISTE)
+					{
+						p = DarPolinomio(abb,l->info);
+						l=l->sig;                            
+						if(EsValidoNumero(l->info) == OK)
+						{
+							x = ConvertirCharANumero(l->info);
+							//Reutilizo x
+							x = EvaluarPoli(p, x);
+							printf("Resultado = %d", x);
+						}
+						else
+						{
+							MostrarMensaje(NUMERO_INVALIDO);
+						}
+					}
+					else
+					{
+						MostrarMensaje(NO_EXISTE_POLINOMIO);
+					}
+				}				
+				else
+				{
+					MostrarMensaje(NOMBRE_INVALIDO);
+				}
+			}
+			else
+			{
+				MostrarMensaje(PARAMETROS_INVALIDOS);
+			}
+            break;
         default:
             MostrarMensaje(COMANDO_INVALIDO);
         break;
