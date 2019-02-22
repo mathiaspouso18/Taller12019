@@ -17,9 +17,4 @@ Boolean EsRaizPoli(Polinomio p, int x);
 
 void MostrarPolinomio(Polinomio p);
 
-void GuardarPolinomio(Polinomio p, String poli);
-
-/*Precondicion: Debe existir el polinomio*/
-void LevantarPolinomio(Polinomio &p, String poli);
-
 #endif // POLINOMIO_H_INCLUDED
