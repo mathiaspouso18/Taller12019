@@ -38,7 +38,7 @@ void Crear(Polinomio &p, ListaParam lista)
                             CrearTermino(t, base, cant_terminos, signo);
                             InsTermBack(listaTerminos, t);
                             cant_terminos--;
-
+                            signo = '+';
                             lista = lista->sig;
                         }
                     }

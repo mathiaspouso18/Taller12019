@@ -116,11 +116,14 @@ int ConvertirCharANumero(String s)
 	}
 
 	i = cantItem;
-	for (contador= 0; contador < i; contador++)
+	for (contador = 0; contador < i; contador++)
 	{
-		resultado = resultado + (s[cantItem-1]-48) * multiplicador;
-		multiplicador = multiplicador *10;
-		cantItem--;
+	    if(s[cantItem-1] != '-' && s[cantItem-1] != '+')
+        {
+            resultado = resultado + (s[cantItem-1]-48) * multiplicador;
+            multiplicador = multiplicador *10;
+            cantItem--;
+        }
 	}
 
 	return resultado;
