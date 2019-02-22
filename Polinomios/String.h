@@ -8,7 +8,7 @@
 const int MAX = 80;
 typedef char * String;
 
-/* crea un string vacío */
+/* crea un string vacÃ­o */
 void StrCrear (String &s);
 
 /* libera la memoria usada por el string */
@@ -38,9 +38,9 @@ Boolean StrEq(String s1, String s2);
 /* Convierte un char a numero */
 int ConvertirCharANumero(String s);
 
-Boolean EsValidoNombre(String s);
+TipoMensaje EsValidoNombre(String s);
 
-Boolean EsValidoNumero(String s);
+TipoMensaje EsValidoNumero(String s);
 
 Boolean ValidarNombreArchivo (String s);
 
