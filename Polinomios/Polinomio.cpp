@@ -52,6 +52,46 @@ void Crear(Polinomio &p, ListaParam lista)
     }
 }
 
+int EvaluarPoli(Polinomio p, int x){
+	ListaTerm l;
+	int base, exponente, resultado, temp, i;
+	char signo;
+	DarListaTermPoli(p, l);
+
+	while(l != NULL){
+		base = DarBase(l->info);
+		signo = DarSigno(l->info);
+		if(base != 0)
+		{
+			exponente = DarExponente(l->info);
+			temp = x;
+			if(exponente > 1){
+				i = exponente;
+				while(i > 1){
+					temp = temp * x;
+					i--;
+				}
+				temp = temp * base;
+			}else{
+				if(exponente == 1){
+					temp = x * base;
+				}
+				else{
+					if(exponente == 0){
+						temp = base;
+					}
+				}
+			}
+		}
+		if(signo == '-'){
+			temp = temp * -1;
+			resultado = resultado + temp;
+			l = l->sig;
+		}
+	l = l ->sig;
+	}
+	return resultado;
+}
 
 void MostrarPolinomio(Polinomio p)
 {
@@ -60,22 +100,6 @@ void MostrarPolinomio(Polinomio p)
     MostrarTerminos(p.Listaterminos);
 }
 
-void GuardarPolinomio(Polinomio p, String poli)
-{
-	FILE *f = fopen(poli,"wb");
-	ListaTerm lista;
-	Guardar_String (p.nombre, f);
-	//DarListaTermPoli(p, lista);
-	GuardarListaTerminos(lista, f);
-	fclose(f);
-}
-
-void LevantarPolinomio(Polinomio &p, String poli)
-{
-	FILE *f = fopen(poli,"rb");
-	ListaTerm lista;
-	LevantarListaTerminos(lista, f);
-	Levantar_String(p.nombre,f);
-	p.Listaterminos = lista;
-	fclose(f);
+void DarListaTermPoli(Polinomio p, ListaTerm &lista){
+	
 }
