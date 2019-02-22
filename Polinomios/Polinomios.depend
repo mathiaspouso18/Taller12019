@@ -11,55 +11,55 @@
 
 1549150654 f:\codeblocks projects\taller 1 2019\polinomios\boolean.h
 
-1550663961 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\boolean.cpp
+1550839854 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\boolean.cpp
 	"Boolean.h"
 
-1550174592 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\boolean.h
+1550839854 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\boolean.h
 
-1550768731 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\main.cpp
+1550839854 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\main.cpp
 	<iostream>
 	"ABBPolinomio.h"
 
-1550769506 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\string.cpp
+1550839854 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\string.cpp
 	"String.h"
 
-1550694211 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\string.h
+1550839854 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\string.h
 	"Boolean.h"
 	"EnumMensajes.h"
 	<stdio.h>
 
-1550691979 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\listaparametros.cpp
+1550839854 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\listaparametros.cpp
 	"ListaParametros.h"
 
-1550765590 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\termino.cpp
+1550839854 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\termino.cpp
 	"Termino.h"
 
-1550663719 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\listaterminos.cpp
+1550839854 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\listaterminos.cpp
 	"ListaTerminos.h"
 
-1550769794 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\polinomio.cpp
+1550839854 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\polinomio.cpp
 	"Polinomio.h"
 
-1550758799 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enumcomandos.cpp
+1550839854 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enumcomandos.cpp
 	"EnumComandos.h"
 
-1550766194 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\abbpolinomio.cpp
+1550839854 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\abbpolinomio.cpp
 	"ABBPolinomio.h"
 
-1550493727 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\abbpolinomio.h
+1550839854 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\abbpolinomio.h
 	"Polinomio.h"
 
-1550691185 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\polinomio.h
+1550839854 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\polinomio.h
 	"ListaTerminos.h"
 	"ListaParametros.h"
 
-1550493727 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\listaterminos.h
+1550839854 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\listaterminos.h
 	"Termino.h"
 
-1550765592 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\termino.h
+1550839854 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\termino.h
 	"String.h"
 
-1550758967 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enumcomandos.h
+1550839854 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enumcomandos.h
 	"String.h"
 
 1550618238 source:c:\users\majo\documents\taller1\polinomios\abbpolinomio.cpp
@@ -116,15 +116,15 @@
 1550618258 source:c:\users\majo\documents\taller1\polinomios\termino.cpp
 	"Termino.h"
 
-1550753209 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\listaparametros.h
+1550839854 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\listaparametros.h
 	"EnumComandos.h"
 	"String.h"
 
-1550768544 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enummensajes.cpp
+1550839854 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enummensajes.cpp
 	"EnumMensajes.h"
 	<stdio.h>
 
-1550768309 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enummensajes.h
+1550839854 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enummensajes.h
 
 1550705079 source:e:\lic.informatica\taller12019\polinomios\abbpolinomio.cpp
 	"ABBPolinomio.h"
