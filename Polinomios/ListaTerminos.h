@@ -9,7 +9,5 @@ typedef Nodo * ListaTerm;
 
 int CantTerminos(ListaTerm lista);
 void InsTermBack(ListaTerm &lista, Termino term);
-void GuardarListaTerminos(ListaTerm lista, FILE *f);
-void LevantarListaTerminos(ListaTerm &lista, FILE *f);
 void MostrarTerminos(ListaTerm l);
 #endif // LISTATERMINOS_H_INCLUDED
