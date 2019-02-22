@@ -12,7 +12,7 @@ typedef nodo *Arbol;
 void InicializarArbol(Arbol &ABB);
 void MostrarABBPoli(Arbol ABBPoli);
 void InsPoliABBPoli(Arbol &ABBPoli, Polinomio p);
-Boolean ExistePolinomio(Arbol &ABBPoli, String nombre_poli);
+TipoMensaje ExistePolinomio(Arbol &ABBPoli, String nombre_poli);
 void DarPolinomio (Arbol &ABBPoli, String nombre_poli);
 
 #endif // ABBPOLINOMIO_H_INCLUDED

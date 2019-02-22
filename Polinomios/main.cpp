@@ -48,9 +48,30 @@ int main()
     switch(ec)
     {
         case CREAR:
-            Crear(p, l);
-            InsPoliABBPoli(abb, p);
-            MostrarPolinomio(p);
+            if(l != NULL)
+            {
+                if(ExistePolinomio(abb, l->info) == YA_EXISTE)
+                {
+                    if(EsValidoNombre(l->info))
+                    {
+                        Crear(p, l);
+                        InsPoliABBPoli(abb, p);
+                        MostrarPolinomio(p);
+                    }
+                    else
+                    {
+                        MostrarMensaje(NOMBRE_INVALIDO);
+                    }
+                }
+                else
+                {
+                    MostrarMensaje(YA_EXISTE);
+                }
+            }
+            else
+            {
+                MostrarMensaje(NO_INGRESO_NOMBRE);
+            }
         break;
         default:
             MostrarMensaje(COMANDO_INVALIDO);

@@ -10,3 +10,8 @@ void InsPoliABBPoli(Arbol &abb, Polinomio p)
 {
 
 }
+
+TipoMensaje ExistePolinomio(Arbol &ABBPoli, String nombre_poli)
+{
+
+}

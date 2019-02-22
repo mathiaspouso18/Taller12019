@@ -12,58 +12,44 @@ void Crear(Polinomio &p, ListaParam lista)
     int base, cant_terminos = 0;
     Termino t;
     ListaTerm listaTerminos = NULL;
-    if(lista != NULL)
-    {
-        if(EsValidoNombre(lista->info))
-        {
-            StrCop(p.nombre, lista->info);
-            lista = lista -> sig;
-            cant_terminos = CantParametros(lista) - 1;
-            if(cant_terminos == 0)
-            {
-                MostrarMensaje(NO_INGRESO_TERMINO);
-            }
-            else
-            {
-                if(cant_terminos > 2 || (cant_terminos <= 2 && !StrEq(lista->info, "0")))
-                {
-                    if(EsValidoNumero(lista -> info))
-                    {
-                        while(lista != NULL)
-                        {
-                            if(lista->info[0] == '-')
-                                signo = '-';
 
-                            base = ConvertirCharANumero(lista->info);
-                            CrearTermino(t, base, cant_terminos, signo);
-                            InsTermBack(listaTerminos, t);
-                            cant_terminos--;
-                            signo = '+';
-                            lista = lista->sig;
-                        }
-                    }
-                    else
-                    {
-                        MostrarMensaje(NUMERO_INVALIDO);
-                    }
-                    p.Listaterminos = listaTerminos;
-                }
-                else
-                {
-                    MostrarMensaje(NO_INGRESO_TERMINO);
-                }
-            }
-        }
-        else
-        {
-            MostrarMensaje(NOMBRE_INVALIDO);
-        }
+    StrCop(p.nombre, lista->info);
+    lista = lista -> sig;
+    cant_terminos = CantParametros(lista) - 1;
+    if(cant_terminos == 0)
+    {
+        MostrarMensaje(NO_INGRESO_TERMINO);
     }
     else
     {
-        MostrarMensaje(NO_INGRESO_NOMBRE);
-    }
+        if(cant_terminos > 2 || (cant_terminos <= 2 && !StrEq(lista->info, "0")))
+        {
+            if(EsValidoNumero(lista -> info))
+            {
+                while(lista != NULL)
+                {
+                    if(lista->info[0] == '-')
+                        signo = '-';
 
+                    base = ConvertirCharANumero(lista->info);
+                    CrearTermino(t, base, cant_terminos, signo);
+                    InsTermBack(listaTerminos, t);
+                    cant_terminos--;
+                    signo = '+';
+                    lista = lista->sig;
+                }
+            }
+            else
+            {
+                MostrarMensaje(NUMERO_INVALIDO);
+            }
+            p.Listaterminos = listaTerminos;
+        }
+        else
+        {
+            MostrarMensaje(NO_INGRESO_TERMINO);
+        }
+    }
 }
 
 
