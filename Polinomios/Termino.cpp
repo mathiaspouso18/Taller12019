@@ -1,4 +1,3 @@
-
 #include "Termino.h"
 
 char DarSigno(Termino term){

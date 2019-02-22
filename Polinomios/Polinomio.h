@@ -7,7 +7,7 @@
 typedef struct nodo_int{String nombre;
                         ListaTerm Listaterminos;} Polinomio;
 
-void DarNombrePloli(Polinomio p, String &nom);
+void DarNombrePoli(Polinomio p, String &nom);
 void DarListaTermPoli(Polinomio p, ListaTerm &lista);
 void Crear(Polinomio &p, ListaParam lista);
 void SumarPoli(Polinomio a, Polinomio b ,Polinomio &resu);

@@ -50,6 +50,7 @@ int main()
         case CREAR:
             Crear(p, l);
             InsPoliABBPoli(abb, p);
+            MostrarPolinomio(p);
         break;
         default:
             MostrarMensaje(COMANDO_INVALIDO);

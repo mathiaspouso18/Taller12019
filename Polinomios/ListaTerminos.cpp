@@ -40,3 +40,33 @@ void LevantarListaTerminos(ListaTerm &lista, FILE *f)
 		Levantar_Termino (term, f);
 	}
 }
+
+void MostrarTerminos(ListaTerm l)
+{
+    char signo;
+    int base = 0, exponente = 0;
+    while(l != NULL)
+    {
+        signo = DarSigno(l->info);
+        base = DarBase(l->info);
+        exponente = DarExponente(l->info);
+
+        if(base > 0)
+        {
+            printf("%c", signo);
+            printf("%d",base);
+
+            if(exponente > 1)
+            {
+                printf("x");
+                printf("%d ", exponente);
+            }
+            else if(exponente == 1)
+            {
+                printf("x ");
+            }
+        }
+
+        l = l->sig;
+    }
+}

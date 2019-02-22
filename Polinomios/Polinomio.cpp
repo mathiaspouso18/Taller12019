@@ -1,9 +1,9 @@
 
 #include "Polinomio.h"
 
-void DarNombrePloli(Polinomio p, String &nom)
+void DarNombrePoli(Polinomio p, String &nom)
 {
-
+    StrCop(nom, p.nombre);
 }
 
 void Crear(Polinomio &p, ListaParam lista)
@@ -18,7 +18,7 @@ void Crear(Polinomio &p, ListaParam lista)
         {
             StrCop(p.nombre, lista->info);
             lista = lista -> sig;
-            cant_terminos = CantParametros(lista);
+            cant_terminos = CantParametros(lista) - 1;
             if(cant_terminos == 0)
             {
                 MostrarMensaje(NO_INGRESO_TERMINO);
@@ -31,15 +31,14 @@ void Crear(Polinomio &p, ListaParam lista)
                     {
                         while(lista != NULL)
                         {
-                            if(StrEq(lista->info, "-"))
+                            if(lista->info[0] == '-')
                                 signo = '-';
-                            else
-                            {
-                                base = ConvertirCharANumero(lista->info);
-                                CrearTermino(t, base, cant_terminos, signo);
-                                InsTermBack(listaTerminos, t);
-                                cant_terminos--;
-                            }
+
+                            base = ConvertirCharANumero(lista->info);
+                            CrearTermino(t, base, cant_terminos, signo);
+                            InsTermBack(listaTerminos, t);
+                            cant_terminos--;
+
                             lista = lista->sig;
                         }
                     }
@@ -68,18 +67,12 @@ void Crear(Polinomio &p, ListaParam lista)
 }
 
 
-/*void MostrarPolinomio(Polinomio p)
+void MostrarPolinomio(Polinomio p)
 {
-	int i = 1;
-	ListaTerm l;
-	Print(p.nombre);
-	printf("= ");
-	DarListaTermPoli(p, l);
-	while(l != NULL){
-
-	}
-
-}*/
+    Print(p.nombre);
+    printf(" = ");
+    MostrarTerminos(p.Listaterminos);
+}
 
 void GuardarPolinomio(Polinomio p, String poli)
 {
