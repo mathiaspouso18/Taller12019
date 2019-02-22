@@ -21,26 +21,6 @@ void InsTermBack(ListaTerm &lista, Termino term){
         InsTermBack (lista -> sig, term);
 }
 
-void GuardarListaTerminos(ListaTerm lista, FILE *f)
-{
-	while(lista != NULL)
-	{
-		Guardar_Termino(lista->info, f);
-		lista = lista -> sig;
-	}
-}
-
-void LevantarListaTerminos(ListaTerm &lista, FILE *f)
-{
-	Termino term;
-	Levantar_Termino (term, f);
-    while (!feof(f))
-	{
-		InsTermBack(lista, term);
-		Levantar_Termino (term, f);
-	}
-}
-
 void MostrarTerminos(ListaTerm l)
 {
     char signo;
