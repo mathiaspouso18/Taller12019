@@ -38,9 +38,9 @@ Boolean StrEq(String s1, String s2);
 /* Convierte un char a numero */
 int ConvertirCharANumero(String s);
 
-TipoMensaje EsValidoNombre(String s);
+Boolean EsValidoNombre(String s);
 
-TipoMensaje EsValidoNumero(String s);
+Boolean EsValidoNumero(String s);
 
 Boolean ValidarNombreArchivo (String s);
 

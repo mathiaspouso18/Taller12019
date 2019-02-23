@@ -24,22 +24,3 @@ EnumComandos ValidarComando(String s)
 
     return ec;
 }
-
-/*TipoMensaje ValidarComando(String comando)
-{
-    TipoMensaje check = COMANDO_INVALIDO;
-    EnumComandos comandoMapeado = Mapeo(comando);
-    switch(comandoMapeado)
-    {
-        case CREAR:check = OK; break;
-        case SUMAR:check = OK; break;
-        case MULTIPLICAR:check = OK; break;
-        case EVALUAR:check = OK; break;
-        case ES_RAIZ:check = OK; break;
-        case MOSTRAR:check = OK; break;
-        case GUARDAR:check = OK; break;
-        case RECUPERAR:check = OK; break;
-        case SALIR:check = OK; break;
-    }
-    return check;
-}*/

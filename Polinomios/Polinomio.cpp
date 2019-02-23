@@ -105,15 +105,14 @@ void DarListaTermPoli(Polinomio p, ListaTerm &lista)
 
 }
 
-void SumarPoli(Polinomio a, Polinomio b, Polinomio &resu)
+void SumarPoli(Polinomio a, Polinomio b, Polinomio &resu, String nombreNuevo)
 {
     int CantA = CantTerminos(a.Listaterminos);
     int CantB = CantTerminos(b.Listaterminos);
     int base = 0, exponente = 0, base2 = 0, exponente2 = 0, baseNueva = 0;
-    Polinomio aux;
     Boolean encontre = FALSE;
-    ListaTerm lista1, lista2, listaNueva;
-    char signo, signo2, signoNuevo;
+    ListaTerm lista1, lista2, listaNueva = NULL;
+    char signo, signo2, signoNuevo = '+';
     Termino term;
 
     //Esto es para saber cual recorro primero
@@ -130,6 +129,7 @@ void SumarPoli(Polinomio a, Polinomio b, Polinomio &resu)
 
     while(lista1 != NULL)
     {
+        encontre = FALSE;
         signo = DarSigno(lista1->info);
         base = DarBase(lista1->info);
         exponente = DarExponente(lista1->info);
@@ -157,4 +157,7 @@ void SumarPoli(Polinomio a, Polinomio b, Polinomio &resu)
         }
         lista1 = lista1->sig;
     }
+
+    resu.Listaterminos = listaNueva;
+    StrCop(resu.nombre, nombreNuevo);
 }

@@ -3,39 +3,12 @@
 
 using namespace std;
 
-void PruebaParsear(ListaParam l, String s)
-{
-    printf("Ingrese un string a Parsear: ");
-    Scan(s);
-    //Prueba de Parsear()
-    Parsear(s, l);
-
-    while(l != NULL)
-    {
-        Print(l->info);
-        printf("\n");
-        l = l->sig;
-    }
-}
-
-void PruebaValidar(ListaParam l, String s)
-{
-    printf("Ingrese un string a Parsear: ");
-    Scan(s);
-    Parsear(s,l);
-
-    if ( ValidarComando(l->info) == OK)
-        printf("OK. Continuo");
-    else
-        MostrarMensaje(COMANDO_INVALIDO);
-}
-
 int main()
 {
     Arbol abb;
     ListaParam l = NULL;
-    String s;
-    Polinomio p;
+    String s, nombreNuevo;
+    Polinomio p, resu, a, b;
     EnumComandos ec;
     InicializarArbol(abb);
     int x;
@@ -54,9 +27,9 @@ int main()
             case CREAR:
                 if(l != NULL)
                 {
-                    if(ExistePolinomio(abb, l->info) == NO_EXISTE_POLINOMIO)
+                    if(!ExistePolinomio(abb, l->info))
                     {
-                        if(EsValidoNombre(l->info) == OK)
+                        if(EsValidoNombre(l->info))
                         {
                             Crear(p, l);
                             InsPoliABBPoli(abb, p);
@@ -78,24 +51,46 @@ int main()
                 }
             break;
             case SUMAR:
-                Polinomio resu, a, b;
-                a = DarPolinomio(abb, l->info);
-                l = l->sig;
-                b = DarPolinomio(abb, l->info);
-                SumarPoli(a, b, resu);
-                InsPoliABBPoli(abb, resu);
-                MostrarMensaje(OK);
+                if(ExistePolinomio(abb, l->info))
+                {
+                    a = DarPolinomio(abb, l->info);
+                    l = l->sig;
+                    if(ExistePolinomio(abb, l->info))
+                    {
+                        b = DarPolinomio(abb, l->info);
+                        l = l->sig;
+                        StrCop(nombreNuevo,l->info);
+                        if(!ExistePolinomio(abb, nombreNuevo))
+                        {
+                            SumarPoli(a, b, resu, nombreNuevo);
+                            InsPoliABBPoli(abb, resu);
+                            MostrarMensaje(OK);
+                        }
+                        else
+                        {
+                            MostrarMensaje(YA_EXISTE);
+                        }
+                    }
+                    else
+                    {
+                        MostrarMensaje(NO_EXISTE_POLINOMIO);
+                    }
+                }
+                else
+                {
+                    MostrarMensaje(NO_EXISTE_POLINOMIO);
+                }
                 break;
             case EVALUAR:
                 if(CantParametros(l) == 2)
                 {
-                    if(EsValidoNombre(l->info) == OK)
+                    if(EsValidoNombre(l->info))
                     {
-                        if(ExistePolinomio(abb,l->info) == NO_EXISTE_POLINOMIO)
+                        if(ExistePolinomio(abb,l->info))
                         {
                             p = DarPolinomio(abb,l->info);
                             l=l->sig;
-                            if(EsValidoNumero(l->info) == OK)
+                            if(EsValidoNumero(l->info))
                             {
                                 x = ConvertirCharANumero(l->info);
                                 //Reutilizo x

@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1550935829 source:f:\codeblocks projects\taller 1 2019\polinomios\main.cpp
+1550947929 source:f:\codeblocks projects\taller 1 2019\polinomios\main.cpp
 	<iostream>
 	"ABBPolinomio.h"
 
-1550930809 source:f:\codeblocks projects\taller 1 2019\polinomios\string.cpp
+1550947341 source:f:\codeblocks projects\taller 1 2019\polinomios\string.cpp
 	"String.h"
 
-1550930809 f:\codeblocks projects\taller 1 2019\polinomios\string.h
+1550947289 f:\codeblocks projects\taller 1 2019\polinomios\string.h
 	"Boolean.h"
 	"EnumMensajes.h"
 	<stdio.h>
@@ -250,13 +250,13 @@
 	<iostream>
 	"ABBPolinomio.h"
 
-1550933568 source:f:\codeblocks projects\taller 1 2019\polinomios\abbpolinomio.cpp
+1550947156 source:f:\codeblocks projects\taller 1 2019\polinomios\abbpolinomio.cpp
 	"ABBPolinomio.h"
 
-1550930809 f:\codeblocks projects\taller 1 2019\polinomios\abbpolinomio.h
+1550947166 f:\codeblocks projects\taller 1 2019\polinomios\abbpolinomio.h
 	"Polinomio.h"
 
-1550934710 f:\codeblocks projects\taller 1 2019\polinomios\polinomio.h
+1550945430 f:\codeblocks projects\taller 1 2019\polinomios\polinomio.h
 	"ListaTerminos.h"
 	"ListaParametros.h"
 
@@ -278,7 +278,7 @@
 1550801026 source:f:\codeblocks projects\taller 1 2019\polinomios\boolean.cpp
 	"Boolean.h"
 
-1550801026 source:f:\codeblocks projects\taller 1 2019\polinomios\enumcomandos.cpp
+1550947591 source:f:\codeblocks projects\taller 1 2019\polinomios\enumcomandos.cpp
 	"EnumComandos.h"
 
 1550801026 source:f:\codeblocks projects\taller 1 2019\polinomios\listaparametros.cpp
@@ -287,7 +287,7 @@
 1550930809 source:f:\codeblocks projects\taller 1 2019\polinomios\listaterminos.cpp
 	"ListaTerminos.h"
 
-1550935616 source:f:\codeblocks projects\taller 1 2019\polinomios\polinomio.cpp
+1550946205 source:f:\codeblocks projects\taller 1 2019\polinomios\polinomio.cpp
 	"Polinomio.h"
 
 1550930809 source:f:\codeblocks projects\taller 1 2019\polinomios\termino.cpp

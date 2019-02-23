@@ -16,7 +16,7 @@ Arbol HijoIzquierdo(Arbol ABB);
 Arbol HijoDerecho(Arbol ABB);
 void MostrarABBPoli(Arbol ABBPoli);
 void InsPoliABBPoli(Arbol &ABBPoli, Polinomio p);
-TipoMensaje ExistePolinomio(Arbol &ABBPoli, String nombre_poli);
+Boolean ExistePolinomio(Arbol ABBPoli, String nombre_poli);
 Polinomio DarPolinomio (Arbol ABBPoli, String nombre_poli);
 
 #endif // ABBPOLINOMIO_H_INCLUDED

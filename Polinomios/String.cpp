@@ -129,16 +129,16 @@ int ConvertirCharANumero(String s)
 	return resultado;
 }
 
-TipoMensaje EsValidoNombre(String s)
+Boolean EsValidoNombre(String s)
 {
 	int i = 0;
-	TipoMensaje es = OK;
+	Boolean es = TRUE;
 	while(s[i] != '\0' && es == OK)
 	{
 		if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i]<= 'Z') || (s[i]>= '0' && s[i] <= '9'))
-			es = OK;
+			es = TRUE;
 		else
-            es = NOMBRE_INVALIDO;
+            es = FALSE;
 
 		i++;
 	}
@@ -146,25 +146,25 @@ TipoMensaje EsValidoNombre(String s)
 	return es;
 }
 
-TipoMensaje EsValidoNumero(String s)
+Boolean EsValidoNumero(String s)
 {
 	int i = 0;
-	TipoMensaje es = OK;
+	Boolean es = TRUE;
 	while(s[i] != '\0' && es == OK)
 	{
 		if(s[i]=='-')
 		{
 			if(s[i+1] >= '0' && s[i+1] <= '9')
-				es = OK;
+				es = TRUE;
 			else
-				es = NUMERO_INVALIDO;
+				es = FALSE;
 		}
 		else
         {
 			if(s[i] >= '0' && s[i] <= '9')
-				es = OK;
+				es = TRUE;
 			else
-				es = NUMERO_INVALIDO;
+				es = FALSE;
 		}
 		i++;
 	}
@@ -187,6 +187,9 @@ Boolean EsMayor(String s1, String s2)
 			i++;
 		}
 	}
+
+	if((!es) && s2 == '\0')
+        es = TRUE;
 
 	return es;
 }

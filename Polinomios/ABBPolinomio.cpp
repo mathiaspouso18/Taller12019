@@ -52,16 +52,16 @@ void InsPoliABBPoli(Arbol &abb, Polinomio p)
     }
 }
 
-TipoMensaje ExistePolinomio(Arbol &ABBPoli, String nombre_poli)
+Boolean ExistePolinomio(Arbol ABBPoli, String nombre_poli)
 {
-    TipoMensaje existe = NO_EXISTE_POLINOMIO;
+    Boolean existe = FALSE;
 	String nombre_poli_abb;
 
-    while(existe != OK && ABBPoli != NULL){
+    while(existe != TRUE && ABBPoli != NULL){
 		DarNombrePoli(ABBPoli->info, nombre_poli_abb);
         if(StrEq(nombre_poli, nombre_poli_abb))
         {
-            existe = OK;
+            existe = TRUE;
         }
         else
         {
@@ -74,25 +74,33 @@ TipoMensaje ExistePolinomio(Arbol &ABBPoli, String nombre_poli)
     return existe;
 }
 
-Polinomio DarPolinomio (Arbol ABBPoli, String nombre_poli){
+Polinomio DarPolinomio (Arbol ABBPoli, String nombre_poli)
+{
 	Polinomio p;
-	Boolean encontre = FALSE;
+	Boolean seguir = TRUE;
 	String nombre_poli_abb;
 
-	while(!encontre){
-
-		DarNombrePoli(ABBPoli->info, nombre_poli_abb);
-		if(StrEq(nombre_poli, nombre_poli_abb)){
-			p = DarRaiz(ABBPoli);
-			encontre = TRUE;
-		}
-		else
-		{
-			if(EsMayor(nombre_poli_abb, nombre_poli))
-                ABBPoli = ABBPoli->hizq;
+	while(seguir)
+    {
+        if(ABBPoli == NULL)
+        {
+            seguir = FALSE;
+        }
+        else
+        {
+            DarNombrePoli(ABBPoli->info, nombre_poli_abb);
+            if(StrEq(nombre_poli, nombre_poli_abb)){
+                p = DarRaiz(ABBPoli);
+                seguir = FALSE;
+            }
             else
-                ABBPoli = ABBPoli->hder;
-		}
+            {
+                if(EsMayor(nombre_poli_abb, nombre_poli))
+                    ABBPoli = ABBPoli->hizq;
+                else
+                    ABBPoli = ABBPoli->hder;
+            }
+        }
 	}
 	return p;
 }
