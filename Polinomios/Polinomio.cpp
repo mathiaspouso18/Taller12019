@@ -23,7 +23,7 @@ void Crear(Polinomio &p, ListaParam lista)
     {
         if(cant_terminos > 2 || (cant_terminos <= 2 && !StrEq(lista->info, "0")))
         {
-            if(EsValidoNumero(lista -> info) == OK)
+            if(EsValidoNumero(lista -> info))
             {
                 while(lista != NULL)
                 {
