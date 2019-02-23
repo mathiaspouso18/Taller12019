@@ -1,4 +1,3 @@
-
 #include "Polinomio.h"
 
 void DarNombrePoli(Polinomio p, String &nom)
@@ -24,7 +23,7 @@ void Crear(Polinomio &p, ListaParam lista)
     {
         if(cant_terminos > 2 || (cant_terminos <= 2 && !StrEq(lista->info, "0")))
         {
-            if(EsValidoNumero(lista -> info))
+            if(EsValidoNumero(lista -> info) == OK)
             {
                 while(lista != NULL)
                 {
@@ -52,7 +51,8 @@ void Crear(Polinomio &p, ListaParam lista)
     }
 }
 
-int EvaluarPoli(Polinomio p, int x){
+int EvaluarPoli(Polinomio p, int x)
+{
 	ListaTerm l;
 	int base, exponente, resultado, temp, i;
 	char signo;
@@ -100,6 +100,61 @@ void MostrarPolinomio(Polinomio p)
     MostrarTerminos(p.Listaterminos);
 }
 
-void DarListaTermPoli(Polinomio p, ListaTerm &lista){
-	
+void DarListaTermPoli(Polinomio p, ListaTerm &lista)
+{
+
+}
+
+void SumarPoli(Polinomio a, Polinomio b, Polinomio &resu)
+{
+    int CantA = CantTerminos(a.Listaterminos);
+    int CantB = CantTerminos(b.Listaterminos);
+    int base = 0, exponente = 0, base2 = 0, exponente2 = 0, baseNueva = 0;
+    Polinomio aux;
+    Boolean encontre = FALSE;
+    ListaTerm lista1, lista2, listaNueva;
+    char signo, signo2, signoNuevo;
+    Termino term;
+
+    //Esto es para saber cual recorro primero
+    if(CantA >= CantB)
+    {
+        lista1 = a.Listaterminos;
+        lista2 = b.Listaterminos;
+    }
+    else
+    {
+        lista1 = b.Listaterminos;
+        lista2 = a.Listaterminos;
+    }
+
+    while(lista1 != NULL)
+    {
+        signo = DarSigno(lista1->info);
+        base = DarBase(lista1->info);
+        exponente = DarExponente(lista1->info);
+        if(signo == '-')
+            base = base * -1;
+
+        while(lista2 != NULL && !encontre)
+        {
+            exponente2 = DarExponente(lista2->info);
+            if(exponente == exponente2)
+            {
+                encontre = TRUE;
+                signo2 = DarSigno(lista2->info);
+                base2 = DarBase(lista2->info);
+                if(signo2 == '-')
+                    base2 = base2 * -1;
+                baseNueva = base + base2;
+                if(baseNueva < 0)
+                    signoNuevo = '-';
+
+                CrearTermino(term, baseNueva, exponente, signoNuevo);
+                InsTermBack(listaNueva, term);
+            }
+            lista2 = lista2->sig;
+        }
+        lista1 = lista1->sig;
+    }
 }

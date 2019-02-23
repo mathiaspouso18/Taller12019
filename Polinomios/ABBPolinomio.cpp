@@ -33,22 +33,22 @@ Arbol HijoDerecho(Arbol ABB)
 void InsPoliABBPoli(Arbol &abb, Polinomio p)
 {
     String nombre_poli_abb, nombre_poli;
-	DarNombrePloli(p, nombre_poli);
-	DarNombrePloli(ABBPoli->info, nombre_poli_abb);
+	DarNombrePoli(p, nombre_poli);
 
-	if (ABBPoli == NULL)
+	if (abb == NULL)
     {
-        ABBPoli = new nodo;
-        ABBPoli -> info = p;
-        ABBPoli -> hizq = NULL;
-        ABBPoli -> hder = NULL;
+        abb = new nodo;
+        abb -> info = p;
+        abb -> hizq = NULL;
+        abb -> hder = NULL;
     }
     else
     {
+        DarNombrePoli(abb->info, nombre_poli_abb);
         if(EsMayor(nombre_poli_abb, nombre_poli))
-            InsPoliABBPoli (ABBPoli -> hizq, p);
+            InsPoliABBPoli (abb -> hizq, p);
         else
-            InsPoliABBPoli (ABBPoli -> hder, p);
+            InsPoliABBPoli (abb -> hder, p);
     }
 }
 
@@ -58,7 +58,7 @@ TipoMensaje ExistePolinomio(Arbol &ABBPoli, String nombre_poli)
 	String nombre_poli_abb;
 
     while(existe != OK && ABBPoli != NULL){
-		DarNombrePloli(ABBPoli->info, nombre_poli_abb);
+		DarNombrePoli(ABBPoli->info, nombre_poli_abb);
         if(StrEq(nombre_poli, nombre_poli_abb))
         {
             existe = OK;
@@ -78,10 +78,10 @@ Polinomio DarPolinomio (Arbol ABBPoli, String nombre_poli){
 	Polinomio p;
 	Boolean encontre = FALSE;
 	String nombre_poli_abb;
-	
+
 	while(!encontre){
-		
-		DarNombrePloli(ABBPoli->info, nombre_poli_abb);
+
+		DarNombrePoli(ABBPoli->info, nombre_poli_abb);
 		if(StrEq(nombre_poli, nombre_poli_abb)){
 			p = DarRaiz(ABBPoli);
 			encontre = TRUE;
@@ -95,4 +95,8 @@ Polinomio DarPolinomio (Arbol ABBPoli, String nombre_poli){
 		}
 	}
 	return p;
+}
+
+void MostrarABBPoli(Arbol abb)
+{
 }

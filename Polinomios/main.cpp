@@ -39,25 +39,78 @@ int main()
     EnumComandos ec;
     InicializarArbol(abb);
     int x;
-    
-    printf("Ingrese comando y polinomio: ");
+
+    printf("Ingrese comando: ");
     Scan(s);
     Parsear(s, l);
-
     ec = ValidarComando(l->info);
     l = l->sig;
-    switch(ec)
+
+    //Vuelvo a solicitar un comando hasta que indique que quiere salir
+    while(ec != SALIR)
     {
-        case CREAR:
-            if(l != NULL)
-            {
-                if(ExistePolinomio(abb, l->info) == YA_EXISTE)
+        switch(ec)
+        {
+            case CREAR:
+                if(l != NULL)
                 {
-                    if(EsValidoNombre(l->info))
+                    if(ExistePolinomio(abb, l->info) == NO_EXISTE_POLINOMIO)
                     {
-                        Crear(p, l);
-                        InsPoliABBPoli(abb, p);
-                        MostrarPolinomio(p);
+                        if(EsValidoNombre(l->info) == OK)
+                        {
+                            Crear(p, l);
+                            InsPoliABBPoli(abb, p);
+                            MostrarMensaje(OK);
+                        }
+                        else
+                        {
+                            MostrarMensaje(NOMBRE_INVALIDO);
+                        }
+                    }
+                    else
+                    {
+                        MostrarMensaje(YA_EXISTE);
+                    }
+                }
+                else
+                {
+                    MostrarMensaje(NO_INGRESO_NOMBRE);
+                }
+            break;
+            case SUMAR:
+                Polinomio resu, a, b;
+                a = DarPolinomio(abb, l->info);
+                l = l->sig;
+                b = DarPolinomio(abb, l->info);
+                SumarPoli(a, b, resu);
+                InsPoliABBPoli(abb, resu);
+                MostrarMensaje(OK);
+                break;
+            case EVALUAR:
+                if(CantParametros(l) == 2)
+                {
+                    if(EsValidoNombre(l->info) == OK)
+                    {
+                        if(ExistePolinomio(abb,l->info) == NO_EXISTE_POLINOMIO)
+                        {
+                            p = DarPolinomio(abb,l->info);
+                            l=l->sig;
+                            if(EsValidoNumero(l->info) == OK)
+                            {
+                                x = ConvertirCharANumero(l->info);
+                                //Reutilizo x
+                                x = EvaluarPoli(p, x);
+                                printf("Resultado = %d", x);
+                            }
+                            else
+                            {
+                                MostrarMensaje(NUMERO_INVALIDO);
+                            }
+                        }
+                        else
+                        {
+                            MostrarMensaje(NO_EXISTE_POLINOMIO);
+                        }
                     }
                     else
                     {
@@ -66,52 +119,24 @@ int main()
                 }
                 else
                 {
-                    MostrarMensaje(YA_EXISTE);
+                    MostrarMensaje(PARAMETROS_INVALIDOS);
                 }
-            }
-            else
-            {
-                MostrarMensaje(NO_INGRESO_NOMBRE);
-            }
-        break;
-        case EVALUAR:
-			if(CantParametros(l) == 2)
-			{
-				if(EsValidoNombre(l->info) == OK)
-				{
-					if(ExistePolinomio(abb,l->info) == YA_EXISTE)
-					{
-						p = DarPolinomio(abb,l->info);
-						l=l->sig;                            
-						if(EsValidoNumero(l->info) == OK)
-						{
-							x = ConvertirCharANumero(l->info);
-							//Reutilizo x
-							x = EvaluarPoli(p, x);
-							printf("Resultado = %d", x);
-						}
-						else
-						{
-							MostrarMensaje(NUMERO_INVALIDO);
-						}
-					}
-					else
-					{
-						MostrarMensaje(NO_EXISTE_POLINOMIO);
-					}
-				}				
-				else
-				{
-					MostrarMensaje(NOMBRE_INVALIDO);
-				}
-			}
-			else
-			{
-				MostrarMensaje(PARAMETROS_INVALIDOS);
-			}
+                break;
+            case MOSTRAR:
+                break;
+            case SALIR:
+                break;
+            default:
+                MostrarMensaje(COMANDO_INVALIDO);
             break;
-        default:
-            MostrarMensaje(COMANDO_INVALIDO);
-        break;
+        }
+
+        l = NULL;
+        printf("\n\n");
+        printf("Ingrese comando: ");
+        Scan(s);
+        Parsear(s, l);
+        ec = ValidarComando(l->info);
+        l = l->sig;
     }
 }

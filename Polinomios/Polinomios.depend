@@ -1,15 +1,17 @@
 # depslib dependency file v1.0
-1353751060 source:f:\codeblocks projects\taller 1 2019\polinomios\main.cpp
+1550935829 source:f:\codeblocks projects\taller 1 2019\polinomios\main.cpp
 	<iostream>
+	"ABBPolinomio.h"
 
-1549150848 source:f:\codeblocks projects\taller 1 2019\polinomios\string.cpp
+1550930809 source:f:\codeblocks projects\taller 1 2019\polinomios\string.cpp
 	"String.h"
+
+1550930809 f:\codeblocks projects\taller 1 2019\polinomios\string.h
+	"Boolean.h"
+	"EnumMensajes.h"
 	<stdio.h>
 
-1549150590 f:\codeblocks projects\taller 1 2019\polinomios\string.h
-	"Boolean.h"
-
-1549150654 f:\codeblocks projects\taller 1 2019\polinomios\boolean.h
+1550801026 f:\codeblocks projects\taller 1 2019\polinomios\boolean.h
 
 1550839854 source:c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\boolean.cpp
 	"Boolean.h"
@@ -247,4 +249,51 @@
 1550790975 source:e:\downloads\taller12019-master 5\polinomios\main.cpp
 	<iostream>
 	"ABBPolinomio.h"
+
+1550933568 source:f:\codeblocks projects\taller 1 2019\polinomios\abbpolinomio.cpp
+	"ABBPolinomio.h"
+
+1550930809 f:\codeblocks projects\taller 1 2019\polinomios\abbpolinomio.h
+	"Polinomio.h"
+
+1550934710 f:\codeblocks projects\taller 1 2019\polinomios\polinomio.h
+	"ListaTerminos.h"
+	"ListaParametros.h"
+
+1550930809 f:\codeblocks projects\taller 1 2019\polinomios\listaterminos.h
+	"Termino.h"
+
+1550930809 f:\codeblocks projects\taller 1 2019\polinomios\termino.h
+	"String.h"
+
+1550930809 f:\codeblocks projects\taller 1 2019\polinomios\enummensajes.h
+
+1550801026 f:\codeblocks projects\taller 1 2019\polinomios\listaparametros.h
+	"EnumComandos.h"
+	"String.h"
+
+1550801026 f:\codeblocks projects\taller 1 2019\polinomios\enumcomandos.h
+	"String.h"
+
+1550801026 source:f:\codeblocks projects\taller 1 2019\polinomios\boolean.cpp
+	"Boolean.h"
+
+1550801026 source:f:\codeblocks projects\taller 1 2019\polinomios\enumcomandos.cpp
+	"EnumComandos.h"
+
+1550801026 source:f:\codeblocks projects\taller 1 2019\polinomios\listaparametros.cpp
+	"ListaParametros.h"
+
+1550930809 source:f:\codeblocks projects\taller 1 2019\polinomios\listaterminos.cpp
+	"ListaTerminos.h"
+
+1550935616 source:f:\codeblocks projects\taller 1 2019\polinomios\polinomio.cpp
+	"Polinomio.h"
+
+1550930809 source:f:\codeblocks projects\taller 1 2019\polinomios\termino.cpp
+	"Termino.h"
+
+1550801026 source:f:\codeblocks projects\taller 1 2019\polinomios\enummensajes.cpp
+	"EnumMensajes.h"
+	<stdio.h>
 
