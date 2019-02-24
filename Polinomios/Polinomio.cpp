@@ -53,42 +53,50 @@ void Crear(Polinomio &p, ListaParam lista)
 
 int EvaluarPoli(Polinomio p, int x)
 {
-	ListaTerm l;
-	int base, exponente, resultado, temp, i;
+	ListaTerm l = NULL;
+	int base = 0, exponente = 0, resultado = 0, temp = 0, i = 0;
 	char signo;
 	DarListaTermPoli(p, l);
 
-	while(l != NULL){
+	while(l != NULL)
+    {
 		base = DarBase(l->info);
 		signo = DarSigno(l->info);
 		if(base != 0)
 		{
 			exponente = DarExponente(l->info);
 			temp = x;
-			if(exponente > 1){
+			if(exponente > 1)
+			{
 				i = exponente;
-				while(i > 1){
+				while(i > 1)
+				{
 					temp = temp * x;
 					i--;
 				}
 				temp = temp * base;
-			}else{
-				if(exponente == 1){
+			}
+            else
+            {
+				if(exponente == 1)
+				{
 					temp = x * base;
 				}
-				else{
-					if(exponente == 0){
+				else
+				{
+					if(exponente == 0)
+					{
 						temp = base;
 					}
 				}
 			}
+            if(signo == '-')
+                temp = temp * -1;
+
+            resultado = resultado + temp;
 		}
-		if(signo == '-'){
-			temp = temp * -1;
-			resultado = resultado + temp;
-			l = l->sig;
-		}
-	l = l ->sig;
+
+        l = l ->sig;
 	}
 	return resultado;
 }
@@ -102,7 +110,7 @@ void MostrarPolinomio(Polinomio p)
 
 void DarListaTermPoli(Polinomio p, ListaTerm &lista)
 {
-
+    lista = p.Listaterminos;
 }
 
 void SumarPoli(Polinomio a, Polinomio b, Polinomio &resu, String nombreNuevo)

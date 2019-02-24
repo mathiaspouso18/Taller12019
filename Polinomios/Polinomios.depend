@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1551021665 source:f:\codeblocks projects\taller 1 2019\polinomios\main.cpp
+1551032920 source:f:\codeblocks projects\taller 1 2019\polinomios\main.cpp
 	<iostream>
 	"ABBPolinomio.h"
 
-1551015593 source:f:\codeblocks projects\taller 1 2019\polinomios\string.cpp
+1551032295 source:f:\codeblocks projects\taller 1 2019\polinomios\string.cpp
 	"String.h"
 
 1551014724 f:\codeblocks projects\taller 1 2019\polinomios\string.h
@@ -287,7 +287,7 @@
 1551021891 source:f:\codeblocks projects\taller 1 2019\polinomios\listaterminos.cpp
 	"ListaTerminos.h"
 
-1551028712 source:f:\codeblocks projects\taller 1 2019\polinomios\polinomio.cpp
+1551031528 source:f:\codeblocks projects\taller 1 2019\polinomios\polinomio.cpp
 	"Polinomio.h"
 
 1550930809 source:f:\codeblocks projects\taller 1 2019\polinomios\termino.cpp

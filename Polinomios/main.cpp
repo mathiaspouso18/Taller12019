@@ -11,7 +11,7 @@ int main()
     Polinomio p, resu, a, b;
     EnumComandos ec;
     InicializarArbol(abb);
-    int x;
+    int x, z;
 
     printf("Ingrese comando: ");
     Scan(s);
@@ -35,7 +35,7 @@ int main()
                             {
                                 Crear(p, l);
                                 InsPoliABBPoli(abb, p);
-                                MostrarMensaje(OK);
+                                MostrarPolinomio(p);
                             }
                             else
                             {
@@ -74,9 +74,8 @@ int main()
                                 {
                                     b = DarPolinomio(abb, l->info);
                                     SumarPoli(a, b, resu, nombreNuevo);
-                                    MostrarPolinomio(resu); //Para probar si suma correctamente
+                                    MostrarPolinomio(resu);
                                     InsPoliABBPoli(abb, resu);
-                                    //MostrarMensaje(OK);
                                 }
                                 else
                                 {
@@ -122,7 +121,6 @@ int main()
                                             MultiplicarPoli(a,b,resu,nombreNuevo);
                                             MostrarPolinomio(resu);
                                             InsPoliABBPoli(abb, resu);
-                                            //MostrarMensaje(OK);
                                         }
                                         else
                                         MostrarMensaje(NO_EXISTE_POLINOMIO);
@@ -145,38 +143,63 @@ int main()
                 else
                     MostrarMensaje(PARAMETROS_INVALIDOS);
             break;
-            default:
-                MostrarMensaje(COMANDO_INVALIDO);
-            break;
             case EVALUAR:
                 if(CantParametros(l) == 2)
                 {
-                    if(EsValidoNombre(l->info))
+                    if(ExistePolinomio(abb,l->info))
                     {
-                        if(ExistePolinomio(abb,l->info))
+                        p = DarPolinomio(abb,l->info);
+                        l=l->sig;
+                        if(EsValidoNumero(l->info))
                         {
-                            p = DarPolinomio(abb,l->info);
-                            l=l->sig;
-                            if(EsValidoNumero(l->info))
-                            {
-                                x = ConvertirCharANumero(l->info);
-                                //Reutilizo x
-                                x = EvaluarPoli(p, x);
-                                printf("Resultado = %d", x);
-                            }
-                            else
-                            {
-                                MostrarMensaje(NUMERO_INVALIDO);
-                            }
+                            x = ConvertirCharANumero(l->info);
+                            if(l->info[0] == '-')
+                                x = x * -1;
+                            //Reutilizo x
+                            x = EvaluarPoli(p, x);
+                            printf("Resultado = %d", x);
                         }
                         else
                         {
-                            MostrarMensaje(NO_EXISTE_POLINOMIO);
+                            MostrarMensaje(NUMERO_INVALIDO);
                         }
                     }
                     else
                     {
-                        MostrarMensaje(NOMBRE_INVALIDO);
+                        MostrarMensaje(NO_EXISTE_POLINOMIO);
+                    }
+                }
+                else
+                {
+                    MostrarMensaje(PARAMETROS_INVALIDOS);
+                }
+                break;
+            case ES_RAIZ:
+                if(CantParametros(l) == 2)
+                {
+                    if(ExistePolinomio(abb,l->info))
+                    {
+                        p = DarPolinomio(abb,l->info);
+                        l=l->sig;
+                        if(EsValidoNumero(l->info))
+                        {
+                            z = ConvertirCharANumero(l->info);
+                            if(l->info[0] == '-')
+                                z = z * -1;
+                            x = EvaluarPoli(p, z);
+                            if(x == 0)
+                                printf("%d es raiz del polinomio", z);
+                            else
+                                printf("%d NO es raiz del polinomio", z);
+                        }
+                        else
+                        {
+                            MostrarMensaje(NUMERO_INVALIDO);
+                        }
+                    }
+                    else
+                    {
+                        MostrarMensaje(NO_EXISTE_POLINOMIO);
                     }
                 }
                 else
@@ -188,6 +211,9 @@ int main()
                 break;
             case SALIR:
                 break;
+            default:
+                MostrarMensaje(COMANDO_INVALIDO);
+            break;
         }
 
         l = NULL;
