@@ -47,6 +47,8 @@ void MostrarTerminos(ListaTerm l)
             {
                 printf("x ");
             }
+            else if(exponente == 0 && base == 1)
+                printf("%d",base);
         }
 
         l = l->sig;

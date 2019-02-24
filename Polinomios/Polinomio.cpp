@@ -168,6 +168,8 @@ void SumarPoli(Polinomio a, Polinomio b, Polinomio &resu, String nombreNuevo)
                 seguir = FALSE;
             }
         }
+        if(lista2 == NULL && seguir)
+            InsTermBack(listaNueva, lista1->info);
         lista1 = lista1->sig;
     }
 
@@ -190,39 +192,36 @@ void MultiplicarPoli(Polinomio a, Polinomio b ,Polinomio &resu, String nombreNue
     //Primer Recorrido
     while(listaA != NULL)
     {
-            signoA = DarSigno(listaA->info);
-            baseA = DarBase(listaA->info);
-            exponenteA = DarExponente(listaA->info);
-            while(listaB != NULL)
+        signoA = DarSigno(listaA->info);
+        baseA = DarBase(listaA->info);
+        exponenteA = DarExponente(listaA->info);
+        while(listaB != NULL)
+        {
+            signoB = DarSigno(listaB->info);
+            baseB = DarBase(listaB->info);
+            exponenteB = DarExponente(listaB->info);
+
+            if (exponenteA >= exponenteB)
             {
-                signoB = DarSigno(listaB->info);
-                baseB = DarBase(listaB->info);
-                exponenteB = DarExponente(listaB->info);
-
-                if (exponenteA >= exponenteB)
+                if (baseB != 0 && baseA != 0)
                 {
-                        if (baseB != 0)
-                        {
-                            exponenteResu = exponenteA + exponenteB;
-                            baseResu = baseA * baseB;
-                            if (signoA == '+' && signoB == '+')
-                                signoResu = '+';
-                            else
-                            {
-                                    if (signoA == '-' && signoB == '-')
-                                        signoResu = '+';
-                                    else
-                                        signoResu='-';
+                    exponenteResu = exponenteA + exponenteB;
+                    baseResu = baseA * baseB;
+                    if (signoA == signoB)
+                        signoResu = '+';
+                    else
+                        signoResu='-';
 
-                            }
-                            CrearTermino(term,baseResu,exponenteResu,signoResu);
-                            InsTermBack(listTemp1,term);
-                        }
+                    CrearTermino(term,baseResu,exponenteResu,signoResu);
+                    InsTermBack(listTemp1,term);
                 }
-                listaB = listaB->sig;
             }
-            listaA=listaA->sig;
+            listaB = listaB->sig;
+        }
+        listaA=listaA->sig;
+        listaB = b.Listaterminos;
     }
+
     //Segundo Recorrido por si el 2do polinomio es de mayor grado
     listaA = a.Listaterminos;
     listaB = b.Listaterminos;
@@ -239,27 +238,23 @@ void MultiplicarPoli(Polinomio a, Polinomio b ,Polinomio &resu, String nombreNue
 
                 if (exponenteB > exponenteA)
                 {
-                        if (baseA != 0)
-                        {
-                            exponenteResu = exponenteA + exponenteB;
-                            baseResu = baseA * baseB;
-                            if (signoA == '+' && signoB == '+')
-                                signoResu = '+';
-                            else
-                            {
-                                    if (signoA == '-' && signoB == '-')
-                                        signoResu = '+';
-                                    else
-                                        signoResu='-';
+                    if (baseA != 0 && baseB != 0)
+                    {
+                        exponenteResu = exponenteA + exponenteB;
+                        baseResu = baseA * baseB;
+                        if (signoA == signoB)
+                            signoResu = '+';
+                        else
+                            signoResu='-';
 
-                            }
-                            CrearTermino(term,baseResu,exponenteResu,signoResu);
-                            InsTermBack(listTemp2,term);
-                        }
+                        CrearTermino(term,baseResu,exponenteResu,signoResu);
+                        InsTermBack(listTemp2,term);
+                    }
                 }
                 listaA = listaA->sig;
             }
             listaB = listaB->sig;
+            listaA = a.Listaterminos;
     }
     temp1.Listaterminos = listTemp1;
     temp1.nombre="temp1";

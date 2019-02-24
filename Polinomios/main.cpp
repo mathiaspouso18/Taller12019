@@ -120,8 +120,9 @@ int main()
                                         {
                                             b = DarPolinomio(abb,l->info);
                                             MultiplicarPoli(a,b,resu,nombreNuevo);
+                                            MostrarPolinomio(resu);
                                             InsPoliABBPoli(abb, resu);
-                                            MostrarMensaje(OK);
+                                            //MostrarMensaje(OK);
                                         }
                                         else
                                         MostrarMensaje(NO_EXISTE_POLINOMIO);
