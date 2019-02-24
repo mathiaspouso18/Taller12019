@@ -25,46 +25,22 @@ int main()
         switch(ec)
         {
             case CREAR:
-                if(l != NULL)
+                if(CantParametros(l) >= 2)
                 {
-                    if(!ExistePolinomio(abb, l->info))
+                    if(l != NULL)
                     {
-                        if(EsValidoNombre(l->info))
+                        if(!ExistePolinomio(abb, l->info))
                         {
-                            Crear(p, l);
-                            InsPoliABBPoli(abb, p);
-                            MostrarMensaje(OK);
-                        }
-                        else
-                        {
-                            MostrarMensaje(NOMBRE_INVALIDO);
-                        }
-                    }
-                    else
-                    {
-                        MostrarMensaje(YA_EXISTE);
-                    }
-                }
-                else
-                {
-                    MostrarMensaje(NO_INGRESO_NOMBRE);
-                }
-            break;
-            case SUMAR:
-                if(ExistePolinomio(abb, l->info))
-                {
-                    a = DarPolinomio(abb, l->info);
-                    l = l->sig;
-                    if(ExistePolinomio(abb, l->info))
-                    {
-                        b = DarPolinomio(abb, l->info);
-                        l = l->sig;
-                        StrCop(nombreNuevo,l->info);
-                        if(!ExistePolinomio(abb, nombreNuevo))
-                        {
-                            SumarPoli(a, b, resu, nombreNuevo);
-                            InsPoliABBPoli(abb, resu);
-                            MostrarMensaje(OK);
+                            if(EsValidoNombre(l->info))
+                            {
+                                Crear(p, l);
+                                InsPoliABBPoli(abb, p);
+                                MostrarMensaje(OK);
+                            }
+                            else
+                            {
+                                MostrarMensaje(NOMBRE_INVALIDO);
+                            }
                         }
                         else
                         {
@@ -73,54 +49,56 @@ int main()
                     }
                     else
                     {
-                        MostrarMensaje(NO_EXISTE_POLINOMIO);
-                    }
-                }
-                else
-                {
-                    MostrarMensaje(NO_EXISTE_POLINOMIO);
-                }
-                break;
-            case EVALUAR:
-                if(CantParametros(l) == 2)
-                {
-                    if(EsValidoNombre(l->info))
-                    {
-                        if(ExistePolinomio(abb,l->info))
-                        {
-                            p = DarPolinomio(abb,l->info);
-                            l=l->sig;
-                            if(EsValidoNumero(l->info))
-                            {
-                                x = ConvertirCharANumero(l->info);
-                                //Reutilizo x
-                                x = EvaluarPoli(p, x);
-                                printf("Resultado = %d", x);
-                            }
-                            else
-                            {
-                                MostrarMensaje(NUMERO_INVALIDO);
-                            }
-                        }
-                        else
-                        {
-                            MostrarMensaje(NO_EXISTE_POLINOMIO);
-                        }
-                    }
-                    else
-                    {
-                        MostrarMensaje(NOMBRE_INVALIDO);
+                        MostrarMensaje(NO_INGRESO_NOMBRE);
                     }
                 }
                 else
                 {
                     MostrarMensaje(PARAMETROS_INVALIDOS);
                 }
-                break;
-            case MOSTRAR: MostrarABBPoli(abb);
-                break;
-            case SALIR:
-                break;
+            break;
+            case SUMAR:
+                if(CantParametros(l) == 3)
+                {
+                    if(!ExistePolinomio(abb, l->info))
+                    {
+                        if(EsValidoNombre(l->info))
+                        {
+                            StrCop(nombreNuevo,l->info);
+                            l = l->sig;
+                            if(ExistePolinomio(abb, l->info))
+                            {
+                                a = DarPolinomio(abb, l->info);
+                                l = l->sig;
+                                if(ExistePolinomio(abb, l->info))
+                                {
+                                    b = DarPolinomio(abb, l->info);
+                                    SumarPoli(a, b, resu, nombreNuevo);
+                                    MostrarPolinomio(resu); //Para probar si suma correctamente
+                                    InsPoliABBPoli(abb, resu);
+                                    //MostrarMensaje(OK);
+                                }
+                                else
+                                {
+                                    MostrarMensaje(NO_EXISTE_POLINOMIO);
+                                }
+                            }
+                            else
+                            {
+                                MostrarMensaje(NO_EXISTE_POLINOMIO);
+                            }
+                         }
+                        else
+                            MostrarMensaje(NOMBRE_INVALIDO);
+                    }
+                    else
+                    {
+                        MostrarMensaje(YA_EXISTE);
+                    }
+                }
+                else
+                    MostrarMensaje(PARAMETROS_INVALIDOS);
+            break;
             case MULTIPLICAR:
                 if (CantParametros(l) == 3)
                 {
@@ -165,10 +143,50 @@ int main()
                 }
                 else
                     MostrarMensaje(PARAMETROS_INVALIDOS);
-                break;
+            break;
             default:
                 MostrarMensaje(COMANDO_INVALIDO);
             break;
+            case EVALUAR:
+                if(CantParametros(l) == 2)
+                {
+                    if(EsValidoNombre(l->info))
+                    {
+                        if(ExistePolinomio(abb,l->info))
+                        {
+                            p = DarPolinomio(abb,l->info);
+                            l=l->sig;
+                            if(EsValidoNumero(l->info))
+                            {
+                                x = ConvertirCharANumero(l->info);
+                                //Reutilizo x
+                                x = EvaluarPoli(p, x);
+                                printf("Resultado = %d", x);
+                            }
+                            else
+                            {
+                                MostrarMensaje(NUMERO_INVALIDO);
+                            }
+                        }
+                        else
+                        {
+                            MostrarMensaje(NO_EXISTE_POLINOMIO);
+                        }
+                    }
+                    else
+                    {
+                        MostrarMensaje(NOMBRE_INVALIDO);
+                    }
+                }
+                else
+                {
+                    MostrarMensaje(PARAMETROS_INVALIDOS);
+                }
+                break;
+            case MOSTRAR: MostrarABBPoli(abb);
+                break;
+            case SALIR:
+                break;
         }
 
         l = NULL;

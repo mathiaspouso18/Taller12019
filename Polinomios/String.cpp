@@ -133,7 +133,7 @@ Boolean EsValidoNombre(String s)
 {
 	int i = 0;
 	Boolean es = TRUE;
-	while(s[i] != '\0' && es == OK)
+	while(s[i] != '\0' && es)
 	{
 		if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i]<= 'Z') || (s[i]>= '0' && s[i] <= '9'))
 			es = TRUE;

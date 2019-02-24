@@ -7,7 +7,8 @@ void MostrarMensaje(TipoMensaje tipo){
         case NOMBRE_INVALIDO: printf("ERROR: Nombre invalido");break;
         case NUMERO_INVALIDO: printf("ERROR: Numero invalido");break;
         case COMANDO_INVALIDO: printf("ERROR: Comando invalido");break;
-        case YA_EXISTE: printf("ERROR: Ya existe polinomio");break;
+        case YA_EXISTE: printf("ERROR: Ya existe polinomio con ese nombre");break;
+        case NO_EXISTE_POLINOMIO: printf("ERROR: No existe polinomio con ese nombre");break;
         case NO_INGRESO_NOMBRE: printf("ERROR: No ingreso nombre");break;
         case NO_INGRESO_TERMINO: printf("ERROR: No ingreso termino/s");break;
         case PARAMETROS_INVALIDOS: printf("ERROR: Faltan Parametros");break;

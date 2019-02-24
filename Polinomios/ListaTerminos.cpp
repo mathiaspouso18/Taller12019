@@ -31,10 +31,12 @@ void MostrarTerminos(ListaTerm l)
         base = DarBase(l->info);
         exponente = DarExponente(l->info);
 
-        if(base > 0)
+        if(base != 0)
         {
             printf("%c", signo);
-            printf("%d",base);
+
+            if(base != 1)
+                printf("%d",base);
 
             if(exponente > 1)
             {

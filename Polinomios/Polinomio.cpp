@@ -110,7 +110,7 @@ void SumarPoli(Polinomio a, Polinomio b, Polinomio &resu, String nombreNuevo)
     int CantA = CantTerminos(a.Listaterminos);
     int CantB = CantTerminos(b.Listaterminos);
     int base = 0, exponente = 0, base2 = 0, exponente2 = 0, baseNueva = 0;
-    Boolean encontre = FALSE;
+    Boolean seguir = TRUE;
     ListaTerm lista1, lista2, listaNueva = NULL;
     char signo, signo2, signoNuevo = '+';
     Termino term;
@@ -129,31 +129,44 @@ void SumarPoli(Polinomio a, Polinomio b, Polinomio &resu, String nombreNuevo)
 
     while(lista1 != NULL)
     {
-        encontre = FALSE;
+        seguir = TRUE;
         signo = DarSigno(lista1->info);
         base = DarBase(lista1->info);
         exponente = DarExponente(lista1->info);
+
         if(signo == '-')
             base = base * -1;
 
-        while(lista2 != NULL && !encontre)
+        while(lista2 != NULL && seguir)
         {
             exponente2 = DarExponente(lista2->info);
             if(exponente == exponente2)
             {
-                encontre = TRUE;
+                seguir = FALSE;
                 signo2 = DarSigno(lista2->info);
                 base2 = DarBase(lista2->info);
+
                 if(signo2 == '-')
                     base2 = base2 * -1;
+
                 baseNueva = base + base2;
+
                 if(baseNueva < 0)
+                {
                     signoNuevo = '-';
+                    baseNueva = baseNueva * -1;
+                }
 
                 CrearTermino(term, baseNueva, exponente, signoNuevo);
+                signoNuevo = '+';
                 InsTermBack(listaNueva, term);
+                lista2 = lista2->sig;
             }
-            lista2 = lista2->sig;
+            else
+            {
+                InsTermBack(listaNueva, lista1->info);
+                seguir = FALSE;
+            }
         }
         lista1 = lista1->sig;
     }
