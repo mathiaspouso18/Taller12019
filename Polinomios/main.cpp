@@ -117,9 +117,54 @@ int main()
                     MostrarMensaje(PARAMETROS_INVALIDOS);
                 }
                 break;
-            case MOSTRAR:
+            case MOSTRAR: MostrarABBPoli(abb);
                 break;
             case SALIR:
+                break;
+            case MULTIPLICAR:
+                if (CantParametros(l) == 3)
+                {
+                    if(EsValidoNombre(l->info))
+                    {
+                        if(!ExistePolinomio(abb,l->info))
+                        {
+                            StrCop(nombreNuevo,l->info);
+                            l=l->sig;
+                            if(EsValidoNombre(l->info))
+                            {
+                                if(ExistePolinomio(abb,l->info))
+                                {
+                                    a = DarPolinomio(abb,l->info);
+                                    l=l->sig;
+                                    if(EsValidoNombre(l->info))
+                                    {
+                                        if(ExistePolinomio(abb,l->info))
+                                        {
+                                            b = DarPolinomio(abb,l->info);
+                                            MultiplicarPoli(a,b,resu,nombreNuevo);
+                                            InsPoliABBPoli(abb, resu);
+                                            MostrarMensaje(OK);
+                                        }
+                                        else
+                                        MostrarMensaje(NO_EXISTE_POLINOMIO);
+                                    }
+                                    else
+                                        MostrarMensaje(NOMBRE_INVALIDO);
+                                }
+                                else
+                                    MostrarMensaje(NO_EXISTE_POLINOMIO);
+                            }
+                            else
+                                MostrarMensaje(NOMBRE_INVALIDO);
+                        }
+                        else
+                            MostrarMensaje(YA_EXISTE);
+                    }
+                    else
+                        MostrarMensaje(NOMBRE_INVALIDO);
+                }
+                else
+                    MostrarMensaje(PARAMETROS_INVALIDOS);
                 break;
             default:
                 MostrarMensaje(COMANDO_INVALIDO);

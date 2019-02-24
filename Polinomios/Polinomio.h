@@ -11,7 +11,7 @@ void DarNombrePoli(Polinomio p, String &nom);
 void DarListaTermPoli(Polinomio p, ListaTerm &lista);
 void Crear(Polinomio &p, ListaParam lista);
 void SumarPoli(Polinomio a, Polinomio b ,Polinomio &resu, String nombreNuevo);
-void MultiplicarPoli(Polinomio a, Polinomio b ,Polinomio &resu);
+void MultiplicarPoli(Polinomio a, Polinomio b ,Polinomio &resu, String nombreNuevo);
 int EvaluarPoli(Polinomio p, int x);
 Boolean EsRaizPoli(Polinomio p, int x);
 

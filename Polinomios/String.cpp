@@ -220,3 +220,27 @@ void Levantar_String (String &s, FILE * f)
 	 StrCop (s, aux);
 	 delete [] aux;
 }
+
+void IntToString(String &s, int num)
+{
+    String aux = new char[MAX];
+
+    int x=10, cant=1, i;
+    char c;
+    while (num >= x ){
+        x=x*10;
+        cant++;
+    }
+    int y = x/10;
+
+    for(i=0;i<cant;i++){
+        c =((num%x)/y)+48;
+        aux[i]=c;
+        //printf("%c",c);
+        x=x/10;
+        y=y/10;
+    }
+    aux[i] = '\0';
+    StrCop (s,aux);
+    StrDestruir (aux);
+}

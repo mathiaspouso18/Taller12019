@@ -107,4 +107,11 @@ Polinomio DarPolinomio (Arbol ABBPoli, String nombre_poli)
 
 void MostrarABBPoli(Arbol abb)
 {
+    if (abb != NULL)
+	{
+		MostrarABBPoli(abb->hizq);
+		MostrarPolinomio(abb->info);
+		printf("\n");
+		MostrarABBPoli(abb->hder);
+	}
 }

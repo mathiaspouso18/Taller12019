@@ -50,5 +50,5 @@ void Guardar_String (String s, FILE * f) ;
 
 void Levantar_String (String &s, FILE * f);
 
-
+void IntToString(String s, int num);
 #endif // STRING_H_INCLUDED
