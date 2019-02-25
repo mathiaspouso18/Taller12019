@@ -174,23 +174,25 @@ Boolean EsValidoNumero(String s)
 
 Boolean EsMayor(String s1, String s2)
 {
-	Boolean es = FALSE;
+	Boolean es = FALSE, stop = FALSE;
 	int i = 0;
 
-	while(!es && (s1[i] != '\0') && (s2[i] != '\0')){
-		if(s1[i] > s2[i]){
+	while(!stop && ((s1[i] != '\0') || (s2[i] != '\0'))){
+		if(s1[i] < s2[i])
+		{
 			es = TRUE;
+			stop = TRUE;
 		}
 		else
 		{
-			es = FALSE;
-			i++;
+			if(s1[i] > s2[i])
+			{
+				es = FALSE;
+				stop = TRUE;
+			}
 		}
+		i++;
 	}
-
-	if((!es) && s2 == '\0')
-        es = TRUE;
-
 	return es;
 }
 
