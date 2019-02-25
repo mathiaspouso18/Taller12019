@@ -45,7 +45,7 @@ void InsPoliABBPoli(Arbol &abb, Polinomio p)
     else
     {
         DarNombrePoli(abb->info, nombre_poli_abb);
-        if(EsMayor(nombre_poli_abb, nombre_poli))
+        if(!EsMayor(nombre_poli_abb, nombre_poli))
             InsPoliABBPoli (abb -> hizq, p);
         else
             InsPoliABBPoli (abb -> hder, p);
@@ -65,7 +65,7 @@ Boolean ExistePolinomio(Arbol ABBPoli, String nombre_poli)
         }
         else
         {
-            if(EsMayor(nombre_poli_abb, nombre_poli))
+            if(!EsMayor(nombre_poli_abb, nombre_poli))
                 ABBPoli = ABBPoli->hizq;
             else
                 ABBPoli = ABBPoli->hder;
@@ -95,7 +95,7 @@ Polinomio DarPolinomio (Arbol ABBPoli, String nombre_poli)
             }
             else
             {
-                if(EsMayor(nombre_poli_abb, nombre_poli))
+                if(!EsMayor(nombre_poli_abb, nombre_poli))
                     ABBPoli = ABBPoli->hizq;
                 else
                     ABBPoli = ABBPoli->hder;
