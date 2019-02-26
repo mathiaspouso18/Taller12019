@@ -46,6 +46,8 @@ Boolean ValidarNombreArchivo (String s);
 
 Boolean EsMayor(String s1, String s2);
 
+void LowerCase(String &s);
+
 void Guardar_String (String s, FILE * f) ;
 
 void Levantar_String (String &s, FILE * f);
