@@ -54,3 +54,24 @@ void MostrarTerminos(ListaTerm l)
         l = l->sig;
     }
 }
+
+void BajarTerm(ListaTerm lista, String nomArch)
+{
+	FILE *f = fopen (nomArch, "wb");
+	while(lista != NULL)
+	{
+		char signo = DarSigno(lista->info), espacio = ' ';
+
+		int base = DarBase(lista->info);
+		String s;
+		IntToString(s,base);
+
+		fwrite (&signo, sizeof(char), 1, f);
+		Guardar_String(s,f); //El guardar string le pone el \0, no deberia?
+		fwrite (&espacio, sizeof(char), 1, f);
+		lista = lista->sig;
+	}
+
+	fclose (f);
+}
+
