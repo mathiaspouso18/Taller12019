@@ -209,6 +209,36 @@ int main()
                 break;
             case MOSTRAR: MostrarABBPoli(abb);
                 break;
+            case GUARDAR: 
+				if(CantParametros(l) == 2)
+                {
+					if(ExistePolinomio(abb,l->info))
+                    {
+						p = DarPolinomio(abb,l->info);
+                        l=l->sig;
+						DarListaTermPoli(p,lista);
+						BajarTerm(lista,l->info);
+						printf("polinomio almacenado correctamente en ");
+						x = 0;
+						StrCop(s,l->info);
+						while(s[x] != '\0')
+						{
+							printf("%c", s[x]);
+							x++;
+						}
+						//printf(".txt"); 
+					}
+                    else
+                    {
+                        MostrarMensaje(NO_EXISTE_POLINOMIO);
+                    }
+				}
+                else
+                {
+                    MostrarMensaje(PARAMETROS_INVALIDOS);
+                }
+				MostrarABBPoli(abb);
+                break;
             case SALIR:
                 break;
             default:
