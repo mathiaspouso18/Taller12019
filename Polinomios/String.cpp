@@ -208,6 +208,17 @@ void Guardar_String (String s, FILE * f)
     fwrite (&s[i], sizeof(char), 1, f);
 }
 
+void LowerCase(String &s)
+{
+	int i = 0;
+	while(s[i] != '\0')
+	{
+		if (s[i] >= 'A' && s[i]<= 'Z')
+			s[i] = s[i] + 32;
+		i++;
+	}
+}
+
 void Levantar_String (String &s, FILE * f)
 {
 	 int i=0;
