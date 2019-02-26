@@ -56,9 +56,11 @@ Boolean ExistePolinomio(Arbol ABBPoli, String nombre_poli)
 {
     Boolean existe = FALSE;
 	String nombre_poli_abb;
+	LowerCase(nombre_poli);
 
     while(existe != TRUE && ABBPoli != NULL){
 		DarNombrePoli(ABBPoli->info, nombre_poli_abb);
+		LowerCase(nombre_poli_abb);
         if(StrEq(nombre_poli, nombre_poli_abb))
         {
             existe = TRUE;
