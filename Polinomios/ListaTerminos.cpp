@@ -58,19 +58,22 @@ void MostrarTerminos(ListaTerm l)
 void BajarTerm(ListaTerm lista, String nomArch)
 {
 	FILE *f = fopen (nomArch, "wb");
+	String str;
+	StrCrear(str);
+	int i = 0,largo = 0;
 	while(lista != NULL)
 	{
-		char signo = DarSigno(lista->info), espacio = ' ';
-
-		int base = DarBase(lista->info);
-		String s;
-		IntToString(s,base);
-
-		fwrite (&signo, sizeof(char), 1, f);
-		Guardar_String(s,f); //El guardar string le pone el \0, no deberia?
-		fwrite (&espacio, sizeof(char), 1, f);
-		lista = lista->sig;
+		ConvertirTerminoAString(lista->info,str);
+		StrCon(str," ");
+		lista = lista->sig;		
 	}
+	//Elimino el ultimo espacio, reemplazandolo por el fin de string
+	largo = StrLar(str);
+	for(i=0; i<=largo;i++){
+		if(i = largo)
+			str[i] = '\0';
+	}
+	Guardar_String(str,f);
 
 	fclose (f);
 }
