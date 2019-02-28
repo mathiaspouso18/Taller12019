@@ -5,6 +5,7 @@ void MostrarMensaje(TipoMensaje tipo){
     switch (tipo){
         case OK: printf("OK");break;
         case NOMBRE_INVALIDO: printf("ERROR: Nombre invalido");break;
+        case NOMBRE_ARCHIVO_INVALIDO: printf("ERROR: Nombre del archivo invalido");break;
         case NUMERO_INVALIDO: printf("ERROR: Numero invalido");break;
         case COMANDO_INVALIDO: printf("ERROR: Comando invalido");break;
         case YA_EXISTE: printf("ERROR: Ya existe polinomio con ese nombre");break;
