@@ -42,7 +42,7 @@ Boolean EsValidoNombre(String s);
 
 Boolean EsValidoNumero(String s);
 
-Boolean ValidarNombreArchivo (String s);
+Boolean EsValidoNombreArchivo(String s);
 
 Boolean EsMayor(String s1, String s2);
 
@@ -50,7 +50,7 @@ void LowerCase(String &s);
 
 void Guardar_String (String s, FILE * f) ;
 
-void Levantar_String (String &s, FILE * f);
+void Levantar_String (String &s, String nomArch);
 
-void IntToString(String s, int num);
+void IntToString(String &s, int num);
 #endif // STRING_H_INCLUDED

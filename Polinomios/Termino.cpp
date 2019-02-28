@@ -25,19 +25,12 @@ void ConvertirTerminoAString(Termino term, String &s)
 	int base = DarBase(term), i = 0;
 	String sbase;
 
-	if(s[0] = '\0')
-	{
-		s[0] = signo;
-		s[1] = '\0';
-		IntToString(sbase,base);
-		StrCon(s,sbase);
-	}
-	//En proceso
-	while(s != '\0')
-	{
-		
-	}
-	
+
+    if (signo == '-' )
+        StrCon(s,"-");
+	IntToString(sbase,base);
+	StrCon(s,sbase);
+
 }
 
 Termino ConvertirStringATermino (String s)

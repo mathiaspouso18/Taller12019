@@ -146,6 +146,12 @@ Boolean EsValidoNombre(String s)
 	return es;
 }
 
+Boolean EsValidoNombreArchivo(String s){
+
+//PARA HACER
+return TRUE;
+}
+
 Boolean EsValidoNumero(String s)
 {
 	int i = 0;
@@ -219,8 +225,9 @@ void LowerCase(String &s)
 	}
 }
 
-void Levantar_String (String &s, FILE * f)
+void Levantar_String (String &s, String nomArch)
 {
+     FILE *f = fopen (nomArch, "rb");
 	 int i=0;
 	 String aux;
 	 aux = new char[MAX];

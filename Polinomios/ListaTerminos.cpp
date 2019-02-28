@@ -64,15 +64,12 @@ void BajarTerm(ListaTerm lista, String nomArch)
 	while(lista != NULL)
 	{
 		ConvertirTerminoAString(lista->info,str);
-		StrCon(str," ");
-		lista = lista->sig;		
+		if (lista->sig != NULL)
+            StrCon(str," ");
+		lista = lista->sig;
 	}
-	//Elimino el ultimo espacio, reemplazandolo por el fin de string
-	largo = StrLar(str);
-	for(i=0; i<=largo;i++){
-		if(i = largo)
-			str[i] = '\0';
-	}
+
+    //Print(str);
 	Guardar_String(str,f);
 
 	fclose (f);

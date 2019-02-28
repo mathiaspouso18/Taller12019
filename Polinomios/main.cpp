@@ -7,11 +7,13 @@ int main()
 {
     Arbol abb;
     ListaParam l = NULL;
-    String s, nombreNuevo;
+    String s, nombreNuevo, strArchivo;
     Polinomio p, resu, a, b;
     EnumComandos ec;
     InicializarArbol(abb);
     int x, z;
+
+    StrCrear(strArchivo);
 
     printf("Ingrese comando: ");
     Scan(s);
@@ -209,13 +211,14 @@ int main()
                 break;
             case MOSTRAR: MostrarABBPoli(abb);
                 break;
-            case GUARDAR: 
+            case GUARDAR:
 				if(CantParametros(l) == 2)
                 {
 					if(ExistePolinomio(abb,l->info))
                     {
 						p = DarPolinomio(abb,l->info);
                         l=l->sig;
+                        ListaTerm lista;
 						DarListaTermPoli(p,lista);
 						BajarTerm(lista,l->info);
 						printf("polinomio almacenado correctamente en ");
@@ -226,7 +229,7 @@ int main()
 							printf("%c", s[x]);
 							x++;
 						}
-						//printf(".txt"); 
+						//printf(".txt");
 					}
                     else
                     {
@@ -239,6 +242,28 @@ int main()
                 }
 				MostrarABBPoli(abb);
                 break;
+            case RECUPERAR:
+                if(CantParametros(l) == 2)
+                {
+					if(!ExistePolinomio(abb,l->info))
+                    {
+                        StrCop(nombreNuevo,l->info);
+                        l = l->sig;
+                        if (EsValidoNombreArchivo(l->info)){
+                            // A TERMINAR EXPOTA!!!
+                            //Levantar_String(strArchivo,l->info);
+                            //Print(strArchivo);
+
+                        }
+                    }
+                    else
+                        MostrarMensaje(YA_EXISTE);
+                }
+                else
+                    MostrarMensaje(PARAMETROS_INVALIDOS);
+
+                break;
+
             case SALIR:
                 break;
             default:
