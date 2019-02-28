@@ -25,7 +25,7 @@ void MostrarTerminos(ListaTerm l)
 {
     char signo;
     int base = 0, exponente = 0;
-    int cantTerminosL = CantTerminos(l);
+    int suma = 0;
     while(l != NULL)
     {
         signo = DarSigno(l->info);
@@ -34,6 +34,8 @@ void MostrarTerminos(ListaTerm l)
 
         if(base != 0)
         {
+            suma = suma + base;
+
             printf("%c", signo);
 
             if(base != 1)
@@ -51,14 +53,11 @@ void MostrarTerminos(ListaTerm l)
             else if(exponente == 0 && base == 1)
                 printf("%d",base);
         }
-        else
-        {
-            if(base == 0 && cantTerminosL ==1)
-                printf("0");
-        }
-
         l = l->sig;
     }
+
+    if(suma == 0)
+        printf("0");
 }
 
 void BajarTerm(ListaTerm lista, String nomArch)
