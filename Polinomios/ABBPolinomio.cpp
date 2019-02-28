@@ -117,3 +117,13 @@ void MostrarABBPoli(Arbol abb)
 		MostrarABBPoli(abb->hder);
 	}
 }
+
+void LiberarMemoriaABB (Arbol &ABB)
+{
+	if (ABB != NULL)
+	{
+		LiberarMemoriaABB(ABB -> hizq);
+		LiberarMemoriaABB(ABB -> hder);
+		delete (ABB);
+	}
+}
