@@ -32,11 +32,3 @@ void ConvertirTerminoAString(Termino term, String &s)
 	StrCon(s,sbase);
 
 }
-
-Termino ConvertirStringATermino (String s)
-{
-	//En proceso
-	Termino term;
-
-	return term;
-}
