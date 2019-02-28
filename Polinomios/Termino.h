@@ -11,7 +11,6 @@ typedef struct { char signo;
 char DarSigno(Termino term);
 int DarExponente(Termino term);
 int DarBase(Termino term);
-Termino ConvertirStringATermino (String s);
 void CrearTermino(Termino &t, int base, int exp, char signo);
 void ConvertirTerminoAString(Termino term, String &s);
 
