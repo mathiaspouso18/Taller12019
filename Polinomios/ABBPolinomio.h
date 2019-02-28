@@ -18,5 +18,5 @@ void MostrarABBPoli(Arbol ABBPoli);
 void InsPoliABBPoli(Arbol &ABBPoli, Polinomio p);
 Boolean ExistePolinomio(Arbol ABBPoli, String nombre_poli);
 Polinomio DarPolinomio (Arbol ABBPoli, String nombre_poli);
-
+void LiberarMemoriaABB(Arbol &ABB);
 #endif // ABBPOLINOMIO_H_INCLUDED
