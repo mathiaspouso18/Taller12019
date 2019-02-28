@@ -147,9 +147,46 @@ Boolean EsValidoNombre(String s)
 }
 
 Boolean EsValidoNombreArchivo(String s){
+	Boolean es= FALSE, validonombre = FALSE, validoext = TRUE;
+	int i = 0, j = 0;
+	String s1, s2, ext;
+	StrCrear(s1);
+	StrCrear(s2);
+	StrCrear(ext);
+	ext[0] = '.';
+	ext[1] = 't';
+	ext[2] = 'x';
+	ext[3] = 't';
+	ext[4] = '\0';
 
-//PARA HACER
-return TRUE;
+	while(s[i] != '.' || s[i] == '\0')
+	{
+		s1[i] = s[i];
+		i++;
+	}
+	s1[i] = '\0';
+	while(s[i] != '\0')
+	{
+		s2[j] = s[i];
+		i++;
+		j++;
+	}
+	s2[j] = '\0';
+	validonombre = EsValidoNombre(s1);
+	i = 0;
+		
+	while(((s2[i] != '\0') || (ext[i] != '\0')) & validoext)
+	{
+		if(s2[i] == ext[i])
+			validoext = TRUE;
+		else
+			validoext = FALSE;
+		i++;
+	}
+
+	if(validonombre && validoext)
+		es = TRUE;
+	return es;
 }
 
 Boolean EsValidoNumero(String s)
