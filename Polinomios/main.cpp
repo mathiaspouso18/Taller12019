@@ -240,20 +240,24 @@ int main()
                 {
                     MostrarMensaje(PARAMETROS_INVALIDOS);
                 }
-				MostrarABBPoli(abb);
                 break;
             case RECUPERAR:
                 if(CantParametros(l) == 2)
                 {
+                    Polinomio p;
 					if(!ExistePolinomio(abb,l->info))
                     {
                         StrCop(nombreNuevo,l->info);
                         l = l->sig;
                         if (EsValidoNombreArchivo(l->info)){
                             // A TERMINAR EXPOTA!!!
-                            //Levantar_String(strArchivo,l->info);
-                            //Print(strArchivo);
-
+                            Levantar_String(strArchivo,l->info);
+                            ListaParam l2 = NULL;
+                            Parsear(strArchivo, l2);
+                            InsFront(nombreNuevo, l2);
+                            Crear(p, l2);
+                            InsPoliABBPoli(abb, p);
+                            MostrarPolinomio(p);
                         }
                     }
                     else

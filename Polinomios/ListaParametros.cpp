@@ -22,6 +22,14 @@ void InsBack(String s, ListaParam &l)
         InsBack (s, l -> sig);
  }
 
+ void InsFront(String s, ListaParam &l)
+{
+    ListaParam aux = new NodoS;
+    StrCop(aux->info, s);
+    aux -> sig = l;
+    l = aux;
+ }
+
 void Parsear(String s, ListaParam &l)
 {
 	String s1;

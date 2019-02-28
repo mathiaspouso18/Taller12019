@@ -237,6 +237,7 @@ void Levantar_String (String &s, String nomArch)
          i++;
          fread (&aux[i], sizeof(char), 1, f);
 	 }
+	 aux[i] = '\0';
 	 StrCop (s, aux);
 	 delete [] aux;
 }
