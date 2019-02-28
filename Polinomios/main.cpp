@@ -267,9 +267,6 @@ int main()
                     MostrarMensaje(PARAMETROS_INVALIDOS);
 
                 break;
-
-            case SALIR:
-                break;
             default:
                 MostrarMensaje(COMANDO_INVALIDO);
             break;
@@ -283,4 +280,34 @@ int main()
         ec = ValidarComando(l->info);
         l = l->sig;
     }
+	//Libero espacio de lista de parametros
+	/*if(l != NULL)
+	{
+		ListaParam aux;
+		while(l->sig != NULL)
+		{
+			aux = l->sig;
+			StrDestruir(l->info);
+			l = aux;
+			l = l->sig;
+		}
+		StrDestruir(aux->info); 
+		}
+		else
+		{
+			StrDestruir(l->info);
+		}*/
+				
+		//Libero espacio de variables
+		if(s != NULL)
+			StrDestruir(s);
+		/*if(nombreNuevo != NULL)
+			StrDestruir(nombreNuevo);
+		if(strArchivo != NULL)
+			StrDestruir(strArchivo);
+		if(lista != NULL)
+			delete lista;*/
+		//Libero espacio de ABB
+		LiberarMemoriaABB(abb);
+		printf("\nResultado = Hasta la proxima");
 }
