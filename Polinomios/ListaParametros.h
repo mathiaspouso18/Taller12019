@@ -22,4 +22,6 @@ void LiberarLista(ListaParam &l);
 
 void SiguienteNodo(ListaParam &l);
 
+void InicializarLista(ListaParam &l);
+
 #endif // LISTAPARAMETROS_H_INCLUDED

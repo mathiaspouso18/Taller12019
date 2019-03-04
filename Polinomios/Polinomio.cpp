@@ -28,8 +28,7 @@ void Crear(Polinomio &p, ListaParam lista)
         signo = '+';
         lista = lista->sig;
     }
-
-        p.Listaterminos = listaTerminos;
+    p.Listaterminos = listaTerminos;
 }
 
 
@@ -89,6 +88,7 @@ void MostrarPolinomio(Polinomio p)
     Print(p.nombre);
     printf(" = ");
     MostrarTerminos(p.Listaterminos);
+    printf("\n");
 }
 
 void DarListaTermPoli(Polinomio p, ListaTerm &lista)

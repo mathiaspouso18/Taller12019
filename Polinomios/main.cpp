@@ -6,14 +6,16 @@ using namespace std;
 int main()
 {
     Arbol abb;
-    ListaParam l = NULL;
-    String s, nombreNuevo, strArchivo, cmd;
+    ListaParam l;
+    String s, cmd;
     Polinomio p, resu, a, b;
     EnumComandos ec;
     InicializarArbol(abb);
+    InicializarLista(l);
     int x, z;
 
-    printf("Ingrese comando: ");
+    MostrarMensaje(BIENVENIDA);
+    MostrarMensaje(INGRESO);
     Scan(s);
     Parsear(s, l);
     StrCop(cmd, l->info);
@@ -66,6 +68,7 @@ int main()
             case SUMAR:
                 if(CantParametros(l) == 3)
                 {
+                    String nombreNuevo;
                     if(!ExistePolinomio(abb, l->info))
                     {
                         if(EsValidoNombre(l->info))
@@ -96,8 +99,10 @@ int main()
                             }
                          }
                         else
+                        {
                             MostrarMensaje(NOMBRE_INVALIDO);
                             printf("\n");
+                        }
                     }
                     else
                     {
@@ -114,6 +119,7 @@ int main()
             case MULTIPLICAR:
                 if (CantParametros(l) == 3)
                 {
+                    String nombreNuevo;
                     if(EsValidoNombre(l->info))
                     {
                         if(!ExistePolinomio(abb,l->info))
@@ -266,14 +272,9 @@ int main()
                         ListaTerm lista;
 						DarListaTermPoli(p,lista);
 						BajarTerm(lista,l->info);
-						printf("polinomio almacenado correctamente en ");
-						x = 0;
-						StrCop(s,l->info);
-						while(s[x] != '\0')
-						{
-							printf("%c", s[x]);
-							x++;
-						}
+						MostrarMensaje(GUARDADO);
+						Print(l->info);
+						printf("\n");
 					}
                     else
                     {
@@ -290,6 +291,7 @@ int main()
             case RECUPERAR:
                 if(CantParametros(l) == 2)
                 {
+                    String strArchivo, nombreNuevo;
                     Polinomio p;
 					if(!ExistePolinomio(abb,l->info))
                     {
@@ -330,8 +332,7 @@ int main()
         }
 
         LiberarLista(l);
-        printf("\n");
-        printf("Ingrese comando: ");
+        MostrarMensaje(INGRESO);
         Scan(s);
         Parsear(s, l);
         StrCop(cmd, l->info);
@@ -340,5 +341,5 @@ int main()
         SiguienteNodo(l);
     }
 	LiberarMemoriaABB(abb);
-	printf("Resultado = Hasta la proxima\n");
+	MostrarMensaje(CERRAR);
 }

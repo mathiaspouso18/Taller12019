@@ -88,3 +88,8 @@ void LiberarLista(ListaTerm &l)
         l = NULL;
     }
 }
+
+void InicializarLista(ListaTerm &l)
+{
+    l = NULL;
+}

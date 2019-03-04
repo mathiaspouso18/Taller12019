@@ -113,7 +113,6 @@ void MostrarABBPoli(Arbol abb)
 	{
 		MostrarABBPoli(abb->hizq);
 		MostrarPolinomio(abb->info);
-		printf("\n");
 		MostrarABBPoli(abb->hder);
 	}
 }
