@@ -32,15 +32,15 @@ void InsBack(String s, ListaParam &l)
 
 void Parsear(String s, ListaParam &l)
 {
-	String s1;
-	StrCrear(s1);
 	int i = 0, j = 0;
+    String s1 = new char[MAX];
 
 	while(s[i] == ' ')
         i++;
 
 	while(s[i + 1] != '\0')
     {
+
 		if(s[i] != ' ')
         {
 			s1[j] = s[i];
@@ -50,7 +50,7 @@ void Parsear(String s, ListaParam &l)
 		{
                 s1[j] = '\0';
                 InsBack(s1,l);
-                StrCrear(s1);
+                //StrDestruir(s1);
                 while(s[i] == ' ')
                     i++;
                 j=0;
@@ -61,22 +61,6 @@ void Parsear(String s, ListaParam &l)
 	s1[j] = s[i];
     s1[j+1] = '\0';
 	InsBack(s1,l);
-	delete[] s1;
+	StrDestruir(s1);
 }
 
-void LiberarLista(ListaParam &l)
-{
-    if(l != NULL)
-    {
-        LiberarLista(l -> sig);
-        delete (l);
-        l = NULL;
-    }
-}
-
-void SiguienteNodo(ListaParam &l)
-{
-    ListaParam aux = l;
-    l = l -> sig;
-    delete aux;
-}
