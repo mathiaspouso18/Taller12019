@@ -61,5 +61,22 @@ void Parsear(String s, ListaParam &l)
 	s1[j] = s[i];
     s1[j+1] = '\0';
 	InsBack(s1,l);
+	delete[] s1;
 }
 
+void LiberarLista(ListaParam &l)
+{
+    if(l != NULL)
+    {
+        LiberarLista(l -> sig);
+        delete (l);
+        l = NULL;
+    }
+}
+
+void SiguienteNodo(ListaParam &l)
+{
+    ListaParam aux = l;
+    l = l -> sig;
+    delete aux;
+}

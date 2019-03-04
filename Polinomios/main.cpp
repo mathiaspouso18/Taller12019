@@ -13,13 +13,11 @@ int main()
     InicializarArbol(abb);
     int x, z;
 
-    StrCrear(strArchivo);
-
     printf("Ingrese comando: ");
     Scan(s);
     Parsear(s, l);
     ec = ValidarComando(l->info);
-    l = l->sig;
+    SiguienteNodo(l);
 
     //Vuelvo a solicitar un comando hasta que indique que quiere salir
     while(ec != SALIR)
@@ -67,11 +65,11 @@ int main()
                         if(EsValidoNombre(l->info))
                         {
                             StrCop(nombreNuevo,l->info);
-                            l = l->sig;
+                            SiguienteNodo(l);
                             if(ExistePolinomio(abb, l->info))
                             {
                                 a = DarPolinomio(abb, l->info);
-                                l = l->sig;
+                                SiguienteNodo(l);
                                 if(ExistePolinomio(abb, l->info))
                                 {
                                     b = DarPolinomio(abb, l->info);
@@ -108,13 +106,13 @@ int main()
                         if(!ExistePolinomio(abb,l->info))
                         {
                             StrCop(nombreNuevo,l->info);
-                            l=l->sig;
+                            SiguienteNodo(l);
                             if(EsValidoNombre(l->info))
                             {
                                 if(ExistePolinomio(abb,l->info))
                                 {
                                     a = DarPolinomio(abb,l->info);
-                                    l=l->sig;
+                                    SiguienteNodo(l);
                                     if(EsValidoNombre(l->info))
                                     {
                                         if(ExistePolinomio(abb,l->info))
@@ -151,7 +149,7 @@ int main()
                     if(ExistePolinomio(abb,l->info))
                     {
                         p = DarPolinomio(abb,l->info);
-                        l=l->sig;
+                        SiguienteNodo(l);
                         if(EsValidoNumero(l->info))
                         {
                             x = ConvertirCharANumero(l->info);
@@ -182,7 +180,7 @@ int main()
                     if(ExistePolinomio(abb,l->info))
                     {
                         p = DarPolinomio(abb,l->info);
-                        l=l->sig;
+                        SiguienteNodo(l);
                         if(EsValidoNumero(l->info))
                         {
                             z = ConvertirCharANumero(l->info);
@@ -209,7 +207,11 @@ int main()
                     MostrarMensaje(PARAMETROS_INVALIDOS);
                 }
                 break;
-            case MOSTRAR: MostrarABBPoli(abb);
+            case MOSTRAR:
+                if(abb != NULL)
+                    MostrarABBPoli(abb);
+                else
+                    MostrarMensaje(ABB_VACIO);
                 break;
             case GUARDAR:
 				if(CantParametros(l) == 2)
@@ -217,7 +219,7 @@ int main()
 					if(ExistePolinomio(abb,l->info))
                     {
 						p = DarPolinomio(abb,l->info);
-                        l=l->sig;
+                        SiguienteNodo(l);
                         ListaTerm lista;
 						DarListaTermPoli(p,lista);
 						BajarTerm(lista,l->info);
@@ -229,7 +231,6 @@ int main()
 							printf("%c", s[x]);
 							x++;
 						}
-						//printf(".txt");
 					}
                     else
                     {
@@ -247,17 +248,19 @@ int main()
                     Polinomio p;
 					if(!ExistePolinomio(abb,l->info))
                     {
+                        StrCrear(strArchivo);
                         StrCop(nombreNuevo,l->info);
-                        l = l->sig;
-                        if (EsValidoNombreArchivo(l->info)){
+                        SiguienteNodo(l);
+                        if (EsValidoNombre(l->info)){
                             // A TERMINAR EXPOTA!!!
                             Levantar_String(strArchivo,l->info);
-                            ListaParam l2 = NULL;
-                            Parsear(strArchivo, l2);
-                            InsFront(nombreNuevo, l2);
-                            Crear(p, l2);
-                            InsPoliABBPoli(abb, p);
-                            MostrarPolinomio(p);
+                            //ListaParam l2 = NULL;
+                            //Parsear(strArchivo, l2);
+                            //InsFront(nombreNuevo, l2);
+                            //Crear(p, l2);
+                            //InsPoliABBPoli(abb, p);
+                            //MostrarPolinomio(p);
+                            Print(strArchivo);
                         }
                     }
                     else
@@ -278,36 +281,8 @@ int main()
         Scan(s);
         Parsear(s, l);
         ec = ValidarComando(l->info);
-        l = l->sig;
+        SiguienteNodo(l);
     }
-	//Libero espacio de lista de parametros
-	/*if(l != NULL)
-	{
-		ListaParam aux;
-		while(l->sig != NULL)
-		{
-			aux = l->sig;
-			StrDestruir(l->info);
-			l = aux;
-			l = l->sig;
-		}
-		StrDestruir(aux->info); 
-		}
-		else
-		{
-			StrDestruir(l->info);
-		}*/
-				
-		//Libero espacio de variables
-		if(s != NULL)
-			StrDestruir(s);
-		/*if(nombreNuevo != NULL)
-			StrDestruir(nombreNuevo);
-		if(strArchivo != NULL)
-			StrDestruir(strArchivo);
-		if(lista != NULL)
-			delete lista;*/
-		//Libero espacio de ABB
-		LiberarMemoriaABB(abb);
-		printf("\nResultado = Hasta la proxima");
+	LiberarMemoriaABB(abb);
+	printf("\nResultado = Hasta la proxima");
 }

@@ -18,4 +18,8 @@ void InsBack(String s, ListaParam &l);
 
 void InsFront(String s, ListaParam &l);
 
+void LiberarLista(ListaParam &l);
+
+void SiguienteNodo(ListaParam &l);
+
 #endif // LISTAPARAMETROS_H_INCLUDED

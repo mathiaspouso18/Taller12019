@@ -13,5 +13,6 @@ void MostrarMensaje(TipoMensaje tipo){
         case NO_INGRESO_NOMBRE: printf("ERROR: No ingreso nombre");break;
         case NO_INGRESO_TERMINO: printf("ERROR: No ingreso termino/s");break;
         case PARAMETROS_INVALIDOS: printf("ERROR: Faltan Parametros");break;
+        case ABB_VACIO: printf("No hay polinomios en memoria");break;
     }
 }

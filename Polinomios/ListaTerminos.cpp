@@ -74,9 +74,17 @@ void BajarTerm(ListaTerm lista, String nomArch)
 		lista = lista->sig;
 	}
 
-    //Print(str);
 	Guardar_String(str,f);
 
 	fclose (f);
 }
 
+void LiberarLista(ListaTerm &l)
+{
+    if(l != NULL)
+    {
+        LiberarLista(l -> sig);
+        delete (l);
+        l = NULL;
+    }
+}
