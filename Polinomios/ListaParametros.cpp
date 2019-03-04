@@ -64,3 +64,19 @@ void Parsear(String s, ListaParam &l)
 	StrDestruir(s1);
 }
 
+void SiguienteNodo(ListaParam &l)
+{
+    ListaParam aux = l;
+    l = l -> sig;
+    delete aux;
+}
+
+void LiberarLista(ListaParam &l)
+{
+    if(l != NULL)
+    {
+        LiberarLista(l -> sig);
+        delete (l);
+        l = NULL;
+    }
+}

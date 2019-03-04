@@ -85,6 +85,7 @@ int EvaluarPoli(Polinomio p, int x)
 
 void MostrarPolinomio(Polinomio p)
 {
+    printf("\t- ");
     Print(p.nombre);
     printf(" = ");
     MostrarTerminos(p.Listaterminos);
