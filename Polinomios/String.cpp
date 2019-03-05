@@ -174,7 +174,7 @@ Boolean EsValidoNombreArchivo(String s){
 	s2[j] = '\0';
 	validonombre = EsValidoNombre(s1);
 	i = 0;
-		
+
 	while(((s2[i] != '\0') || (ext[i] != '\0')) & validoext)
 	{
 		if(s2[i] == ext[i])
@@ -301,4 +301,17 @@ void IntToString(String &s, int num)
     aux[i] = '\0';
     StrCop (s,aux);
     StrDestruir (aux);
+}
+
+Boolean ExisteArchivo(String s)
+{
+    FILE * f = fopen(s, "rb");
+    Boolean existe = FALSE;
+
+    if(f != NULL)
+    {
+        fclose(f);
+        existe = TRUE;
+    }
+    return existe;
 }

@@ -53,4 +53,6 @@ void Guardar_String (String s, FILE * f) ;
 void Levantar_String (String &s, String nomArch);
 
 void IntToString(String &s, int num);
+
+Boolean ExisteArchivo(String s);
 #endif // STRING_H_INCLUDED

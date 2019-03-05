@@ -44,25 +44,21 @@ int main()
                             else
                             {
                                 MostrarMensaje(NOMBRE_INVALIDO);
-                                printf("\n");
                             }
                         }
                         else
                         {
                             MostrarMensaje(YA_EXISTE);
-                            printf("\n");
                         }
                     }
                     else
                     {
                         MostrarMensaje(NO_INGRESO_NOMBRE);
-                        printf("\n");
                     }
                 }
                 else
                 {
                     MostrarMensaje(PARAMETROS_INVALIDOS);
-                    printf("\n");
                 }
             break;
             case SUMAR:
@@ -89,31 +85,26 @@ int main()
                                 else
                                 {
                                     MostrarMensaje(NO_EXISTE_POLINOMIO);
-                                    printf("\n");
                                 }
                             }
                             else
                             {
                                 MostrarMensaje(NO_EXISTE_POLINOMIO);
-                                printf("\n");
                             }
                          }
                         else
                         {
                             MostrarMensaje(NOMBRE_INVALIDO);
-                            printf("\n");
                         }
                     }
                     else
                     {
                         MostrarMensaje(YA_EXISTE);
-                        printf("\n");
                     }
                 }
                 else
                 {
                     MostrarMensaje(PARAMETROS_INVALIDOS);
-                    printf("\n");
                 }
             break;
             case MULTIPLICAR:
@@ -144,43 +135,36 @@ int main()
                                         else
                                         {
                                             MostrarMensaje(NO_EXISTE_POLINOMIO);
-                                            printf("\n");
                                         }
                                     }
                                     else
                                     {
                                         MostrarMensaje(NOMBRE_INVALIDO);
-                                        printf("\n");
                                     }
                                 }
                                 else
                                 {
                                     MostrarMensaje(NO_EXISTE_POLINOMIO);
-                                    printf("\n");
                                 }
                             }
                             else
                             {
                                 MostrarMensaje(NOMBRE_INVALIDO);
-                                printf("\n");
                             }
                         }
                         else
                         {
                             MostrarMensaje(YA_EXISTE);
-                            printf("\n");
                         }
                     }
                     else
                     {
                         MostrarMensaje(NOMBRE_INVALIDO);
-                        printf("\n");
                     }
                 }
                 else
                 {
                     MostrarMensaje(PARAMETROS_INVALIDOS);
-                    printf("\n");
                 }
             break;
             case EVALUAR:
@@ -197,24 +181,21 @@ int main()
                                 x = x * -1;
                             //Reutilizo x
                             x = EvaluarPoli(p, x);
-                            printf("Resultado = %d", x);
+                            printf("Resultado = %d\n", x);
                         }
                         else
                         {
                             MostrarMensaje(NUMERO_INVALIDO);
-                            printf("\n");
                         }
                     }
                     else
                     {
                         MostrarMensaje(NO_EXISTE_POLINOMIO);
-                        printf("\n");
                     }
                 }
                 else
                 {
                     MostrarMensaje(PARAMETROS_INVALIDOS);
-                    printf("\n");
                 }
                 break;
             case ES_RAIZ:
@@ -231,26 +212,23 @@ int main()
                                 z = z * -1;
                             x = EvaluarPoli(p, z);
                             if(x == 0)
-                                printf("%d es raiz del polinomio", z);
+                                printf("%d es raiz del polinomio\n", z);
                             else
-                                printf("%d NO es raiz del polinomio", z);
+                                printf("%d NO es raiz del polinomio\n", z);
                         }
                         else
                         {
                             MostrarMensaje(NUMERO_INVALIDO);
-                            printf("\n");
                         }
                     }
                     else
                     {
                         MostrarMensaje(NO_EXISTE_POLINOMIO);
-                        printf("\n");
                     }
                 }
                 else
                 {
                     MostrarMensaje(PARAMETROS_INVALIDOS);
-                    printf("\n");
                 }
                 break;
             case MOSTRAR:
@@ -259,7 +237,6 @@ int main()
                 else
                 {
                     MostrarMensaje(ABB_VACIO);
-                    printf("\n");
                 }
                 break;
             case GUARDAR:
@@ -279,13 +256,11 @@ int main()
                     else
                     {
                         MostrarMensaje(NO_EXISTE_POLINOMIO);
-                        printf("\n");
                     }
 				}
                 else
                 {
                     MostrarMensaje(PARAMETROS_INVALIDOS);
-                    printf("\n");
                 }
                 break;
             case RECUPERAR:
@@ -298,40 +273,45 @@ int main()
                         StrCrear(strArchivo);
                         StrCop(nombreNuevo,l->info);
                         SiguienteNodo(l);
-                        if (EsValidoNombre(l->info)){
-                            Levantar_String(strArchivo,l->info);
-                            ListaParam l2 = NULL;
-                            Parsear(strArchivo, l2);
-                            InsFront(nombreNuevo, l2);
-                            Crear(p, l2);
-                            InsPoliABBPoli(abb, p);
-                            MostrarPolinomio(p);
+                        if (EsValidoNombre(l->info))
+                        {
+                            if(ExisteArchivo(l->info))
+                            {
+                                Levantar_String(strArchivo,l->info);
+                                ListaParam l2;
+                                InicializarLista(l2);
+                                Parsear(strArchivo, l2);
+                                InsFront(nombreNuevo, l2);
+                                Crear(p, l2);
+                                InsPoliABBPoli(abb, p);
+                                MostrarPolinomio(p);
+                            }
+                            else
+                            {
+                                MostrarMensaje(NO_EXISTE_ARCHIVO);
+                            }
                         }
                         else
                         {
                             MostrarMensaje(NOMBRE_INVALIDO);
-                            printf("\n");
                         }
                     }
                     else
                     {
                         MostrarMensaje(YA_EXISTE);
-                        printf("\n");
                     }
                 }
                 else
                 {
                     MostrarMensaje(PARAMETROS_INVALIDOS);
-                    printf("\n");
                 }
                 break;
             default:
                 MostrarMensaje(COMANDO_INVALIDO);
-                printf("\n");
             break;
         }
 
-        LiberarLista(l);
+        InicializarLista(l);
         MostrarMensaje(INGRESO);
         Scan(s);
         Parsear(s, l);

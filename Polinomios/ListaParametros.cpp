@@ -38,8 +38,9 @@ void Parsear(String s, ListaParam &l)
 	while(s[i] == ' ')
         i++;
 
-	while(s[i] != '\0')
+	while(s[i + 1] != '\0')
     {
+
 		if(s[i] != ' ')
         {
 			s1[j] = s[i];
@@ -47,20 +48,20 @@ void Parsear(String s, ListaParam &l)
         }
 		else
 		{
-            s1[j] = '\0';
-            InsBack(s1,l);
-            //StrDestruir(s1);
-            while(s[i] == ' ')
-                i++;
-            j=0;
-            i--;
+                s1[j] = '\0';
+                InsBack(s1,l);
+                //StrDestruir(s1);
+                while(s[i] == ' ')
+                    i++;
+                j=0;
+                i--;
 		}
         i++;
 	}
 	s1[j] = s[i];
-    //s1[j+1] = '\0';
+    s1[j+1] = '\0';
 	InsBack(s1,l);
-	StrDestruir(s1);
+    StrDestruir(s1);
 }
 
 void SiguienteNodo(ListaParam &l)
