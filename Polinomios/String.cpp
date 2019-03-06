@@ -193,7 +193,7 @@ Boolean EsValidoNumero(String s)
 {
 	int i = 0;
 	Boolean es = TRUE;
-	while(s[i] != '\0' && es == OK)
+	while(s[i] != '\0' && es)
 	{
 		if(s[i]=='-')
 		{
