@@ -6,12 +6,13 @@ using namespace std;
 int main()
 {
     Arbol abb;
-    ListaParam l;
+    ListaParam l, aux;
     String s, cmd;
     Polinomio p, resu, a, b;
     EnumComandos ec;
     InicializarArbol(abb);
     InicializarLista(l);
+    InicializarLista(aux);
     int x, z;
 
     MostrarMensaje(BIENVENIDA);
@@ -37,9 +38,23 @@ int main()
                         {
                             if(EsValidoNombre(l->info))
                             {
-                                Crear(p, l);
-                                InsPoliABBPoli(abb, p);
-                                MostrarPolinomio(p);
+                            	aux = l->sig;
+				Boolean esValidoNum = TRUE;
+				while(aux != NULL && esValidoNum)
+				{
+					esValidoNum = EsValidoNumero(aux->info);
+					aux = aux->sig;
+				}
+				if(esValidoNum)
+				{
+					Crear(p, l);
+					InsPoliABBPoli(abb, p);
+					MostrarPolinomio(p);
+				}
+				else
+				{
+				MostrarMensaje(NUMERO_INVALIDO);
+				}
                             }
                             else
                             {
