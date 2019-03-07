@@ -71,17 +71,17 @@ void SiguienteNodo(ListaParam &l)
     delete aux;
 }
 
-void LiberarLista(ListaParam &l)
+void LiberarListaParam(ListaParam &l)
 {
     if(l != NULL)
     {
-        LiberarLista(l -> sig);
+        LiberarListaParam(l -> sig);
         delete (l);
         l = NULL;
     }
 }
 
-void InicializarLista(ListaParam &l)
+void InicializarListaParam(ListaParam &l)
 {
     l = NULL;
 }

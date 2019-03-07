@@ -11,7 +11,7 @@ void Crear(Polinomio &p, ListaParam lista)
     int base, cant_terminos = 0;
     Termino t;
     ListaTerm listaTerminos;
-    InicializarLista(listaTerminos);
+    InicializarListaTerm(listaTerminos);
 
     StrCop(p.nombre, lista->info);
     SiguienteNodo(lista);
@@ -36,7 +36,7 @@ void Crear(Polinomio &p, ListaParam lista)
 int EvaluarPoli(Polinomio p, int x)
 {
 	ListaTerm l;
-	InicializarLista(l);
+	InicializarListaTerm(l);
 	int base = 0, exponente = 0, resultado = 0, temp = 0, i = 0;
 	char signo;
 	DarListaTermPoli(p, l);
@@ -105,7 +105,7 @@ void SumarPoli(Polinomio a, Polinomio b, Polinomio &resu, String nombreNuevo)
     int base = 0, exponente = 0, base2 = 0, exponente2 = 0, baseNueva = 0;
     Boolean seguir = TRUE;
     ListaTerm lista1, lista2, listaNueva;
-    InicializarLista(listaNueva);
+    InicializarListaTerm(listaNueva);
     char signo, signo2, signoNuevo = '+';
     Termino term;
 
@@ -174,8 +174,8 @@ void SumarPoli(Polinomio a, Polinomio b, Polinomio &resu, String nombreNuevo)
 void MultiplicarPoli(Polinomio a, Polinomio b ,Polinomio &resu, String nombreNuevo){
 
     ListaTerm listaA, listaB, listTemp1, listTemp2;
-    InicializarLista(listTemp1);
-    InicializarLista(listTemp2);
+    InicializarListaTerm(listTemp1);
+    InicializarListaTerm(listTemp2);
 
     int baseA=0, exponenteA=0, baseB=0, exponenteB=0, exponenteResu=0, baseResu=0;
     char signoA,signoB,signoResu;

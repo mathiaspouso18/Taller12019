@@ -119,10 +119,16 @@ void MostrarABBPoli(Arbol abb)
 
 void LiberarMemoriaABB (Arbol &ABB)
 {
+    ListaTerm lterm;
+    InicializarListaTerm(lterm);
+
 	if (ABB != NULL)
 	{
 		LiberarMemoriaABB(ABB -> hizq);
 		LiberarMemoriaABB(ABB -> hder);
+		DarListaTermPoli(ABB -> info,lterm);
+		LiberarListaTerm(lterm);
 		delete (ABB);
+		delete lterm;
 	}
 }

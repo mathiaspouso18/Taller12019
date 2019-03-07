@@ -79,17 +79,17 @@ void BajarTerm(ListaTerm lista, String nomArch)
 	fclose (f);
 }
 
-void LiberarLista(ListaTerm &l)
+void LiberarListaTerm(ListaTerm &l)
 {
     if(l != NULL)
     {
-        LiberarLista(l -> sig);
+        LiberarListaTerm(l -> sig);
         delete (l);
         l = NULL;
     }
 }
 
-void InicializarLista(ListaTerm &l)
+void InicializarListaTerm(ListaTerm &l)
 {
     l = NULL;
 }

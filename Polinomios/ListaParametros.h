@@ -18,10 +18,10 @@ void InsBack(String s, ListaParam &l);
 
 void InsFront(String s, ListaParam &l);
 
-void LiberarLista(ListaParam &l);
+void LiberarListaParam(ListaParam &l);
 
 void SiguienteNodo(ListaParam &l);
 
-void InicializarLista(ListaParam &l);
+void InicializarListaParam(ListaParam &l);
 
 #endif // LISTAPARAMETROS_H_INCLUDED

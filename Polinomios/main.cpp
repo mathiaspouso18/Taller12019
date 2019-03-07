@@ -11,8 +11,8 @@ int main()
     Polinomio p, resu, a, b;
     EnumComandos ec;
     InicializarArbol(abb);
-    InicializarLista(l);
-    InicializarLista(aux);
+    InicializarListaParam(l);
+    InicializarListaParam(aux);
     int x, z;
 
     MostrarMensaje(BIENVENIDA);
@@ -294,7 +294,7 @@ int main()
                             {
                                 Levantar_String(strArchivo,l->info);
                                 ListaParam l2;
-                                InicializarLista(l2);
+                                InicializarListaParam(l2);
                                 Parsear(strArchivo, l2);
                                 InsFront(nombreNuevo, l2);
                                 Crear(p, l2);
@@ -326,7 +326,7 @@ int main()
             break;
         }
 
-        InicializarLista(l);
+        InicializarListaParam(l);
         MostrarMensaje(INGRESO);
         Scan(s);
         Parsear(s, l);
@@ -335,6 +335,9 @@ int main()
         ec = ValidarComando(cmd);
         SiguienteNodo(l);
     }
+    LiberarListaParam(l);
+    StrDestruir(s);
+    StrDestruir(cmd);
 	LiberarMemoriaABB(abb);
 	MostrarMensaje(CERRAR);
 }
