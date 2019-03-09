@@ -1,0 +1,185 @@
+Boolean.h
+
+	typedef enum{FALSE, TRUE} Boolean;
+	
+------------------------------------------------------------------------
+
+String.h
+
+#include "Boolean.h"
+#include "EnumMensajes.h"
+#include <stdio.h>
+
+	const int MAX = 80;
+	typedef char * String;
+
+	/* crea un string vacío */
+	void StrCrear (String &s);
+
+	/* libera la memoria usada por el string */
+	void StrDestruir (String &s);
+
+	/* devuelve el largo del string s */
+	int StrLar (String s);
+
+	/* copia el contenido del string s2 en s1 */
+	void StrCop (String &s1, String s2);
+
+	/* lee el string s desde teclado */
+	void Scan (String &s);
+
+	/* concatena el contenido de s2 al final de s1 */
+	void StrCon (String &s1, String s2);
+
+	/* intercambia los contenidos de s1 y s2 */
+	void StrSwp (String &s1, String &s2);
+
+	/* imprime el string s por pantalla */
+	void Print (String s);
+
+	/* compara dos strings */
+	Boolean StrEq(String s1, String s2);
+
+	/* Convierte un char a numero */
+	int ConvertirCharANumero(String s);
+
+	Boolean EsValidoNombre(String s);
+
+	Boolean EsValidoNumero(String s);
+
+	Boolean EsValidoNombreArchivo(String s);
+
+	Boolean EsMayor(String s1, String s2);
+
+	void LowerCase(String &s);
+
+	void Guardar_String (String s, FILE * f) ;
+
+	void Levantar_String (String &s, String nomArch);
+
+	void IntToString(String &s, int num);
+
+	Boolean ExisteArchivo(String s);
+	
+------------------------------------------------------------------------
+
+EnumComandos.h
+
+#include "String.h"
+
+	typedef enum{CREAR, SUMAR, MULTIPLICAR, EVALUAR, ES_RAIZ, MOSTRAR, GUARDAR, RECUPERAR, SALIR, NADA} EnumComandos;
+
+	EnumComandos ValidarComando(String s);
+	
+------------------------------------------------------------------------
+
+EnumMensajes.h
+
+	typedef enum {OK, NOMBRE_INVALIDO, NUMERO_INVALIDO, COMANDO_INVALIDO, YA_EXISTE, NO_EXISTE_POLINOMIO, NO_INGRESO_NOMBRE, NO_INGRESO_TERMINO,
+	PARAMETROS_INVALIDOS, ABB_VACIO, CERRAR, BIENVENIDA, INGRESO, GUARDADO, NO_EXISTE_ARCHIVO} TipoMensaje;
+
+	void MostrarMensaje(TipoMensaje tipo);
+	
+------------------------------------------------------------------------
+
+ListaParametros.h
+
+#include "EnumComandos.h"
+#include "String.h"
+
+
+	typedef struct nodo_string{String info;
+				   nodo_string * sig;
+					} NodoS;
+	typedef NodoS * ListaParam;
+
+	int CantParametros(ListaParam l);
+
+	void Parsear(String s, ListaParam &l);
+
+	void InsBack(String s, ListaParam &l);
+
+	void InsFront(String s, ListaParam &l);
+
+	void LiberarListaParam(ListaParam &l);
+
+	void SiguienteNodo(ListaParam &l);
+
+	void InicializarListaParam(ListaParam &l);
+
+------------------------------------------------------------------------
+
+ListaTerminos.h
+
+#include "Termino.h"
+
+	typedef struct nodo_termino{ Termino info;
+				   nodo_termino * sig;} Nodo;
+	typedef Nodo * ListaTerm;
+
+	int CantTerminos(ListaTerm lista);
+	void InsTermBack(ListaTerm &lista, Termino term);
+	void MostrarTerminos(ListaTerm l);
+	void BajarTerm(ListaTerm lista, String nomArch);
+	void LiberarListaTerm(ListaTerm &l);
+	void InicializarListaTerm(ListaTerm &l);
+	
+------------------------------------------------------------------------
+
+Polinomio.h
+
+#include "ListaTerminos.h"
+#include "ListaParametros.h"
+
+	typedef struct nodo_int{String nombre;
+							ListaTerm Listaterminos;} Polinomio;
+
+	void DarNombrePoli(Polinomio p, String &nom);
+	void DarListaTermPoli(Polinomio p, ListaTerm &lista);
+	void Crear(Polinomio &p, ListaParam lista);
+	void SumarPoli(Polinomio a, Polinomio b ,Polinomio &resu, String nombreNuevo);
+	void MultiplicarPoli(Polinomio a, Polinomio b ,Polinomio &resu, String nombreNuevo);
+	int EvaluarPoli(Polinomio p, int x);
+	void MostrarPolinomio(Polinomio p);
+
+------------------------------------------------------------------------
+
+AbbPolinomio.h
+
+#include "Polinomio.h"
+
+	typedef struct nodoN { Polinomio info;
+						   nodoN *hizq;
+						   nodoN *hder;} nodo;
+
+	typedef nodo *Arbol;
+
+	void InicializarArbol(Arbol &ABB);
+	Boolean EsVacio(Arbol ABB);
+	Polinomio DarRaiz(Arbol ABB);
+	Arbol HijoIzquierdo(Arbol ABB);
+	Arbol HijoDerecho(Arbol ABB);
+	void MostrarABBPoli(Arbol ABBPoli);
+	void InsPoliABBPoli(Arbol &ABBPoli, Polinomio p);
+	Boolean ExistePolinomio(Arbol ABBPoli, String nombre_poli);
+	Polinomio DarPolinomio (Arbol ABBPoli, String nombre_poli);
+	void LiberarMemoriaABB(Arbol &ABB);
+	
+------------------------------------------------------------------------
+
+Termino.h
+
+#include "String.h"
+
+	typedef struct { char signo;
+				 int base;
+				 int exponente;} Termino;
+
+
+	char DarSigno(Termino term);
+	int DarExponente(Termino term);
+	int DarBase(Termino term);
+	void CrearTermino(Termino &t, int base, int exp, char signo);
+	void ConvertirTerminoAString(Termino term, String &s);
+
+------------------------------------------------------------------------
