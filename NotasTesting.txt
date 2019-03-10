@@ -1,0 +1,7 @@
+Notas:
+
+-Si dejo un espacio al final al crear un polinomio me dice numero incorrecto cuando deberia saltar el parametros incorrectos?
+
+-No puedo ingresar un termino con mas de 10 digitos
+
+-Guardar el archivo con extension o sin extension?
