@@ -39,22 +39,22 @@ int main()
                             if(EsValidoNombre(l->info))
                             {
                             	aux = l->sig;
-				Boolean esValidoNum = TRUE;
-				while(aux != NULL && esValidoNum)
-				{
-					esValidoNum = EsValidoNumero(aux->info);
-					aux = aux->sig;
-				}
-				if(esValidoNum)
-				{
-					Crear(p, l);
-					InsPoliABBPoli(abb, p);
-					MostrarPolinomio(p);
-				}
-				else
-				{
-				MostrarMensaje(NUMERO_INVALIDO);
-				}
+                                Boolean esValidoNum = TRUE;
+                                while(aux != NULL && esValidoNum)
+                                {
+                                    esValidoNum = EsValidoNumero(aux->info);
+                                    aux = aux->sig;
+                                }
+                                if(esValidoNum)
+                                {
+                                    Crear(p, l);
+                                    InsPoliABBPoli(abb, p);
+                                    MostrarPolinomio(p);
+                                }
+                                else
+                                {
+                                MostrarMensaje(NUMERO_INVALIDO);
+                                }
                             }
                             else
                             {

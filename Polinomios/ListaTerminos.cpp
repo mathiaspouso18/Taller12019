@@ -65,7 +65,6 @@ void BajarTerm(ListaTerm lista, String nomArch)
 	FILE *f = fopen (nomArch, "wb");
 	String str;
 	StrCrear(str);
-	int i = 0,largo = 0;
 	while(lista != NULL)
 	{
 		ConvertirTerminoAString(lista->info,str);
@@ -92,4 +91,11 @@ void LiberarListaTerm(ListaTerm &l)
 void InicializarListaTerm(ListaTerm &l)
 {
     l = NULL;
+}
+
+void SiguienteNodo(ListaTerm &l)
+{
+    ListaTerm aux = l;
+    l = l -> sig;
+    delete aux;
 }

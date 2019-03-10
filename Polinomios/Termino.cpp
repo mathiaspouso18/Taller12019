@@ -32,3 +32,4 @@ void ConvertirTerminoAString(Termino term, String &s)
 	StrCon(s,sbase);
 
 }
+

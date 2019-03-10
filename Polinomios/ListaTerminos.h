@@ -13,4 +13,5 @@ void MostrarTerminos(ListaTerm l);
 void BajarTerm(ListaTerm lista, String nomArch);
 void LiberarListaTerm(ListaTerm &l);
 void InicializarListaTerm(ListaTerm &l);
+void SiguienteNodo(ListaTerm &l);
 #endif // LISTATERMINOS_H_INCLUDED
