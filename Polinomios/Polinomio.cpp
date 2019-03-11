@@ -263,12 +263,17 @@ void MultiplicarPoli(Polinomio a, Polinomio b ,Polinomio &resu, String nombreNue
         listaB = listaB->sig;
         listaA = a.Listaterminos;
     }
+    ReducirListaTerm(listTemp1);
+    ReducirListaTerm(listTemp2);
     temp1.Listaterminos = listTemp1;
     temp1.nombre = "temp1";
 
     temp2.Listaterminos = listTemp2;
     temp2.nombre = "temp2";
+    MostrarPolinomio(temp1);
+    MostrarPolinomio(temp2);
 
     SumarPoli(temp1,temp2,resu,nombreNuevo);
 }
+
 

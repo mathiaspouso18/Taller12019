@@ -99,3 +99,53 @@ void SiguienteNodo(ListaTerm &l)
     l = l -> sig;
     delete aux;
 }
+
+void ReducirListaTerm(ListaTerm &lista){
+    ListaTerm aux, l;
+
+    Termino term;
+    int exp1, exp2, base1,base2,base3;
+    char signo1, signo2,signo3;
+    InicializarListaTerm(aux);
+    l = lista;
+    while(l != NULL ){
+            exp1 = DarExponente(l->info);
+            base1 = DarBase(l->info);
+            signo1 = DarSigno(l->info);
+            if (signo1 == '-' )
+                base1 = base1 * -1;
+
+            if (l->sig != NULL){
+                aux = l->sig;
+                exp2 = DarExponente(aux->info);
+                base2 = DarBase(aux->info);
+                signo2 = DarSigno(aux->info);
+                if (signo2 == '-')
+                    base2 = base2 * -1;
+
+                if (exp1 == exp2){
+                    //Defino nuevo termino
+                    base3=base1+base2;
+                    if ( base3 < 0 ){
+                        signo3 = '-';
+                        base3 = base3 * -1;
+                    }
+                    else
+                        signo3 = '+';
+
+                    CrearTermino(term,base3,exp1,signo3);
+
+                    //Agrego el termino a la lista
+                    //******ESTA MAL ACA***//
+                    delete (l);
+                    l = new Nodo;
+                    l->info=term;
+                    l->sig = aux->sig;
+                    delete (aux);
+                }
+            }
+            l=l->sig;
+    }
+
+}
+
