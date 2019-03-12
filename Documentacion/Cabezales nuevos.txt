@@ -42,7 +42,19 @@ String.h
 
 	/* Convierte un char a numero */
 	int ConvertirCharANumero(String s);
+	
+	void LowerCase(String &s);
 
+	void Guardar_String (String s, FILE * f) ;
+
+	void Levantar_String (String &s, String nomArch);
+
+	void IntToString(String &s, int num);
+	
+	Boolean EsCaracterValido(char c)
+
+	Boolean ExisteArchivo(String s);
+	
 	Boolean EsValidoNombre(String s);
 
 	Boolean EsValidoNumero(String s);
@@ -51,16 +63,6 @@ String.h
 
 	Boolean EsMayor(String s1, String s2);
 
-	void LowerCase(String &s);
-
-	void Guardar_String (String s, FILE * f) ;
-
-	void Levantar_String (String &s, String nomArch);
-
-	void IntToString(String &s, int num);
-
-	Boolean ExisteArchivo(String s);
-	
 ------------------------------------------------------------------------
 
 EnumComandos.h
@@ -76,7 +78,7 @@ EnumComandos.h
 EnumMensajes.h
 
 	typedef enum {OK, NOMBRE_INVALIDO, NUMERO_INVALIDO, COMANDO_INVALIDO, YA_EXISTE, NO_EXISTE_POLINOMIO, NO_INGRESO_NOMBRE, NO_INGRESO_TERMINO,
-	PARAMETROS_INVALIDOS, ABB_VACIO, CERRAR, BIENVENIDA, INGRESO, GUARDADO, NO_EXISTE_ARCHIVO} TipoMensaje;
+	PARAMETROS_INVALIDOS, ABB_VACIO, CERRAR, BIENVENIDA, INGRESO, GUARDADO, NO_EXISTE_ARCHIVO, NOMBRE_ARCHIVO_INVALIDO} TipoMensaje;
 
 	void MostrarMensaje(TipoMensaje tipo);
 	
@@ -87,10 +89,9 @@ ListaParametros.h
 #include "EnumComandos.h"
 #include "String.h"
 
-
 	typedef struct nodo_string{String info;
-				   nodo_string * sig;
-					} NodoS;
+			   nodo_string * sig;
+				} NodoS;
 	typedef NodoS * ListaParam;
 
 	int CantParametros(ListaParam l);
@@ -114,15 +115,24 @@ ListaTerminos.h
 #include "Termino.h"
 
 	typedef struct nodo_termino{ Termino info;
-				   nodo_termino * sig;} Nodo;
+               nodo_termino * sig;} Nodo;
 	typedef Nodo * ListaTerm;
 
 	int CantTerminos(ListaTerm lista);
+
 	void InsTermBack(ListaTerm &lista, Termino term);
+
 	void MostrarTerminos(ListaTerm l);
+
 	void BajarTerm(ListaTerm lista, String nomArch);
+
 	void LiberarListaTerm(ListaTerm &l);
+
 	void InicializarListaTerm(ListaTerm &l);
+
+	void SiguienteNodo(ListaTerm &l);
+
+	void InsertarTerminoOrdenado(ListaTerm &l, Termino t);
 	
 ------------------------------------------------------------------------
 
@@ -132,14 +142,23 @@ Polinomio.h
 #include "ListaParametros.h"
 
 	typedef struct nodo_int{String nombre;
-							ListaTerm Listaterminos;} Polinomio;
+                        ListaTerm Listaterminos;} Polinomio;
 
 	void DarNombrePoli(Polinomio p, String &nom);
+
 	void DarListaTermPoli(Polinomio p, ListaTerm &lista);
+
 	void Crear(Polinomio &p, ListaParam lista);
+
+	//Precondicion: Los polinomios existen.
 	void SumarPoli(Polinomio a, Polinomio b ,Polinomio &resu, String nombreNuevo);
+
+	//Precondicion: Los polinomios existen.
 	void MultiplicarPoli(Polinomio a, Polinomio b ,Polinomio &resu, String nombreNuevo);
+
+	//Precondicion: El polinomio existe.
 	int EvaluarPoli(Polinomio p, int x);
+
 	void MostrarPolinomio(Polinomio p);
 
 ------------------------------------------------------------------------
@@ -149,20 +168,31 @@ AbbPolinomio.h
 #include "Polinomio.h"
 
 	typedef struct nodoN { Polinomio info;
-						   nodoN *hizq;
-						   nodoN *hder;} nodo;
+                       nodoN *hizq;
+                       nodoN *hder;} nodo;
 
 	typedef nodo *Arbol;
 
 	void InicializarArbol(Arbol &ABB);
+
 	Boolean EsVacio(Arbol ABB);
+
 	Polinomio DarRaiz(Arbol ABB);
+
 	Arbol HijoIzquierdo(Arbol ABB);
+
 	Arbol HijoDerecho(Arbol ABB);
+
+	//Precondicion: El arbol no esta vacio.
 	void MostrarABBPoli(Arbol ABBPoli);
+
 	void InsPoliABBPoli(Arbol &ABBPoli, Polinomio p);
+
 	Boolean ExistePolinomio(Arbol ABBPoli, String nombre_poli);
+
+	//Precondicion: El polinomio existe en el arbol.
 	Polinomio DarPolinomio (Arbol ABBPoli, String nombre_poli);
+
 	void LiberarMemoriaABB(Arbol &ABB);
 	
 ------------------------------------------------------------------------
@@ -172,14 +202,20 @@ Termino.h
 #include "String.h"
 
 	typedef struct { char signo;
-				 int base;
-				 int exponente;} Termino;
+			 int base;
+			 int exponente;} Termino;
 
 
 	char DarSigno(Termino term);
+
 	int DarExponente(Termino term);
+
 	int DarBase(Termino term);
+
 	void CrearTermino(Termino &t, int base, int exp, char signo);
+
 	void ConvertirTerminoAString(Termino term, String &s);
+
+	void ModificarTerminoEnLista(Termino &term, int base, int exp, char signo);
 
 ------------------------------------------------------------------------

@@ -38,10 +38,7 @@ void Parsear(String s, ListaParam &l)
 
     while(s[i] != '\0')
     {
-        if((s[i] >= 'a' && s[i] <= 'z') ||
-           (s[i] >= 'A' && s[i] <= 'Z') ||
-           (s[i] >= '0' && s[i] <= '9') ||
-           s[i] == '-')
+        if(EsCaracterValido(s[i]) || s[i] == '-')
         {
             s1[j] = s[i];
             j++;

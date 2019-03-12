@@ -135,7 +135,7 @@ Boolean EsValidoNombre(String s)
 	Boolean es = TRUE;
 	while(s[i] != '\0' && es)
 	{
-		if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i]<= 'Z') || (s[i]>= '0' && s[i] <= '9'))
+		if (EsCaracterValido(s[i]))
 			es = TRUE;
 		else
             es = FALSE;
@@ -313,4 +313,18 @@ Boolean ExisteArchivo(String s)
         existe = TRUE;
     }
     return existe;
+}
+
+Boolean EsCaracterValido(char c)
+{
+    Boolean es = FALSE;
+
+    if((c >= 'a' && c <= 'z') ||
+        (c >= 'A' && c <= 'Z') ||
+        (c >= '0' && c <= '9'))
+            es = TRUE;
+    else
+        es = FALSE;
+
+    return es;
 }
