@@ -154,7 +154,7 @@ void SumarPoli(Polinomio a, Polinomio b, Polinomio &resu, String nombreNuevo)
                 CrearTermino(term, baseNueva, exponente, signoNuevo);
                 signoNuevo = '+';
                 InsTermBack(listaNueva, term);
-                SiguienteNodo(lista2);
+                lista2 = lista2->sig;
             }
             else
             {
@@ -162,10 +162,9 @@ void SumarPoli(Polinomio a, Polinomio b, Polinomio &resu, String nombreNuevo)
                 seguir = FALSE;
             }
         }
-        if(lista1 == NULL && seguir)
+        if(lista2 == NULL && seguir)
             InsTermBack(listaNueva, lista1->info);
-
-        SiguienteNodo(lista1);
+        lista1 = lista1->sig;
     }
 
     resu.Listaterminos = listaNueva;
