@@ -330,7 +330,7 @@ int main()
                         }
                         else
                         {
-                            MostrarMensaje(NOMBRE_INVALIDO);
+                            MostrarMensaje(NOMBRE_ARCHIVO_INVALIDO);
                         }
                     }
                     else

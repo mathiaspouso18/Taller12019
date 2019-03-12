@@ -38,7 +38,7 @@ void Parsear(String s, ListaParam &l)
 
     while(s[i] != '\0')
     {
-        if(EsCaracterValido(s[i]))
+        if(s[i] != ' ')
         {
             s1[j] = s[i];
             j++;

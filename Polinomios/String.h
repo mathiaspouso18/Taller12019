@@ -18,8 +18,6 @@ Boolean EsValidoNombre(String s);
 
 Boolean EsValidoNumero(String s);
 
-Boolean EsValidoNombreArchivo(String s);
-
 Boolean EsMayor(String s1, String s2);
 
 Boolean ExisteArchivo(String s);
