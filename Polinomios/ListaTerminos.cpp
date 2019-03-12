@@ -135,7 +135,7 @@ void InsertarTerminoOrdenado(ListaTerm &l, Termino t)
             int baseNueva = baseA + baseB;
             if(baseNueva < 0)
             {
-                baseNueva * -1;
+                baseNueva = baseNueva * -1;
                 signoNuevo = '-';
             }
             else
