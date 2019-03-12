@@ -34,34 +34,35 @@ void Parsear(String s, ListaParam &l)
 {
 	int i = 0, j = 0;
     String s1 = new char[MAX];
+    Boolean anteriorLetra = FALSE;
 
-	while(s[i] == ' ')
-        i++;
-
-	while(s[i + 1] != '\0')
+    while(s[i] != '\0')
     {
-
-		if(s[i] != ' ')
+        if((s[i] >= 'a' && s[i] <= 'z') ||
+           (s[i] >= 'A' && s[i] <= 'Z') ||
+           (s[i] >= '0' && s[i] <= '9') ||
+           s[i] == '-')
         {
-			s1[j] = s[i];
+            s1[j] = s[i];
             j++;
+            anteriorLetra = TRUE;
         }
-		else
-		{
+        else
+        {
+            if(anteriorLetra)
+            {
                 s1[j] = '\0';
                 InsBack(s1,l);
-                //StrDestruir(s1);
-                while(s[i] == ' ')
-                    i++;
                 j=0;
-                i--;
-		}
+            }
+            anteriorLetra = FALSE;
+        }
         i++;
-	}
-	s1[j] = s[i];
+    }
+
+    s1[j] = s[i];
     s1[j+1] = '\0';
-	InsBack(s1,l);
-    StrDestruir(s1);
+    InsBack(s1,l);
 }
 
 void SiguienteNodo(ListaParam &l)
