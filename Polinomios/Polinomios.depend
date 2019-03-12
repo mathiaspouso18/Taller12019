@@ -130,64 +130,64 @@
 
 1552424119 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enummensajes.h
 
-1552261344 source:e:\lic.informatica\taller12019\polinomios\abbpolinomio.cpp
+1552341994 source:e:\lic.informatica\taller12019\polinomios\abbpolinomio.cpp
 	"ABBPolinomio.h"
 
-1552261344 e:\lic.informatica\taller12019\polinomios\abbpolinomio.h
+1552418609 e:\lic.informatica\taller12019\polinomios\abbpolinomio.h
 	"Polinomio.h"
 
-1552268101 e:\lic.informatica\taller12019\polinomios\polinomio.h
+1552418609 e:\lic.informatica\taller12019\polinomios\polinomio.h
 	"ListaTerminos.h"
 	"ListaParametros.h"
 
-1552269572 e:\lic.informatica\taller12019\polinomios\listaterminos.h
+1552418609 e:\lic.informatica\taller12019\polinomios\listaterminos.h
 	"Termino.h"
 
-1552261344 e:\lic.informatica\taller12019\polinomios\termino.h
+1552418609 e:\lic.informatica\taller12019\polinomios\termino.h
 	"String.h"
 
-1552261344 e:\lic.informatica\taller12019\polinomios\string.h
+1552424934 e:\lic.informatica\taller12019\polinomios\string.h
 	"Boolean.h"
 	"EnumMensajes.h"
 	<stdio.h>
 
-1552261344 e:\lic.informatica\taller12019\polinomios\boolean.h
+1552341994 e:\lic.informatica\taller12019\polinomios\boolean.h
 
-1552261344 e:\lic.informatica\taller12019\polinomios\enummensajes.h
+1552426929 e:\lic.informatica\taller12019\polinomios\enummensajes.h
 
-1552261344 e:\lic.informatica\taller12019\polinomios\listaparametros.h
+1552341994 e:\lic.informatica\taller12019\polinomios\listaparametros.h
 	"EnumComandos.h"
 	"String.h"
 
-1552261344 source:e:\lic.informatica\taller12019\polinomios\enumcomandos.cpp
+1552341994 source:e:\lic.informatica\taller12019\polinomios\enumcomandos.cpp
 	"EnumComandos.h"
 
-1552261344 e:\lic.informatica\taller12019\polinomios\enumcomandos.h
+1552341994 e:\lic.informatica\taller12019\polinomios\enumcomandos.h
 	"String.h"
 
-1552261344 source:e:\lic.informatica\taller12019\polinomios\listaparametros.cpp
+1552424934 source:e:\lic.informatica\taller12019\polinomios\listaparametros.cpp
 	"ListaParametros.h"
 
-1552271244 source:e:\lic.informatica\taller12019\polinomios\listaterminos.cpp
+1552418609 source:e:\lic.informatica\taller12019\polinomios\listaterminos.cpp
 	"ListaTerminos.h"
 
-1552261344 source:e:\lic.informatica\taller12019\polinomios\main.cpp
+1552427495 source:e:\lic.informatica\taller12019\polinomios\main.cpp
 	<iostream>
 	"ABBPolinomio.h"
 
-1552269640 source:e:\lic.informatica\taller12019\polinomios\polinomio.cpp
+1552418609 source:e:\lic.informatica\taller12019\polinomios\polinomio.cpp
 	"Polinomio.h"
 
-1552261344 source:e:\lic.informatica\taller12019\polinomios\string.cpp
+1552424934 source:e:\lic.informatica\taller12019\polinomios\string.cpp
 	"String.h"
 
-1552261344 source:e:\lic.informatica\taller12019\polinomios\termino.cpp
+1552418609 source:e:\lic.informatica\taller12019\polinomios\termino.cpp
 	"Termino.h"
 
-1552261344 source:e:\lic.informatica\taller12019\polinomios\boolean.cpp
+1552341994 source:e:\lic.informatica\taller12019\polinomios\boolean.cpp
 	"Boolean.h"
 
-1552261344 source:e:\lic.informatica\taller12019\polinomios\enummensajes.cpp
+1552427103 source:e:\lic.informatica\taller12019\polinomios\enummensajes.cpp
 	"EnumMensajes.h"
 	<stdio.h>
 	"Windows.h"

@@ -27,6 +27,8 @@ void MostrarMensaje(TipoMensaje tipo){
         case INGRESO: SetConsoleTextAttribute(hConsoleHandle, OriginalColors); printf("\nIngrese comando: ");break;
         case GUARDADO: SetConsoleTextAttribute(hConsoleHandle, FOREGROUND_GREEN); printf("polinomio almacenado correctamente en ");break;
         case NOMBRE_ARCHIVO_INVALIDO:printf("ERROR: Nombre de archivo invalido, ingrese un nombre alfanumerico sin extension\n");break;
+        case NO_GUARDADO: printf("Polinomio no guardado\n");break;
+        case OPCION_INCORRECTA: printf("ERROR: Opcion incorrecta\n");
     }
 
     SetConsoleTextAttribute(hConsoleHandle, OriginalColors);

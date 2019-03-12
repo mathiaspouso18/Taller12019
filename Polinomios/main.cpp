@@ -268,13 +268,26 @@ int main()
 							{
 								printf("\nEl archivo ya existe, desea sobre-escribirlo?(S/N): ");
 								Scan(s);
-								if(s[0] == 'S')
-								{
-									BajarTerm(lista,l->info);
-									MostrarMensaje(GUARDADO);
-									Print(l->info);
-									printf("\n");
+								if (StrLar(s) == 1 ){
+                                        switch (s[0]){
+                                            case 's':
+                                            case 'S':
+                                                    BajarTerm(lista,l->info);
+                                                    MostrarMensaje(GUARDADO);
+                                                    Print(l->info);
+                                                    printf("\n");
+                                                    break;
+                                            case 'n':
+                                            case 'N':
+                                                    MostrarMensaje(NO_GUARDADO);
+                                                    break;
+                                            default:
+                                                    MostrarMensaje(OPCION_INCORRECTA);
+
+                                        }
 								}
+								else
+                                    MostrarMensaje(OPCION_INCORRECTA);
 							}
 							else
 							{
