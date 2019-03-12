@@ -174,106 +174,52 @@ void SumarPoli(Polinomio a, Polinomio b, Polinomio &resu, String nombreNuevo)
 
 void MultiplicarPoli(Polinomio a, Polinomio b ,Polinomio &resu, String nombreNuevo){
 
-    ListaTerm listaA, listaB, listTemp1, listTemp2;
+    ListaTerm listaA, listaB, listTemp1, listTemp2, aux;
     InicializarListaTerm(listTemp1);
     InicializarListaTerm(listTemp2);
+    InicializarListaTerm(aux);
 
     int baseA=0, exponenteA=0, baseB=0, exponenteB=0, exponenteResu=0, baseResu=0;
     char signoA,signoB,signoResu;
+    Boolean encontre = FALSE;
     Termino term;
-    Polinomio temp1,temp2;
 
     listaA = a.Listaterminos;
     listaB = b.Listaterminos;
 
-    //Primer Recorrido
+    //Multiplico todo con todo
     while(listaA != NULL)
     {
+        signoA = DarSigno(listaA->info);
         baseA = DarBase(listaA->info);
-        if(baseA != 0)
+        exponenteA = DarExponente(listaA->info);
+        while(listaB != NULL)
         {
-            signoA = DarSigno(listaA->info);
-            exponenteA = DarExponente(listaA->info);
-            while(listaB != NULL)
+            signoB = DarSigno(listaB->info);
+            baseB = DarBase(listaB->info);
+            exponenteB = DarExponente(listaB->info);
+
+            if (baseB != 0 && baseA != 0)
             {
-                baseB = DarBase(listaB->info);
-                if(baseB != 0)
-                {
-                    signoB = DarSigno(listaB->info);
-                    exponenteB = DarExponente(listaB->info);
+                exponenteResu = exponenteA + exponenteB;
+                baseResu = baseA * baseB;
+                if (signoA == signoB)
+                    signoResu = '+';
+                else
+                    signoResu='-';
 
-                    if (exponenteA >= exponenteB)
-                    {
-                        exponenteResu = exponenteA + exponenteB;
-                        baseResu = baseA * baseB;
-                        if (signoA == signoB)
-                            signoResu = '+';
-                        else
-                            signoResu='-';
-
-                        CrearTermino(term,baseResu,exponenteResu,signoResu);
-                        InsTermBack(listTemp1,term);
-                    }
-                }
-                listaB = listaB->sig;
+                CrearTermino(term,baseResu,exponenteResu,signoResu);
+                InsertarTerminoOrdenado(listTemp1, term);
             }
+
+            listaB = listaB->sig;
         }
         listaA=listaA->sig;
         listaB = b.Listaterminos;
     }
 
-    //Segundo Recorrido por si el 2do polinomio es de mayor grado
-    listaA = a.Listaterminos;
-    listaB = b.Listaterminos;
-    while(listaB != NULL)
-    {
-        baseB = DarBase(listaB->info);
-        if(baseB != 0)
-        {
-            signoB = DarSigno(listaB->info);
-            exponenteB = DarExponente(listaB->info);
-            while(listaA != NULL)
-            {
-                baseA = DarBase(listaA->info);
-                if(baseA != 0)
-                {
-                    signoA = DarSigno(listaA->info);
-                    exponenteA = DarExponente(listaA->info);
-
-                    if (exponenteB > exponenteA)
-                    {
-                        if (baseA != 0 && baseB != 0)
-                        {
-                            exponenteResu = exponenteA + exponenteB;
-                            baseResu = baseA * baseB;
-                            if (signoA == signoB)
-                                signoResu = '+';
-                            else
-                                signoResu='-';
-
-                            CrearTermino(term,baseResu,exponenteResu,signoResu);
-                            InsTermBack(listTemp2,term);
-                        }
-                    }
-                }
-                listaA = listaA->sig;
-            }
-        }
-
-        listaB = listaB->sig;
-        listaA = a.Listaterminos;
-    }
-    ReducirListaTerm(listTemp1);
-    ReducirListaTerm(listTemp2);
-    temp1.Listaterminos = listTemp1;
-    temp1.nombre = "temp1";
-
-    temp2.Listaterminos = listTemp2;
-    temp2.nombre = "temp2";
-    MostrarPolinomio(temp1);
-    MostrarPolinomio(temp2);
-
-    SumarPoli(temp1,temp2,resu,nombreNuevo);
+    resu.Listaterminos = listTemp1;
+    StrCop(resu.nombre, nombreNuevo);
 }
 
 

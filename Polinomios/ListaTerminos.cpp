@@ -100,52 +100,58 @@ void SiguienteNodo(ListaTerm &l)
     delete aux;
 }
 
-void ReducirListaTerm(ListaTerm &lista){
-    ListaTerm aux, l;
+void InsertarTerminoOrdenado(ListaTerm &l, Termino t)
+{
+    ListaTerm n;
+    ListaTerm newNodo;
+    Termino Ter;
+    int baseA = 0, baseB = 0;
+    char signoNuevo;
 
-    Termino term;
-    int exp1, exp2, base1,base2,base3;
-    char signo1, signo2,signo3;
-    InicializarListaTerm(aux);
-    l = lista;
-    while(l != NULL ){
-            exp1 = DarExponente(l->info);
-            base1 = DarBase(l->info);
-            signo1 = DarSigno(l->info);
-            if (signo1 == '-' )
-                base1 = base1 * -1;
-
-            if (l->sig != NULL){
-                aux = l->sig;
-                exp2 = DarExponente(aux->info);
-                base2 = DarBase(aux->info);
-                signo2 = DarSigno(aux->info);
-                if (signo2 == '-')
-                    base2 = base2 * -1;
-
-                if (exp1 == exp2){
-                    //Defino nuevo termino
-                    base3=base1+base2;
-                    if ( base3 < 0 ){
-                        signo3 = '-';
-                        base3 = base3 * -1;
-                    }
-                    else
-                        signo3 = '+';
-
-                    CrearTermino(term,base3,exp1,signo3);
-
-                    //Agrego el termino a la lista
-                    //******ESTA MAL ACA***//
-                    delete (l);
-                    l = new Nodo;
-                    l->info=term;
-                    l->sig = aux->sig;
-                    delete (aux);
-                }
-            }
-            l=l->sig;
+    //Si no hay terminos, o el que esta en la lista es mas chico, lo inserto primero...
+    if (l == NULL || DarExponente(l->info) < DarExponente(t))
+    {
+        newNodo = new Nodo;
+        newNodo->info = t;
+        newNodo->sig = l;
+        l = newNodo;
     }
+    else
+    {
+        n = l;
 
+        while (n->sig != NULL && DarExponente(n->sig->info) >= DarExponente(t))
+            n = n->sig;
+
+        if(n != NULL && DarExponente(n->info) == DarExponente(t))
+        {
+            baseA = DarBase(n->info);
+            baseB = DarBase(t);
+            if(DarSigno(n->info) == '-')
+                baseA = baseA * -1;
+            if(DarSigno(t) == '-')
+                baseB = baseB * -1;
+
+            int baseNueva = baseA + baseB;
+            if(baseNueva < 0)
+            {
+                baseNueva * -1;
+                signoNuevo = '-';
+            }
+            else
+            {
+                signoNuevo = '+';
+            }
+
+            ModificarTerminoEnLista(n->info, baseNueva, DarExponente(t), signoNuevo);
+        }
+        else
+        {
+            newNodo = new Nodo;
+            newNodo->info = t;
+            newNodo->sig = n->sig;
+            n->sig = newNodo;
+        }
+    }
 }
 

@@ -15,5 +15,5 @@ void BajarTerm(ListaTerm lista, String nomArch);
 void LiberarListaTerm(ListaTerm &l);
 void InicializarListaTerm(ListaTerm &l);
 void SiguienteNodo(ListaTerm &l);
-void ReducirListaTerm(ListaTerm &l);
+void InsertarTerminoOrdenado(ListaTerm &l, Termino t);
 #endif // LISTATERMINOS_H_INCLUDED

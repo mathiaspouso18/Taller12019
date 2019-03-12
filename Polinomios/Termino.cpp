@@ -33,3 +33,11 @@ void ConvertirTerminoAString(Termino term, String &s)
 
 }
 
+
+void ModificarTerminoEnLista(Termino &term, int base, int exp, char signo)
+{
+    term.base = base;
+    term.exponente = exp;
+    term.signo = signo;
+}
+

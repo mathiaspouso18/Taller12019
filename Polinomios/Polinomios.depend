@@ -64,58 +64,59 @@
 1551729652 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\enumcomandos.h
 	"String.h"
 
-1550618238 source:c:\users\majo\documents\taller1\polinomios\abbpolinomio.cpp
+1552241549 source:c:\users\majo\documents\taller1\polinomios\abbpolinomio.cpp
 	"ABBPolinomio.h"
 
-1550617522 c:\users\majo\documents\taller1\polinomios\abbpolinomio.h
+1552241549 c:\users\majo\documents\taller1\polinomios\abbpolinomio.h
 	"Polinomio.h"
 
-1550617522 c:\users\majo\documents\taller1\polinomios\polinomio.h
+1552241549 c:\users\majo\documents\taller1\polinomios\polinomio.h
 	"ListaTerminos.h"
 	"ListaParametros.h"
 
-1550617522 c:\users\majo\documents\taller1\polinomios\listaterminos.h
+1552353442 c:\users\majo\documents\taller1\polinomios\listaterminos.h
 	"Termino.h"
 
-1550617522 c:\users\majo\documents\taller1\polinomios\termino.h
+1552362097 c:\users\majo\documents\taller1\polinomios\termino.h
 	"String.h"
 
-1550618228 c:\users\majo\documents\taller1\polinomios\string.h
+1552241550 c:\users\majo\documents\taller1\polinomios\string.h
 	"Boolean.h"
+	"EnumMensajes.h"
 	<stdio.h>
 
-1550617522 c:\users\majo\documents\taller1\polinomios\boolean.h
+1552241549 c:\users\majo\documents\taller1\polinomios\boolean.h
 
-1550623437 c:\users\majo\documents\taller1\polinomios\listaparametros.h
+1552241549 c:\users\majo\documents\taller1\polinomios\listaparametros.h
+	"EnumComandos.h"
 	"String.h"
 
-1550617522 source:c:\users\majo\documents\taller1\polinomios\boolean.cpp
+1552241549 source:c:\users\majo\documents\taller1\polinomios\boolean.cpp
 	"Boolean.h"
-	"stdafx.h"
 
-1550618241 source:c:\users\majo\documents\taller1\polinomios\enumcomandos.cpp
+1552241549 source:c:\users\majo\documents\taller1\polinomios\enumcomandos.cpp
 	"EnumComandos.h"
 
-1550617522 c:\users\majo\documents\taller1\polinomios\enumcomandos.h
+1552241549 c:\users\majo\documents\taller1\polinomios\enumcomandos.h
 	"String.h"
 
-1550624544 source:c:\users\majo\documents\taller1\polinomios\listaparametros.cpp
+1552241549 source:c:\users\majo\documents\taller1\polinomios\listaparametros.cpp
 	"ListaParametros.h"
 
-1550618247 source:c:\users\majo\documents\taller1\polinomios\listaterminos.cpp
+1552362233 source:c:\users\majo\documents\taller1\polinomios\listaterminos.cpp
 	"ListaTerminos.h"
 
-1550623471 source:c:\users\majo\documents\taller1\polinomios\main.cpp
+1552241550 source:c:\users\majo\documents\taller1\polinomios\main.cpp
 	<iostream>
 	"ABBPolinomio.h"
 
-1550618383 source:c:\users\majo\documents\taller1\polinomios\polinomio.cpp
+1552362020 source:c:\users\majo\documents\taller1\polinomios\polinomio.cpp
 	"Polinomio.h"
 
-1550618255 source:c:\users\majo\documents\taller1\polinomios\string.cpp
+1552241550 source:c:\users\majo\documents\taller1\polinomios\string.cpp
 	"String.h"
 
-1550618258 source:c:\users\majo\documents\taller1\polinomios\termino.cpp
+1552362132 source:c:\users\majo\documents\taller1\polinomios\termino.cpp
 	"Termino.h"
 
 1551731384 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\listaparametros.h
@@ -296,6 +297,13 @@
 	"Termino.h"
 
 1551802049 source:f:\codeblocks projects\taller 1 2019\polinomios\enummensajes.cpp
+	"EnumMensajes.h"
+	<stdio.h>
+	"Windows.h"
+
+1552241549 c:\users\majo\documents\taller1\polinomios\enummensajes.h
+
+1552241549 source:c:\users\majo\documents\taller1\polinomios\enummensajes.cpp
 	"EnumMensajes.h"
 	<stdio.h>
 	"Windows.h"
