@@ -104,7 +104,6 @@ void InsertarTerminoOrdenado(ListaTerm &l, Termino t)
 {
     ListaTerm n;
     ListaTerm newNodo;
-    Termino Ter;
     int baseA = 0, baseB = 0;
     char signoNuevo;
 

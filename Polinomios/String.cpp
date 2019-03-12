@@ -294,7 +294,6 @@ void IntToString(String &s, int num)
     for(i=0;i<cant;i++){
         c =((num%x)/y)+48;
         aux[i]=c;
-        //printf("%c",c);
         x=x/10;
         y=y/10;
     }

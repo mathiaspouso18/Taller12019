@@ -8,12 +8,19 @@ typedef struct nodo_termino{ Termino info;
 typedef Nodo * ListaTerm;
 
 int CantTerminos(ListaTerm lista);
+
 void InsTermBack(ListaTerm &lista, Termino term);
 
 void MostrarTerminos(ListaTerm l);
+
 void BajarTerm(ListaTerm lista, String nomArch);
+
 void LiberarListaTerm(ListaTerm &l);
+
 void InicializarListaTerm(ListaTerm &l);
+
 void SiguienteNodo(ListaTerm &l);
+
 void InsertarTerminoOrdenado(ListaTerm &l, Termino t);
+
 #endif // LISTATERMINOS_H_INCLUDED

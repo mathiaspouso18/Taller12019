@@ -21,16 +21,15 @@ void CrearTermino(Termino &t, int base, int exp, char signo)
 
 void ConvertirTerminoAString(Termino term, String &s)
 {
-	char signo = DarSigno(term);
-	int base = DarBase(term), i = 0;
+	char signo = term.signo;
+	int base = term.base;
 	String sbase;
 
 
-    if (signo == '-' )
-        StrCon(s,"-");
+    if (signo == '-')
+        StrCon(s, "-");
 	IntToString(sbase,base);
 	StrCon(s,sbase);
-
 }
 
 

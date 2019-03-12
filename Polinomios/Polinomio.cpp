@@ -180,7 +180,6 @@ void MultiplicarPoli(Polinomio a, Polinomio b ,Polinomio &resu, String nombreNue
 
     int baseA=0, exponenteA=0, baseB=0, exponenteB=0, exponenteResu=0, baseResu=0;
     char signoA,signoB,signoResu;
-    Boolean encontre = FALSE;
     Termino term;
 
     listaA = a.Listaterminos;

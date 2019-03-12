@@ -250,9 +250,7 @@ int main()
                 if(abb != NULL)
                     MostrarABBPoli(abb);
                 else
-                {
                     MostrarMensaje(ABB_VACIO);
-                }
                 break;
             case GUARDAR:
 				if(CantParametros(l) == 2)
@@ -263,10 +261,33 @@ int main()
                         SiguienteNodo(l);
                         ListaTerm lista;
 						DarListaTermPoli(p,lista);
-						BajarTerm(lista,l->info);
-						MostrarMensaje(GUARDADO);
-						Print(l->info);
-						printf("\n");
+						if(EsValidoNombre(l->info))
+						{
+							StrCon(l->info,".txt");
+							if(ExisteArchivo(l->info))
+							{
+								printf("\nEl archivo ya existe, desea sobre-escribirlo?(S/N): ");
+								Scan(s);
+								if(s[0] == 'S')
+								{
+									BajarTerm(lista,l->info);
+									MostrarMensaje(GUARDADO);
+									Print(l->info);
+									printf("\n");
+								}
+							}
+							else
+							{
+									BajarTerm(lista,l->info);
+									MostrarMensaje(GUARDADO);
+									Print(l->info);
+									printf("\n");
+							}
+						}
+						else
+						{
+							MostrarMensaje(NOMBRE_ARCHIVO_INVALIDO);
+						}
 					}
                     else
                     {
@@ -290,6 +311,7 @@ int main()
                         SiguienteNodo(l);
                         if (EsValidoNombre(l->info))
                         {
+							StrCon(l->info,".txt");
                             if(ExisteArchivo(l->info))
                             {
                                 Levantar_String(strArchivo,l->info);
