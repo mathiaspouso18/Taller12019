@@ -46,13 +46,16 @@ void Parsear(String s, ListaParam &l)
         }
         else
         {
-            if(anteriorLetra)
+            if(s[i] == ' ')
             {
-                s1[j] = '\0';
-                InsBack(s1,l);
-                j=0;
+                if(anteriorLetra)
+                {
+                    s1[j] = '\0';
+                    InsBack(s1,l);
+                    j=0;
+                }
+                anteriorLetra = FALSE;
             }
-            anteriorLetra = FALSE;
         }
         i++;
     }

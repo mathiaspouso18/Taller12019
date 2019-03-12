@@ -319,9 +319,8 @@ Boolean EsCaracterValido(char c)
 {
     Boolean es = FALSE;
 
-    if((c >= 'a' && c <= 'z') ||
-        (c >= 'A' && c <= 'Z') ||
-        (c >= '0' && c <= '9'))
+    //Comparo contra la tabla ASCII para que acepte todo los valores entrantes, distinto a Espacio (32)
+    if(c >= 33 && c <= 126)
             es = TRUE;
     else
         es = FALSE;
