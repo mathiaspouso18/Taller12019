@@ -135,7 +135,9 @@ Boolean EsValidoNombre(String s)
 	Boolean es = TRUE;
 	while(s[i] != '\0' && es)
 	{
-		if (EsCaracterValido(s[i]))
+		if ((s[i] >= '0' && s[i] <= '9') ||
+            (s[i] >= 'a' && s[i] <= 'z') ||
+            (s[i] >= 'Z' && s[i] <= 'Z'))
 			es = TRUE;
 		else
             es = FALSE;
