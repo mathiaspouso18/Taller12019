@@ -195,7 +195,7 @@ Boolean EsValidoNumero(String s)
 	Boolean es = TRUE;
 	while(s[i] != '\0' && es)
 	{
-		if(s[i]=='-')
+		if(s[i]=='-' && i==0)
 		{
 			if(s[i+1] >= '0' && s[i+1] <= '9')
 				es = TRUE;
@@ -204,7 +204,7 @@ Boolean EsValidoNumero(String s)
 		}
 		else
         {
-			if(s[i] >= '0' && s[i] <= '9')
+			if((s[i] >= '0' && s[i] <= '9'))
 				es = TRUE;
 			else
 				es = FALSE;
