@@ -32,38 +32,26 @@ void InsBack(String s, ListaParam &l)
 
 void Parsear(String s, ListaParam &l)
 {
-	int i = 0, j = 0;
+    int i = 0, j = 0;
     String s1 = new char[MAX];
-    Boolean anteriorLetra = FALSE;
+	while(s[i] != '\0'){
 
-    while(s[i] != '\0')
-    {
-        if(s[i] != ' ')
-        {
+        while( s[i] == ' ' && s[i] != '\0' )
+            i++;
+
+        while (s[i] != ' ' && s[i] != '\0'){
             s1[j] = s[i];
             j++;
-            anteriorLetra = TRUE;
+            i++;
         }
-        else
-        {
-            if(s[i] == ' ')
-            {
-                if(anteriorLetra)
-                {
-                    s1[j] = '\0';
-                    InsBack(s1,l);
-                    j=0;
-                }
-                anteriorLetra = FALSE;
-            }
+        if (s[i-1] != ' '){
+            s1[j] = '\0';
+            InsBack(s1,l);
+            j=0;
         }
-        i++;
     }
-
-    s1[j] = s[i];
-    s1[j+1] = '\0';
-    InsBack(s1,l);
 }
+
 
 void SiguienteNodo(ListaParam &l)
 {

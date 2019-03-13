@@ -67,20 +67,20 @@
 1552241549 source:c:\users\majo\documents\taller1\polinomios\abbpolinomio.cpp
 	"ABBPolinomio.h"
 
-1552241549 c:\users\majo\documents\taller1\polinomios\abbpolinomio.h
+1552435988 c:\users\majo\documents\taller1\polinomios\abbpolinomio.h
 	"Polinomio.h"
 
-1552241549 c:\users\majo\documents\taller1\polinomios\polinomio.h
+1552435988 c:\users\majo\documents\taller1\polinomios\polinomio.h
 	"ListaTerminos.h"
 	"ListaParametros.h"
 
-1552353442 c:\users\majo\documents\taller1\polinomios\listaterminos.h
+1552435988 c:\users\majo\documents\taller1\polinomios\listaterminos.h
 	"Termino.h"
 
-1552362097 c:\users\majo\documents\taller1\polinomios\termino.h
+1552435988 c:\users\majo\documents\taller1\polinomios\termino.h
 	"String.h"
 
-1552241550 c:\users\majo\documents\taller1\polinomios\string.h
+1552435988 c:\users\majo\documents\taller1\polinomios\string.h
 	"Boolean.h"
 	"EnumMensajes.h"
 	<stdio.h>
@@ -100,23 +100,23 @@
 1552241549 c:\users\majo\documents\taller1\polinomios\enumcomandos.h
 	"String.h"
 
-1552241549 source:c:\users\majo\documents\taller1\polinomios\listaparametros.cpp
+1552440891 source:c:\users\majo\documents\taller1\polinomios\listaparametros.cpp
 	"ListaParametros.h"
 
-1552362233 source:c:\users\majo\documents\taller1\polinomios\listaterminos.cpp
+1552435988 source:c:\users\majo\documents\taller1\polinomios\listaterminos.cpp
 	"ListaTerminos.h"
 
-1552241550 source:c:\users\majo\documents\taller1\polinomios\main.cpp
+1552435988 source:c:\users\majo\documents\taller1\polinomios\main.cpp
 	<iostream>
 	"ABBPolinomio.h"
 
-1552362020 source:c:\users\majo\documents\taller1\polinomios\polinomio.cpp
+1552435988 source:c:\users\majo\documents\taller1\polinomios\polinomio.cpp
 	"Polinomio.h"
 
-1552241550 source:c:\users\majo\documents\taller1\polinomios\string.cpp
+1552435988 source:c:\users\majo\documents\taller1\polinomios\string.cpp
 	"String.h"
 
-1552362132 source:c:\users\majo\documents\taller1\polinomios\termino.cpp
+1552435988 source:c:\users\majo\documents\taller1\polinomios\termino.cpp
 	"Termino.h"
 
 1551962899 c:\users\mpouso\documents\mathias\taller 1 2019\polinomios\listaparametros.h
@@ -301,9 +301,9 @@
 	<stdio.h>
 	"Windows.h"
 
-1552241549 c:\users\majo\documents\taller1\polinomios\enummensajes.h
+1552435988 c:\users\majo\documents\taller1\polinomios\enummensajes.h
 
-1552241549 source:c:\users\majo\documents\taller1\polinomios\enummensajes.cpp
+1552435988 source:c:\users\majo\documents\taller1\polinomios\enummensajes.cpp
 	"EnumMensajes.h"
 	<stdio.h>
 	"Windows.h"
